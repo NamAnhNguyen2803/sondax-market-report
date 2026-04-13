@@ -47,8 +47,8 @@
 ```mermaid
 quadrantChart
     title Cruise Hạ Long — ADR vs Exclusivity (2025 ước tính)
-    x-axis Mass-market (>40 cabin) --> Exclusive/Private (<20 cabin)
-    y-axis ADR thấp ($50-150) --> ADR cao ($400-700+)
+    x-axis Mass-market 40plus cabin --> Exclusive/Private 20minus cabin
+    y-axis ADR thap 50-150 USD --> ADR cao 400-700 USD
     quadrant-1 Luxury private
     quadrant-2 Luxury mass
     quadrant-3 Standard mass

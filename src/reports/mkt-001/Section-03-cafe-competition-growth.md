@@ -64,8 +64,8 @@ Thị trường cafe workshop Hà Nội có khoảng **15-25 nhà cung cấp** (
 ```mermaid
 quadrantChart
     title Cafe Workshop HN — Chiều sâu nội dung vs Giá
-    x-axis Giá thấp ($5-15) --> Giá cao ($35-60)
-    y-axis Nội dung nông (1-2 loại) --> Nội dung sâu (5-6 loại + combo)
+    x-axis Gia thap 5-15 USD --> Gia cao 35-60 USD
+    y-axis Noi dung nong 1-2 loai --> Noi dung sau 5-6 loai combo
     quadrant-1 Premium deep
     quadrant-2 Volume deep
     quadrant-3 Volume shallow
