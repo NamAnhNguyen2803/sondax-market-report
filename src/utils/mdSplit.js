@@ -19,6 +19,60 @@ export function extractPartHeadings(source) {
 }
 
 /**
+ * Strip "noise" sections (methodology, data gaps, open questions, limitations)
+ * from markdown before rendering. Removes the heading + all content until
+ * the next same-or-higher-level heading.
+ */
+export function stripNoiseSections(source) {
+  // Heading patterns that should be removed
+  const NOISE = [
+    /CÁC CÂU HỎI MỞ/i,
+    /OPEN QUESTIONS/i,
+    /KHOẢNG TRỐNG DỮ LIỆU/i,
+    /DATA GAPS/i,
+    /Sources & Methodology/i,
+    /Nguồn dữ liệu.*tham chiếu/i,
+    /Phương pháp/i,
+    /Ghi chú citation/i,
+    /Limitations.*Assumptions/i,
+    /Key assumptions/i,
+    /Defense of Subjective Prob/i,
+    /Devil'?s Advocate/i,
+    /Red Team/i,
+    /Methodology caveats/i,
+    /Recommended next step cho user/i,
+    /Consolidated.*DATA-GAP/i,
+  ];
+
+  const lines = source.split("\n");
+  const out = [];
+  let skipUntilLevel = null;
+
+  for (const line of lines) {
+    const headingMatch = line.match(/^(#{1,6})\s+(.+)/);
+    if (headingMatch) {
+      const level = headingMatch[1].length;
+      const text  = headingMatch[2];
+
+      // End skip when we reach a heading at same or higher level
+      if (skipUntilLevel !== null && level <= skipUntilLevel) {
+        skipUntilLevel = null;
+      }
+
+      if (skipUntilLevel === null && NOISE.some(p => p.test(text))) {
+        skipUntilLevel = level;
+        continue; // drop this heading too
+      }
+    }
+
+    if (skipUntilLevel !== null) continue;
+    out.push(line);
+  }
+
+  return out.join("\n");
+}
+
+/**
  * Generate a DOM-safe id from a heading string.
  * PHẦN/PART headings get a simple "part-x" slug.
  * Others get a stripped ASCII slug.

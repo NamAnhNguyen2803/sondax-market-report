@@ -1,7 +1,11 @@
+import { lazy, Suspense } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { C } from "../data/colors.js";
 import { headingToId } from "../utils/mdSplit.js";
+
+// Lazy-load mermaid renderer — keeps it out of the initial bundle
+const MermaidDiagram = lazy(() => import("./MermaidDiagram.jsx"));
 
 const styles = {
   h1: { color: C.text, fontSize: 20, fontWeight: 800, margin: "24px 0 12px", borderLeft: `4px solid ${C.accent}`, paddingLeft: 12 },
@@ -47,9 +51,19 @@ const components = {
   p:  ({ node, ...p }) => <p  style={styles.p}  {...p} />,
   a:  ({ node, ...p }) => <a  style={styles.a}  target="_blank" rel="noreferrer" {...p} />,
   li: ({ node, ...p }) => <li style={styles.li} {...p} />,
-  code: ({ node, inline, ...p }) => inline
-    ? <code style={styles.code} {...p} />
-    : <code {...p} />,
+  code: ({ node, inline, className, children, ...p }) => {
+    const lang = (className ?? "").replace("language-", "");
+    if (!inline && lang === "mermaid") {
+      return (
+        <Suspense fallback={<div style={{ color: C.muted, fontSize: 11, padding: 8 }}>Rendering diagram…</div>}>
+          <MermaidDiagram code={String(children)} />
+        </Suspense>
+      );
+    }
+    return inline
+      ? <code style={styles.code} className={className} {...p}>{children}</code>
+      : <code className={className} {...p}>{children}</code>;
+  },
   pre: ({ node, ...p }) => <pre style={styles.pre} {...p} />,
   blockquote: ({ node, ...p }) => <blockquote style={styles.blockquote} {...p} />,
   hr: () => <hr style={styles.hr} />,

@@ -137,6 +137,19 @@ export default function Sidebar({ view, setView, mobileOpen, setMobileOpen }) {
       })}
 
       <div style={{ flex: 1 }} />
+
+      {/* Watermark */}
+      <div style={{
+        padding: "12px 14px",
+        borderTop: `1px solid ${C.border}`,
+        fontSize: 10,
+        color: `${C.muted}80`,
+        fontWeight: 600,
+        letterSpacing: 1.2,
+        textTransform: "uppercase",
+      }}>
+        Report by Nam Anh
+      </div>
     </div>
   );
 
