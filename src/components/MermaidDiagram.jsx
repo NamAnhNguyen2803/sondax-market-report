@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import mermaid from "mermaid";
 import { C } from "../data/colors.js";
 
@@ -7,30 +7,46 @@ mermaid.initialize({
   theme: "dark",
   darkMode: true,
   themeVariables: {
-    background:        "#0b1222",
-    primaryColor:      "#1E3A5F",
-    primaryTextColor:  "#E2E8F0",
-    primaryBorderColor:"#38BDF8",
-    lineColor:         "#38BDF8",
-    secondaryColor:    "#0F172A",
-    tertiaryColor:     "#1a2744",
+    background:         "#0b1222",
+    primaryColor:       "#1E3A5F",
+    primaryTextColor:   "#E2E8F0",
+    primaryBorderColor: "#38BDF8",
+    lineColor:          "#38BDF8",
+    secondaryColor:     "#0F172A",
+    tertiaryColor:      "#1a2744",
     edgeLabelBackground:"#0b1222",
-    fontFamily:        "'Segoe UI', -apple-system, sans-serif",
-    fontSize:          "13px",
+    fontFamily:         "'Segoe UI', -apple-system, sans-serif",
+    fontSize:           "13px",
   },
 });
 
 let uid = 0;
 
 export default function MermaidDiagram({ code }) {
-  const [svg, setSvg] = useState(null);
+  const scratchRef = useRef(null);
+  const [svg, setSvg]     = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    setSvg(null);
+    setError(false);
+
+    // Mermaid v11 needs an in-DOM container to render into
+    const scratch = document.createElement("div");
+    scratch.style.visibility = "hidden";
+    scratch.style.position   = "absolute";
+    document.body.appendChild(scratch);
+
     const id = `md-${++uid}`;
-    mermaid.render(id, code.trim())
-      .then(({ svg: s }) => setSvg(s))
-      .catch(() => setError(true));
+    mermaid.render(id, code.trim(), scratch)
+      .then(({ svg: s, bindFunctions }) => {
+        setSvg(s);
+        // bindFunctions is called later on the visible container if needed
+      })
+      .catch(() => setError(true))
+      .finally(() => {
+        document.body.removeChild(scratch);
+      });
   }, [code]);
 
   if (error) return (
@@ -44,7 +60,9 @@ export default function MermaidDiagram({ code }) {
   );
 
   if (!svg) return (
-    <div style={{ color: C.muted, fontSize: 11, padding: "12px 0" }}>Rendering diagram…</div>
+    <div style={{ color: C.muted, fontSize: 11, padding: "12px 0" }}>
+      Rendering diagram…
+    </div>
   );
 
   return (
