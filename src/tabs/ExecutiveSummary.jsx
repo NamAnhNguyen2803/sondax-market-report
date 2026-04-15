@@ -41,6 +41,16 @@ export default function ExecutiveSummary() {
     "Cross-archetype bundle map (§8.4) để upsell khi khách A3 có interest A1/A2",
   ];
 
+  const checklistData = [
+    { month: "Tháng 6", focus: "A5 (PH Barkada)", tasks: ["Kick-off chuẩn bị A5", "Tuyển dụng/Đào tạo HDV tiếng Tagalog", "Mua sắm TikTok kit & khảo sát điểm check-in"] },
+    { month: "Tháng 7", focus: "A1 (Winter Escape)", tasks: ["Kick-off chuẩn bị A1", "Chốt hợp đồng DMC tại Hội An", "Khóa khối cabin du thuyền T6/T7"] },
+    { month: "Tháng 8", focus: "A3 (Cruise-Extend)", tasks: ["Kick-off chuẩn bị A3", "Nộp đơn Approved-operator cho các hãng tàu (Năm 2)", "Chạy thử nghiệm (Pilot) A1 & A5"] },
+    { month: "Tháng 9", focus: "Lượt Launch 1", tasks: ["RA MẮT A5 (Klook PH)", "Chốt hợp đồng khách sạn 4* tại HN", "Chạy thử nghiệm A3"] },
+    { month: "Tháng 10", focus: "Lượt Launch 2", tasks: ["RA MẮT A1 (Viator/TripAdvisor)", "Chạy quảng cáo Meta/Google cho A1", "Giám sát vận hành A5 mùa giao mùa"] },
+    { month: "Tháng 11", focus: "Lượt Launch 3", tasks: ["RA MẮT A3 (ShoreExGroup)", "Vận hành cao điểm du thuyền Hạ Long", "Bán thêm (Upsell) A1 cho khách A3"] },
+    { month: "Tháng 12", focus: "Full Operations", tasks: ["Vận hành cao điểm cho cả Top-3", "Giám sát rủi ro lịch trình tàu du thuyền", "Thu thập review để duy trì thứ hạng OTA"] },
+  ];
+
   return (
     <>
       <H2>Pain — Vấn đề cốt lõi</H2>
@@ -56,6 +66,34 @@ export default function ExecutiveSummary() {
           <p style={{ color: C.muted, fontSize: 11, margin: 0 }}>
             <strong style={{ color: C.text }}>Analogy:</strong> Giống chủ chuỗi phở có sẵn 7 xe đẩy + 5 mặt bằng cố định. Không phải audit 12 quầy để nâng cấp — là <strong style={{ color: C.accent }}>thiết kế 3 menu set mới</strong> theo combo mà khách đi ngang đủ volume lớn nhất đang order. Vị trí xe đẩy + mặt bằng là building block — không phải đối tượng ranking.
           </p>
+        </div>
+      </Card>
+
+      <H2>Checklist Vận hành hàng tháng (Cho Quản lý Tour)</H2>
+      <Card>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+            <thead>
+              <tr style={{ borderBottom: `2px solid ${C.border}`, background: C.bg }}>
+                {["Tháng", "Trọng tâm (Archetype)", "Checklist hành động"].map((h, i) => (
+                  <th key={i} style={{ textAlign: "left", padding: "10px", color: C.muted, fontSize: 10, textTransform: "uppercase" }}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {checklistData.map((row, i) => (
+                <tr key={i} style={{ borderBottom: `1px solid ${C.border}` }}>
+                  <td style={{ padding: "10px", color: C.accent, fontWeight: 700 }}>{row.month}</td>
+                  <td style={{ padding: "10px", color: C.text, fontWeight: 600 }}>{row.focus}</td>
+                  <td style={{ padding: "10px" }}>
+                    <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.muted }}>
+                      {row.tasks.map((t, j) => <li key={j}>{t}</li>)}
+                    </ul>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </Card>
 
