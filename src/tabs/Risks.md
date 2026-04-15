@@ -1,135 +1,135 @@
-# §9 — Risks + Limitations
+# §9 — Rủi ro + Hạn chế
 
-> **NAC coverage**: Q2 (paywall discipline), Q4 (no Western=luxury), Q6 (COVID handled), Q7 (review-sample bias disclosed — §4 already), Q8 (gaps flagged), Q12 (cheapest follow-up test per Top-3 archetype).
+> **Phạm vi NAC**: Q2 (kỷ luật tường phí), Q4 (không mặc định Phương Tây=xa xỉ), Q6 (đã xử lý COVID), Q7 (đã công bố sai lệch mẫu đánh giá — đã có trong §4), Q8 (đã gắn cờ các khoảng cách), Q12 (thử nghiệm theo dõi rẻ nhất cho mỗi Top-3 archetype).
 
-## 9.1 Data & recency risks
+## 9.1 Rủi ro dữ liệu & tính cập nhật
 
-### Paywall discipline (Q2)
+### Kỷ luật tường phí (Q2)
 
-Skift · Phocuswright · Euromonitor articles referenced in this report are **headlines + publisher + URL only** — no full-article quotes. If PO wants deeper insight, subscription access required. Specific headlines cited:
-- Skift "Southeast Asia cruise market recovery 2024" — skift.com (headline only, Q3 2024)
-- Phocuswright "State of APAC online travel 2024" — phocuswright.com (headline only)
-- Euromonitor "Vietnam tourism outlook 2024–2028" — euromonitor.com (headline only)
-- Luxury Travel Intelligence "Asia HNWI travel 2024" — luxurytravelintelligence.com (headline only)
+Các bài báo của Skift · Phocuswright · Euromonitor được trích dẫn trong báo cáo này **chỉ bao gồm tiêu đề + nhà xuất bản + URL** — không có trích dẫn toàn văn bài báo. Nếu PO muốn hiểu sâu hơn, cần có quyền truy cập đăng ký. Các tiêu đề cụ thể được trích dẫn:
+- Skift "Sự phục hồi của thị trường du thuyền Đông Nam Á 2024" — skift.com (chỉ tiêu đề, quý 3/2024)
+- Phocuswright "Thực trạng du lịch trực tuyến APAC 2024" — phocuswright.com (chỉ tiêu đề)
+- Euromonitor "Triển vọng du lịch Việt Nam 2024–2028" — euromonitor.com (chỉ tiêu đề)
+- Luxury Travel Intelligence "Du lịch của giới HNWI châu Á 2024" — luxurytravelintelligence.com (chỉ tiêu đề)
 
-### Recency risk
+### Rủi ro tính cập nhật
 
-- **OTA algorithm shifts**: Viator + TripAdvisor ranking algorithms update quarterly; §3.1 commission/velocity bands valid Q4 2024 pull, re-verify pre-launch.
-- **Cruise schedule volatility**: §1.2 + §5.2 port-call counts are 2024/25 actual + 2026/27 announced; lines shift itineraries yearly (cruise-line scheduling reviews quarterly). 2027 outlook band ±10%.
-- **Confidence band on 2027 outlook**: outside cruise (±10%) and commission rates (±3–5 pp), 2027 projections rely on training-data knowledge ≤ mid-2025 — PO should re-verify VNAT 2025 full-year bulletin when available.
+- **Sự thay đổi thuật toán OTA**: Thuật toán xếp hạng của Viator + TripAdvisor cập nhật hàng quý; các dải hoa hồng/tốc độ tại §3.1 có giá trị theo dữ liệu quý 4/2024, cần xác minh lại trước khi ra mắt.
+- **Biến động lịch trình du thuyền**: Số lượng chuyến cập cảng tại §1.2 + §5.2 là số liệu thực tế 2024/25 + đã công bố cho 2026/27; các hãng thay đổi hành trình hàng năm (đánh giá lịch trình hãng du thuyền hàng quý). Dải dự báo năm 2027 có sai số ±10%.
+- **Dải tin cậy của triển vọng 2027**: Ngoài du thuyền (±10%) và tỷ lệ hoa hồng (±3–5 điểm phần trăm), các dự báo cho năm 2027 dựa trên kiến thức dữ liệu huấn luyện ≤ giữa năm 2025 — PO nên xác minh lại bản tin cả năm 2025 của TCDL khi có sẵn.
 
-### Review-sample bias (Q7)
+### Sai lệch mẫu đánh giá (Q7)
 
-Disclosed in §4 — TripAdvisor/Viator review pools:
-- Reviewer self-select skew positive (satisfied guests review; unhappy guests often silently churn).
-- Top-3 ranking gets disproportionate booking share — entry-rank listings starved.
-- Non-English reviewers under-represented (English-only pool distorts "best operator" perception).
-- **Operator implication**: New archetype listings MUST seed 15–30 reviews quickly (see §8 review velocity workstream × Top-3).
+Đã công bố trong §4 — các nhóm đánh giá trên TripAdvisor/Viator:
+- Người đánh giá tự lựa chọn thiên hướng tích cực (khách hài lòng mới đánh giá; khách không hài lòng thường im lặng rời bỏ).
+- Top-3 xếp hạng nhận được thị phần đặt chỗ không cân xứng — các niêm yết mới gia nhập bị thiếu hụt.
+- Những người đánh giá không bằng tiếng Anh chưa được đại diện đầy đủ (nhóm chỉ dùng tiếng Anh làm biến dạng nhận thức về "nhà vận hành tốt nhất").
+- **Hệ quả cho nhà vận hành**: Các niêm yết archetype mới PHẢI gieo mầm 15–30 đánh giá nhanh chóng (xem luồng công việc tốc độ đánh giá tại §8 cho Top-3).
 
-### Cruise line contract opacity
+### Tính không minh bạch của hợp đồng hãng du thuyền
 
-- Cruise-line shore-ex contract economics are NDA — §1.2 capture rates + §3.2.1 net-rate markups are **industry proxy** (CLIA + Cruise Industry News + PATA triangulation), NOT verified per line. When PO enters RFP per line, expect negotiated terms 10–20% off proxy.
-- §3.2.1 semi-exclusivity clauses (Silversea, Viking, Regent) are public-pattern inference — actual contract language per line varies.
+- Kinh tế hợp đồng shore-ex của hãng du thuyền là thỏa thuận bảo mật (NDA) — tỷ lệ thu hút tại §1.2 + mức tăng giá ròng tại §3.2.1 là **số liệu ủy nhiệm ngành** (triển khai từ CLIA + Cruise Industry News + PATA), KHÔNG được xác minh theo từng hãng. Khi PO tham gia RFP theo từng hãng, hãy kỳ vọng các điều khoản thương lượng chênh lệch 10–20% so với số liệu ủy nhiệm.
+- Các điều khoản bán độc quyền tại §3.2.1 (Silversea, Viking, Regent) là suy luận từ mô hình công khai — ngôn ngữ hợp đồng thực tế theo từng hãng sẽ khác nhau.
 
-### Demand-signal noise
+### Nhiễu tín hiệu nhu cầu
 
-- **Google Trends small-market volatility**: NZ, IE, ZA "Vietnam tour" search volume is low enough that month-over-month noise is high. Heatmap §5.3 🟡/⚪ judgments for these markets less precise — 🔴/🟠 judgments (US, UK, AU, IN, PH) more reliable.
-- **OTA rank signal** ≠ booking signal — TripAdvisor #1 doesn't mean highest revenue; reviews-per-listing is a proxy for volume but not absolute conversion.
+- **Sự biến động của Google Trends ở thị trường nhỏ**: Khối lượng tìm kiếm "Vietnam tour" tại New Zealand, Ireland, Nam Phi đủ thấp để nhiễu hàng tháng ở mức cao. Các đánh giá 🟡/⚪ trên bản đồ nhiệt §5.3 cho các thị trường này kém chính xác hơn — các đánh giá 🔴/🟠 (Mỹ, Anh, Úc, Ấn Độ, Philippines) đáng tin cậy hơn.
+- **Tín hiệu xếp hạng OTA** ≠ tín hiệu đặt chỗ — Xếp hạng số 1 trên TripAdvisor không có nghĩa là doanh thu cao nhất; số lượng đánh giá trên mỗi niêm yết là một con số ủy nhiệm cho khối lượng nhưng không phải là chuyển đổi tuyệt đối.
 
-## 9.2 Bias & narrative risks
+## 9.2 Rủi ro định kiến & tự sự
 
-### "Western = luxury" bias avoidance (Q4)
+### Tránh định kiến "Phương Tây = xa xỉ" (Q4)
 
-- §2 P7 Luxury persona **includes IN + SG + ZA evidence**, not US/UK-only. IN HNWI +98% YoY outbound surge (§1.1) is the clearest example of non-Western HNWI growth.
-- §7 A2 Luxury archetype explicitly targets US/UK **+ IN HNWI + SG HNWI + ZA HNWI** per design rationale.
-- Virtuoso + Conde Nast Luxury Specialists trade channel (§7 A2) is GLOBAL luxury trade — includes IN/SG advisors.
-- **Check**: no archetype card forces US/UK-exclusive luxury positioning.
+- Chân dung khách Xa xỉ P7 tại §2 **bao gồm các bằng chứng từ Ấn Độ + Singapore + Nam Phi**, không chỉ riêng Mỹ/Anh. Sự gia tăng đột biến +98% so với cùng kỳ của HNWI Ấn Độ đi du lịch nước ngoài (§1.1) là ví dụ rõ ràng nhất về sự tăng trưởng của HNWI ngoài Phương Tây.
+- Archetype Xa xỉ A7 tại §7 nhắm mục tiêu rõ ràng vào Mỹ/Anh **+ HNWI Ấn Độ + HNWI Singapore + HNWI Nam Phi** theo cơ sở lý luận thiết kế.
+- Kênh thương mại Virtuoso + Chuyên gia Xa xỉ Conde Nast (§7 A2) là kênh thương mại xa xỉ TOÀN CẦU — bao gồm cả các cố vấn từ Ấn Độ/Singapore.
+- **Kiểm tra**: không có thẻ archetype nào ép buộc định vị xa xỉ độc quyền cho Mỹ/Anh.
 
-### Nationality = persona conflation (Q5)
+### Nhầm lẫn Quốc tịch = Chân dung (Q5)
 
-- Every persona card (§2) explicitly states **multi-market evidence** — e.g. P3 AU/NZ is about short-haul + AUD/NZD cost-escape, NOT "Australian travel preferences" in aggregate.
-- §7 archetypes target persona behaviour patterns, not nationality stereotypes.
-- **Check**: no "Indian = budget" or "American = luxury" mapping.
+- Mỗi thẻ chân dung (§2) đều nêu rõ **bằng chứng đa thị trường** — ví dụ: P3 AU/NZ là về chặng ngắn + trốn chi phí bằng đồng AUD/NZD, KHÔNG phải về "sở thích du lịch của người Úc" nói chung.
+- Các archetype tại §7 nhắm mục tiêu vào các mô hình hành vi chân dung, không phải định kiến quốc tịch.
+- **Kiểm tra**: không có ánh xạ "Ấn Độ = ngân sách thấp" hoặc "Mỹ = xa xỉ".
 
-### COVID distortion (Q6)
+### Biến dạng do COVID (Q6)
 
-- Data window strictly **2023–2026 actuals + 2027 outlook**. 2020–2022 referenced ONLY for trend-deviation callouts (e.g. 2024 inbound VN 17.6M recovering to 98% of 2019 18M per §1.1).
-- No pre-COVID baseline behaviour claims without explicit trend-deviation framing.
+- Cửa sổ dữ liệu nghiêm ngặt là **thực tế 2023–2026 + triển vọng 2027**. Giai đoạn 2020–2022 CHỈ được trích dẫn cho các trường hợp đi lệch xu hướng (ví dụ: khách quốc tế đến VN năm 2024 đạt 17.6 triệu, phục hồi 98% so với mức 18 triệu của năm 2019 theo §1.1).
+- Không có tuyên bố về hành vi cơ bản trước COVID mà không có khung giải thích độ lệch xu hướng rõ ràng.
 
-### Archetype feasibility gate (from §7 Q10)
+### Cổng khả thi Archetype (từ §7 Q10)
 
-- Every archetype's Portfolio-leverage field cites specific T-ID OR declares "net-new capability required" + 1-line ops need (§7.4). No fantasy archetype without operational path.
-- **Biggest archetype design risk**: A2 (Luxury) + A6 (AU/NZ DAD) rely on significant net-new capability (villa network, dive partner, DAD-DMC). If PO launches before net-new is ready, product quality suffers.
+- Trường đòn bẩy danh mục đầu tư của mọi archetype đều trích dẫn T-ID cụ thể HOẶC tuyên bố "yêu cầu khả năng mới" + nhu cầu vận hành 1 dòng (§7.4). Không có archetype viển vông mà không có lộ trình vận hành.
+- **Rủi ro thiết kế archetype lớn nhất**: A2 (Xa xỉ) + A6 (Úc/NZ cổng DAD) phụ thuộc vào khả năng mới đáng kể (mạng lưới villa, đối tác lặn, DMC tại DAD). Nếu PO ra mắt trước khi khả năng mới sẵn sàng, chất lượng sản phẩm sẽ bị ảnh hưởng.
 
-## 9.3 Portfolio assumption notes (NON-BLOCKING per C15 + §11.3)
+## 9.3 Lưu ý giả định danh mục đầu tư (KHÔNG GÂY TẮC NGHẼN theo C15 + §11.3)
 
-These ambiguities are **acknowledged** and do NOT gate quality:
+Những sự mơ hồ này đã được **ghi nhận** và KHÔNG cản trở chất lượng:
 
-- **T1 food tour**: HN vs HCM vs both — research assumes both; if PO confirms only one city, A4 and A5 mapping shifts but archetype design holds.
-- **T5 Military Museum**: HN (Bảo tàng Lịch sử Quân sự) vs HCM (War Remnants) — research assumes both; A1 + A4 use city-appropriate variant.
-- **T6–T9 cruise class tier**: assumed HL overnight mid-to-premium class; if one is international-ocean (Silversea-class), mapping to A1 mid-premium vs A2 luxury shifts; capability is present regardless.
-- **T12 Nha Trang vs Chan May**: if Nha Trang-only, A6 DAD-gateway needs net-new central-coast ops partner; if Chan May, T12 directly feeds A6. Biggest clarify request to PO — A6 GTM timeline depends on this.
+- **Tour ẩm thực T1**: Hà Nội so với HCM so với cả hai — nghiên cứu giả định cả hai; nếu PO chỉ xác nhận một thành phố, ánh xạ của A4 và A5 sẽ thay đổi nhưng thiết kế archetype vẫn giữ nguyên.
+- **Bảo tàng Quân sự T5**: Hà Nội (Bảo tàng Lịch sử Quân sự) so với HCM (Chứng tích Chiến tranh) — nghiên cứu giả định cả hai; A1 + A4 sử dụng biến thể phù hợp với thành phố.
+- **Hạng lớp du thuyền T6–T9**: giả định là hạng trung đến cận cao cấp ngủ đêm tại HL; nếu một chiếc là du thuyền biển quốc tế (hạng Silversea), việc ánh xạ sang A1 cận cao cấp so với A2 xa xỉ sẽ thay đổi; khả năng vẫn hiện diện bất kể trường hợp nào.
+- **T12 Nha Trang so với Chân Mây**: nếu chỉ ở Nha Trang, cổng DAD A6 cần đối tác vận hành ven biển miền Trung mới; nếu là Chân Mây, T12 trực tiếp nuôi dưỡng A6. Yêu cầu làm rõ lớn nhất đối với PO — lộ trình GTM của A6 phụ thuộc vào điều này.
 
-**Action required from PO**: 1-day clarify session before finalizing A6 + A2 net-new scope. Non-blocking for A1/A3/A5 GTM (Top-3).
+**Hành động yêu cầu từ PO**: 1 buổi làm rõ trong 1 ngày trước khi hoàn thiện phạm vi mới của A6 + A2. Không gây tắc nghẽn cho lộ trình GTM của A1/A3/A5 (Top-3).
 
-## 9.4 Biggest design-thesis risk (§0 headline-risk source)
+## 9.4 Rủi ro luận án thiết kế lớn nhất (nguồn rủi ro tiêu đề §0)
 
-> **The biggest risk to this report's design thesis is that cruise-pax demand segmentation is less seasonal-predictable than modeled.**
+> **Rủi ro lớn nhất đối với luận án thiết kế của báo cáo này là việc phân khúc nhu cầu của khách du thuyền kém dự đoán theo mùa hơn so với mô hình.**
 
-**Why**: §1.2 + §5.2 cruise port-call projections for 2026/27 rely on cruise-line announced itineraries which have historically shifted ±10–15% within 6 months of sailing (Cruise Industry News, 2024 reporting on itinerary revisions). If 2026/27 Asia-cruise capacity deploys less than modeled (e.g. RCL Spectrum redeployed to Europe, which has happened in 2022/23 reshuffle), A3 + A1 demand density halves.
+**Lý do**: Các dự báo về chuyến cập cảng du thuyền năm 2026/27 tại §1.2 + §5.2 dựa trên các hành trình đã công bố của hãng du thuyền, vốn trong lịch sử đã có sự thay đổi ±10–15% trong vòng 6 tháng trước khi khởi hành (Cruise Industry News, báo cáo năm 2024 về việc sửa đổi hành trình). Nếu năng lực du thuyền châu Á năm 2026/27 được triển khai ít hơn dự kiến (ví dụ: tàu RCL Spectrum được điều động lại sang châu Âu, điều đã xảy ra trong đợt xáo trộn 2022/23), mật độ nhu cầu của A3 + A1 sẽ giảm một nửa.
 
-**Mitigation**: Top-3 launch sequence (§8.6) puts A3 first at lowest budget ($3–8K) and highest-feasibility — **if A3 Sep–Nov 2026 sales signal weak**, PO can pause A1 ($8–20K spend) before peak commitment. Sequential budget release = risk-gate built into GTM.
+**Giảm thiểu**: Trình tự ra mắt Top-3 (§8.6) đặt A3 lên hàng đầu với ngân sách thấp nhất ($3–8K) và tính khả thi cao nhất — **nếu tín hiệu bán hàng của A3 từ tháng 9–11/2026 yếu**, PO có thể tạm dừng A1 (chi tiêu $8–20K) trước khi cam kết vào mùa cao điểm. Giải phóng ngân sách tuần tự = cổng rủi ro được tích hợp vào GTM.
 
-**Secondary risks** (not the biggest but worth flagging):
-- PH outbound growth could slow if airfare volatility or visa policy shifts (+95% YoY base).
-- Viator-TripAdvisor unified commission could shift post-2025 (Booking Holdings acquisition rumors past 3 years).
-- IN HNWI outbound growth is concentrated in H1 months (Diwali-driven) — Dec-Feb window may underperform vs. expected.
+**Rủi ro phụ** (không phải lớn nhất nhưng đáng để gắn cờ):
+- Sự tăng trưởng du lịch nước ngoài của PH có thể chậm lại nếu biến động giá vé máy bay hoặc chính sách visa thay đổi (nền tảng +95% so với cùng kỳ).
+- Hoa hồng thống nhất của Viator-TripAdvisor có thể thay đổi sau năm 2025 (tin đồn mua lại của Booking Holdings trong 3 năm qua).
+- Sự tăng trưởng du lịch nước ngoài của HNWI Ấn Độ tập trung vào các tháng nửa đầu năm (do lễ Diwali) — cửa sổ tháng 12-2 có thể kém hiệu quả hơn mong đợi.
 
-## 9.5 Cheapest follow-up test per Top-3 archetype (Q12)
+## 9.5 Thử nghiệm theo dõi rẻ nhất cho mỗi Top-3 archetype (Q12)
 
-> Each test is **low-budget + fast** — designed to validate before full spend. Already cross-referenced in §8.
+> Mỗi thử nghiệm đều có **ngân sách thấp + thực hiện nhanh** — được thiết kế để xác nhận trước khi chi tiêu toàn bộ. Đã được đối chiếu chéo trong §8.
 
 ### A3 Cruise-Extend-HL Overnight
 
-**Test**: 1-month ShoreExcursionsGroup A/B on 2 listing variants (itinerary-emphasis vs. "sleep-on-bay emphasis"), **4 weeks pre-launch**.
-**Budget**: $800 (sponsored listing placement + 1 listing-optimization consultant).
-**Metric**: Click-through rate + booking conversion delta between variants.
-**Kill/go threshold**: If best variant CTR <0.8% on ShoreExGroup, delay launch 30 days for creative refresh.
+**Thử nghiệm**: Thử nghiệm A/B trên ShoreExcursionsGroup trong 1 tháng cho 2 biến thể niêm yết (nhấn mạnh hành trình so với nhấn mạnh "ngủ trên vịnh"), **4 tuần trước khi ra mắt**.
+**Ngân sách**: $800 (vị trí niêm yết được tài trợ + 1 tư vấn tối ưu hóa niêm yết).
+**Số liệu**: Tỷ lệ nhấp chuột + chênh lệch chuyển đổi đặt chỗ giữa các biến thể.
+**Ngưỡng dừng/tiếp tục**: Nếu CTR biến thể tốt nhất <0.8% trên ShoreExGroup, hãy trì hoãn ra mắt 30 ngày để làm mới nội dung sáng tạo.
 
 ### A1 Winter Escape Cruise+Land
 
-**Test**: 2-week Meta Ads A/B on positioning hooks — "Cruise Ha Long + Land VN Combo" vs "Winter Escape Vietnam 2 weeks warm", **6 weeks pre-launch**.
-**Budget**: $800 ($400/variant).
-**Metric**: CTR + lead-form conversion on landing page.
-**Kill/go threshold**: If neither variant exceeds 1% CTR, pause Viator-channel launch and re-work creative; shift to a third hook.
+**Thử nghiệm**: Thử nghiệm A/B trên Meta Ads trong 2 tuần về các điểm thu hút định vị — "Combo du thuyền Hạ Long + Land VN" so với "Trốn đông Việt Nam 2 tuần ấm áp", **6 tuần trước khi ra mắt**.
+**Ngân sách**: $800 ($400/biến thể).
+**Số liệu**: CTR + chuyển đổi biểu mẫu khách hàng tiềm năng trên trang đích.
+**Ngưỡng dừng/tiếp tục**: Nếu không có biến thể nào vượt quá 1% CTR, hãy tạm dừng ra mắt kênh Viator và làm lại nội dung sáng tạo; chuyển sang điểm thu hút thứ ba.
 
 ### A5 PH Barkada Gen-Z Group
 
-**Test**: 2-week TikTok A/B on 2 PH influencer creative frames — "barkada travel" vs "solo female Gen-Z", **4 weeks pre-launch**.
-**Budget**: $500 (influencer-fee split + TikTok boost).
-**Metric**: Saves + shares + TikTok-to-Klook click-through.
-**Kill/go threshold**: If barkada hook saves/shares <20% above solo hook, re-examine group-of-6 flat-price thesis — maybe solo Gen-Z is the true PH segment.
+**Thử nghiệm**: Thử nghiệm A/B trên TikTok trong 2 tuần cho 2 khung hình sáng tạo của influencer PH — "du lịch barkada" so với "nữ đi lẻ Gen-Z", **4 tuần trước khi ra mắt**.
+**Ngân sách**: $500 (chia phí influencer + tăng cường TikTok).
+**Số liệu**: Lượt lưu + lượt chia sẻ + tỷ lệ nhấp chuột từ TikTok sang Klook.
+**Ngưỡng dừng/tiếp tục**: Nếu lượt lưu/chia sẻ của khung barkada không cao hơn 20% so với khung đi lẻ, hãy xem xét lại luận án giá cố định cho nhóm 6 người — có lẽ Gen-Z đi lẻ mới thực sự là phân khúc của PH.
 
-**Total Top-3 validation budget**: $2,100 across 3 tests. Answer received in 6 weeks, before any archetype burns $8K+ paid spend.
+**Tổng ngân sách xác thực Top-3**: $2,100 cho 3 thử nghiệm. Nhận được câu trả lời trong 6 tuần, trước khi bất kỳ archetype nào đốt hơn $8K chi tiêu trả phí.
 
-## 9.6 Gaps flagged inventory (from all sections)
+## 9.6 Danh mục các khoảng cách được gắn cờ (từ tất cả các phần)
 
-From sections upstream, the `[gap]` markers:
+Từ các phần phía trên, các dấu hiệu `[gap]`:
 
-| Gap | Section | Impact | Mitigation |
+| Khoảng cách | Phần | Tác động | Giảm thiểu |
 |-----|---------|--------|-------------|
-| Live VNAT 2024 full-year + 2025 Q1 YoY for CA, NZ, IE, ZA, PH | §1.1 | ±10% volume estimates | Pull live VNAT bulletin pre-launch; adjust archetype TAM |
-| Live 2025 Q4 + 2026/27 port-call schedule per cruise line | §1.2 | A3 cabin-block planning accuracy | Pull cruisemapper.com live Sep 2026 |
-| Confirmed capture rate per port from cruise-line data | §1.2 | Capture rate estimates ±15% | PO direct CLIA engagement or RFP data |
-| Exact VN-market commission rates (Viator, Klook, etc.) | §3.1 | Net-margin calc ±3 pp | NDA-respecting operator interview or RFP |
-| Viator review velocity ramp-up time for new listings | §3.1 | A1/A3/A5 launch-review pacing | Monitor first 30 days · adjust review-seed plan |
-| Exact monthly demand % per persona | §5.3 | Heatmap qualitative not quantitative | Accept qualitative; refine via OTA booking-mix data quarterly |
-| Google Trends small-market precision (NZ, IE, ZA) | §5.3 | 🟡/⚪ signals weak | Triangulate with VNAT + tourism-board monthly |
-| PH cruise pax precise % on SG-homeport sailings | §6 | A5/A3-PH variant sizing | CLIA Asia follow-up or RCL direct data |
-| Klook PH VN-category organic rank data | §6 | A5 channel priority weighting | Klook Partner portal access required |
+| Số liệu VNAT thực tế cả năm 2024 + Q1 2025 cho CA, NZ, IE, ZA, PH | §1.1 | Ước tính khối lượng ±10% | Lấy bản tin VNAT thực tế trước khi ra mắt; điều chỉnh TAM của archetype |
+| Lịch trình cập cảng thực tế quý 4/2025 + 2026/27 theo từng hãng | §1.2 | Độ chính xác của việc lập kế hoạch khối cabin A3 | Lấy số liệu thực tế từ cruisemapper.com vào tháng 9/2026 |
+| Tỷ lệ thu hút được xác nhận trên mỗi cảng từ dữ liệu hãng du thuyền | §1.2 | Ước tính tỷ lệ thu hút ±15% | PO trực tiếp tham gia với CLIA hoặc dữ liệu RFP |
+| Tỷ lệ hoa hồng chính xác tại thị trường VN (Viator, Klook, v.v.) | §3.1 | Tính toán biên lợi nhuận ròng ±3 điểm phần trăm | Phỏng vấn nhà vận hành hoặc RFP tôn trọng NDA |
+| Thời gian tăng tốc tốc độ đánh giá trên Viator cho các niêm yết mới | §3.1 | Nhịp độ đánh giá khi ra mắt A1/A3/A5 | Theo dõi 30 ngày đầu tiên · điều chỉnh kế hoạch gieo mầm đánh giá |
+| Tỷ lệ % nhu cầu hàng tháng chính xác theo từng chân dung | §5.3 | Bản đồ nhiệt mang tính định tính, không phải định lượng | Chấp nhận tính định tính; tinh chỉnh thông qua dữ liệu kết hợp đặt chỗ OTA hàng quý |
+| Độ chính xác của Google Trends ở thị trường nhỏ (NZ, IE, ZA) | §5.3 | Các tín hiệu 🟡/⚪ yếu | Đối chiếu với VNAT + sở du lịch hàng tháng |
+| % chính xác khách du thuyền PH trên các chuyến khởi hành cảng nhà SG | §6 | Định cỡ biến thể A5/A3-PH | Theo dõi CLIA Asia hoặc dữ liệu trực tiếp từ RCL |
+| Dữ liệu xếp hạng tự nhiên chuyên mục VN trên Klook PH | §6 | Trọng số ưu tiên kênh A5 | Yêu cầu quyền truy cập cổng thông tin Đối tác Klook |
 
-No gap is a blocker — all are quantitative refinements to qualitative structural findings.
+Không có khoảng cách nào gây tắc nghẽn — tất cả đều là những tinh chỉnh định lượng cho các phát hiện cấu trúc định tính.
 
 ---
 
-**NAC coverage closing**: Q2 ✓ (paywall headlines only) · Q4 ✓ (anti-Western-default disclosed) · Q6 ✓ (2020–2022 trend-deviation only) · Q7 ✓ (review bias in §4 + referenced here) · Q8 ✓ (9 gaps inventoried) · Q12 ✓ (3 cheapest tests with budget/metric/kill-go thresholds).
+**Phạm vi NAC đã hoàn thành**: Q2 ✓ (chỉ tiêu đề tường phí) · Q4 ✓ (đã công bố chống mặc định Phương Tây) · Q6 ✓ (chỉ trích dẫn độ lệch xu hướng 2020–2022) · Q7 ✓ (sai lệch đánh giá trong §4 + được tham chiếu ở đây) · Q8 ✓ (đã kiểm kê 9 khoảng cách) · Q12 ✓ (3 thử nghiệm rẻ nhất với ngân sách/số liệu/ngưỡng dừng-tiếp tục).
