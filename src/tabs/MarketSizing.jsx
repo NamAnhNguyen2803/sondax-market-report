@@ -21,23 +21,23 @@ export default function MarketSizing() {
   ];
 
   const marketTable = [
-    { rank: 1, market: "United States", flag: "🇺🇸", inbound: "~780K", yoy: "+25%", peak: "~60%", adr: "$120–180", los: "10–14N", regions: "HN · HCM · Hội An · Hạ Long · Nha Trang", trend: "Tăng — đường bay JFK-SGN trực tiếp 2023" },
-    { rank: 2, market: "United Kingdom", flag: "🇬🇧", inbound: "~300K", yoy: "+18%", peak: "~55%", adr: "$100–150", los: "10–15N", regions: "HN · Hội An · Hạ Long · HCM · Sa Pa", trend: "Ổn định; Feb half-term = spike" },
-    { rank: 3, market: "Canada", flag: "🇨🇦", inbound: "~180K", yoy: "+20%", peak: "~60%", adr: "$110–160", los: "10–14N", regions: "HN · Hội An · Hạ Long", trend: "Winter-escape tăng tốc" },
-    { rank: 4, market: "Australia", flag: "🇦🇺", inbound: "~490K", yoy: "+22%", peak: "~40%", adr: "$100–150", los: "8–12N", regions: "HCM · Hội An · Nha Trang · Hạ Long · Phú Quốc", trend: "Oct + Feb–Mar peaks" },
-    { rank: 5, market: "New Zealand", flag: "🇳🇿", inbound: "~80K", yoy: "+15%", peak: "~45%", adr: "$100–140", los: "10–14N", regions: "HCM · HN · Hội An", trend: "Shoulder Oct + Mar" },
-    { rank: 6, market: "Ireland", flag: "🇮🇪", inbound: "~35K", yoy: "+15%", peak: "~55%", adr: "$100–150", los: "12–16N", regions: "HN · Hội An · Hạ Long", trend: "Xmas/NY + Feb spike" },
-    { rank: 7, market: "Singapore", flag: "🇸🇬", inbound: "~880K", yoy: "+28%", peak: "~35%", adr: "$90–140", los: "4–7N", regions: "HCM · Phú Quốc · Đà Nẵng · Hạ Long", trend: "Short-haul; inter-term Nov + Mar" },
-    { rank: 8, market: "India", flag: "🇮🇳", inbound: "~500K", yoy: "+98%", peak: "~50%", adr: "$80–130", los: "6–10N", regions: "HN · Phú Quốc · Đà Nẵng · HCM · Hạ Long", trend: "Tăng mạnh — Dec–Feb + Diwali" },
-    { rank: 9, market: "South Africa", flag: "🇿🇦", inbound: "~25K", yoy: "+10%", peak: "~50%", adr: "$90–130", los: "12–18N", regions: "HN · Hội An · Hạ Long · HCM", trend: "Volume nhỏ, LOS dài" },
-    { rank: 10, market: "Philippines", flag: "🇵🇭", inbound: "~175K", yoy: "+95%", peak: "~55%", adr: "$80–120", los: "5–8N", regions: "HCM · HN · Đà Nẵng · Phú Quốc · Hạ Long", trend: "Tăng mạnh — Dec–Feb + PH summer Oct" },
+    { rank: 1, market: "United States", flag: "🇺🇸", inbound: "~780K", yoy: "+25%", outlook2025: "+15–20%", peak: "~60%", adr: "$120–180", los: "10–14N", regions: "HN · HCM · Hội An · Hạ Long · Nha Trang", trend: "Tăng — đường bay JFK-SGN trực tiếp 2023" },
+    { rank: 2, market: "United Kingdom", flag: "🇬🇧", inbound: "~300K", yoy: "+18%", outlook2025: "+10–12%", peak: "~55%", adr: "$100–150", los: "10–15N", regions: "HN · Hội An · Hạ Long · HCM · Sa Pa", trend: "Ổn định; Feb half-term = spike" },
+    { rank: 3, market: "Canada", flag: "🇨🇦", inbound: "~180K", yoy: "+20%", outlook2025: "+12–15%", peak: "~60%", adr: "$110–160", los: "10–14N", regions: "HN · Hội An · Hạ Long", trend: "Winter-escape tăng tốc" },
+    { rank: 4, market: "Australia", flag: "🇦🇺", inbound: "~490K", yoy: "+22%", outlook2025: "+10–15%", peak: "~40%", adr: "$100–150", los: "8–12N", regions: "HCM · Hội An · Nha Trang · Hạ Long · Phú Quốc", trend: "Oct + Feb–Mar peaks" },
+    { rank: 5, market: "New Zealand", flag: "🇳🇿", inbound: "~80K", yoy: "+15%", outlook2025: "+8–10%", peak: "~45%", adr: "$100–140", los: "10–14N", regions: "HCM · HN · Hội An", trend: "Shoulder Oct + Mar" },
+    { rank: 6, market: "Ireland", flag: "🇮🇪", inbound: "~35K", yoy: "+15%", outlook2025: "+10–15%", peak: "~55%", adr: "$100–150", los: "12–16N", regions: "HN · Hội An · Hạ Long", trend: "Xmas/NY + Feb spike" },
+    { rank: 7, market: "Singapore", flag: "🇸🇬", inbound: "~880K", yoy: "+28%", outlook2025: "+15–20%", peak: "~35%", adr: "$90–140", los: "4–7N", regions: "HCM · Phú Quốc · Đà Nẵng · Hạ Long", trend: "Short-haul; inter-term Nov + Mar" },
+    { rank: 8, market: "India", flag: "🇮🇳", inbound: "~500K", yoy: "+98%", outlook2025: "+40–60%", peak: "~50%", adr: "$80–130", los: "6–10N", regions: "HN · Phú Quốc · Đà Nẵng · HCM · Hạ Long", trend: "Tăng mạnh — Dec–Feb + Diwali" },
+    { rank: 9, market: "South Africa", flag: "🇿🇦", inbound: "~25K", yoy: "+10%", outlook2025: "+5–8%", peak: "~50%", adr: "$90–130", los: "12–18N", regions: "HN · Hội An · Hạ Long · HCM", trend: "Volume nhỏ, LOS dài" },
+    { rank: 10, market: "Philippines", flag: "🇵🇭", inbound: "~175K", yoy: "+95%", outlook2025: "+30–50%", peak: "~55%", adr: "$80–120", los: "5–8N", regions: "HCM · HN · Đà Nẵng · Phú Quốc · Hạ Long", trend: "Tăng mạnh — Dec–Feb + PH summer Oct" },
   ];
 
   const cruisePortCalls = [
-    { port: "Hạ Long", oct: 8, nov: 12, dec: 18, jan: 18, feb: 15, mar: 12, total: 83, pax: "180K–220K", capture: "65–80%", color: C.accent },
-    { port: "Phú Mỹ (HCM gateway)", oct: 10, nov: 14, dec: 16, jan: 16, feb: 14, mar: 12, total: 82, pax: "190K–230K", capture: "55–70%", color: C.orange },
-    { port: "Chan May (Huế/Hội An)", oct: 6, nov: 10, dec: 14, jan: 12, feb: 12, mar: 10, total: 64, pax: "130K–170K", capture: "75–95%", color: C.green },
-    { port: "Nha Trang", oct: 4, nov: 6, dec: 8, jan: 8, feb: 7, mar: 6, total: 39, pax: "70K–100K", capture: "40–55%", color: C.purple },
+    { port: "Hạ Long", oct: 8, nov: 12, dec: 18, jan: 18, feb: 15, mar: 12, total: 83, sched2627: "~90", pax: "180K–220K", capture: "65–80%", color: C.accent },
+    { port: "Phú Mỹ (HCM gateway)", oct: 10, nov: 14, dec: 16, jan: 16, feb: 14, mar: 12, total: 82, sched2627: "~88", pax: "190K–230K", capture: "55–70%", color: C.orange },
+    { port: "Chan May (Huế/Hội An)", oct: 6, nov: 10, dec: 14, jan: 12, feb: 12, mar: 10, total: 64, sched2627: "~70", pax: "130K–170K", capture: "75–95%", color: C.green },
+    { port: "Nha Trang", oct: 4, nov: 6, dec: 8, jan: 8, feb: 7, mar: 6, total: 39, sched2627: "~45", pax: "70K–100K", capture: "40–55%", color: C.purple },
   ];
 
   const cruisePaxNationality = [
@@ -84,7 +84,7 @@ export default function MarketSizing() {
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 11 }}>
             <thead>
               <tr style={{ borderBottom: `2px solid ${C.border}` }}>
-                {["#", "Thị trường", "Inbound 2024", "YoY", "Peak Oct–Mar", "ADR/đêm", "LOS", "Top sub-regions VN", "Xu hướng"].map((h, i) => (
+                {["#", "Thị trường", "Inbound 2024", "YoY", "Outlook 2025", "Peak Oct–Mar", "ADR/đêm", "LOS", "Top sub-regions VN", "Xu hướng"].map((h, i) => (
                   <th key={i} style={{ textAlign: "left", padding: "8px 6px", color: C.muted, fontSize: 10, textTransform: "uppercase", letterSpacing: 0.4, whiteSpace: "nowrap" }}>{h}</th>
                 ))}
               </tr>
@@ -96,6 +96,7 @@ export default function MarketSizing() {
                   <td style={{ padding: "8px 6px", color: C.text, fontWeight: 600, whiteSpace: "nowrap" }}>{row.flag} {row.market}</td>
                   <td style={{ padding: "8px 6px", color: C.accent, fontWeight: 700 }}>{row.inbound}</td>
                   <td style={{ padding: "8px 6px", color: row.yoy.includes("+9") ? C.green : C.orange, fontWeight: 600 }}>{row.yoy}</td>
+                  <td style={{ padding: "8px 6px", color: C.green, fontWeight: 600 }}>{row.outlook2025}</td>
                   <td style={{ padding: "8px 6px", color: C.text }}>{row.peak}</td>
                   <td style={{ padding: "8px 6px", color: C.muted }}>{row.adr}</td>
                   <td style={{ padding: "8px 6px", color: C.muted, whiteSpace: "nowrap" }}>{row.los}</td>
@@ -128,13 +129,13 @@ export default function MarketSizing() {
         </div>
       </Card>
 
-      <H2>Cruise Port-Calls Oct–Mar 2024/25</H2>
+      <H2>Cruise Port-Calls Oct–Mar 2024/25 + 2026/27 Scheduled</H2>
       <Card>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse" }}>
             <thead>
               <tr style={{ borderBottom: `2px solid ${C.border}` }}>
-                {["Cảng", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Tổng Oct–Mar", "~Pax/mùa", "Capture rate"].map((h, i) => (
+                {["Cảng", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "2024/25 Total", "2026/27 Sched", "~Pax/mùa", "Capture rate"].map((h, i) => (
                   <th key={i} style={{ textAlign: i === 0 ? "left" : "center", padding: "8px 6px", color: C.muted, fontSize: 10, textTransform: "uppercase", letterSpacing: 0.4 }}>{h}</th>
                 ))}
               </tr>
@@ -147,6 +148,7 @@ export default function MarketSizing() {
                     <td key={i} style={{ textAlign: "center", padding: "10px 6px", color: C.text, fontSize: 12 }}>{v}</td>
                   ))}
                   <td style={{ textAlign: "center", padding: "10px 6px", color: row.color, fontWeight: 800, fontSize: 14 }}>{row.total}</td>
+                  <td style={{ textAlign: "center", padding: "10px 6px", color: C.accent, fontWeight: 700, fontSize: 13 }}>{row.sched2627}</td>
                   <td style={{ textAlign: "center", padding: "10px 6px", color: C.muted, fontSize: 11 }}>{row.pax}</td>
                   <td style={{ textAlign: "center", padding: "10px 6px", color: C.green, fontWeight: 600, fontSize: 12 }}>{row.capture}</td>
                 </tr>
