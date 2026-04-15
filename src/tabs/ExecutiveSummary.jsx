@@ -261,6 +261,39 @@ export default function ExecutiveSummary() {
         </div>
       </Card>
 
+      <H2>Thuật ngữ & Chú giải (Glossary)</H2>
+      <Card>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(200px,1fr))", gap: 16 }}>
+          <div>
+            <div style={{ fontWeight: 700, color: C.accent, fontSize: 12, marginBottom: 8 }}>Ký hiệu mức độ</div>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.muted, listStyleType: "none" }}>
+              <li><strong>H (High):</strong> Mức độ Cao / Phù hợp mạnh</li>
+              <li><strong>M (Medium):</strong> Mức độ Trung bình</li>
+              <li><strong>L (Low):</strong> Mức độ Thấp / Ít phù hợp</li>
+              <li><strong>🔴/🟠/🟡/⚪:</strong> Đỉnh điểm → Cao → Trung bình → Thấp</li>
+            </ul>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, color: C.accent, fontSize: 12, marginBottom: 8 }}>Chỉ số Tài chính/Vận hành</div>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.muted, listStyleType: "none" }}>
+              <li><strong>ADR:</strong> Chi tiêu trung bình/khách/ngày</li>
+              <li><strong>LOS:</strong> Số ngày lưu trú trung bình</li>
+              <li><strong>CVR:</strong> Tỷ lệ chuyển đổi khách đặt tour</li>
+              <li><strong>CAC:</strong> Chi phí quảng cáo để có 1 khách</li>
+            </ul>
+          </div>
+          <div>
+            <div style={{ fontWeight: 700, color: C.accent, fontSize: 12, marginBottom: 8 }}>Thuật ngữ Báo cáo</div>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 11, color: C.muted, listStyleType: "none" }}>
+              <li><strong>Cruise-overlap:</strong> Độ trùng lặp với khách đi du thuyền</li>
+              <li><strong>NAC Coverage:</strong> Tiêu chuẩn kiểm định nội dung báo cáo</li>
+              <li><strong>T-ID (T1-T12):</strong> Mã định danh 12 tour hiện có</li>
+              <li><strong>Archetype:</strong> Mô hình/Mẫu tour thiết kế mới</li>
+            </ul>
+          </div>
+        </div>
+      </Card>
+
       <H2>Tech / Ops Milestones</H2>
       <Card>
         <ul style={{ margin: 0, padding: "0 0 0 18px" }}>

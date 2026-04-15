@@ -102,7 +102,7 @@ export default function OTALandscape() {
           </table>
         </div>
         <p style={{ color: C.muted, fontSize: 10, marginTop: 8, marginBottom: 0 }}>
-          UV = unique visitor monthly · H/M/L = fit given traffic match + commission tolerance + review-velocity. Source: SimilarWeb Q4 2024, Booking Holdings 2024 10-K, TripAdvisor Q3 2024, Viator/GYG/Klook Partner docs.
+          <strong>Ghi chú:</strong> UV = khách truy cập hàng tháng · <strong>Persona fit (H/M/L):</strong> Mức độ phù hợp với từng chân dung khách (High/Medium/Low) dựa trên lưu lượng khách + mức phí + tốc độ đánh giá. Source: SimilarWeb Q4 2024, Booking Holdings 2024 10-K, TripAdvisor Q3 2024, Viator/GYG/Klook Partner docs.
         </p>
       </Card>
 

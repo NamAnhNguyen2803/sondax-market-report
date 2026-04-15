@@ -150,8 +150,16 @@ export default function Personas() {
       <H2>7 Persona Cards — Overview</H2>
       <Card>
         <p style={{ color: C.muted, fontSize: 12, lineHeight: 1.65, margin: 0 }}>
-          7 persona được thiết kế theo <strong style={{ color: C.text }}>UC-card format</strong>: Pain → Analogy → Solution → Before/After → Outcome → Tech LAST. Mỗi card annotate: <strong style={{ color: C.green }}>cruise-overlap (H/M/L)</strong>, dominant peak month(s), 1 unmet need.
+          7 persona được thiết kế theo <strong>UC-card format</strong>: Nỗi đau → Tương đồng → Giải pháp → Trước/Sau → Kết quả.
         </p>
+        <div style={{ marginTop: 10, display: "flex", gap: 20, flexWrap: "wrap", borderTop: `1px solid ${C.border}`, paddingTop: 10 }}>
+          <div style={{ fontSize: 11, color: C.muted }}>
+            <strong style={{ color: C.text }}>Cruise-overlap:</strong> H (Cao) / M (Trung bình) / L (Thấp)
+          </div>
+          <div style={{ fontSize: 11, color: C.muted }}>
+            <strong style={{ color: C.text }}>Ký hiệu mùa:</strong> 🔴 (Đỉnh điểm) / 🟠 (Cao) / 🟡 (Trung bình) / ⚪ (Thấp)
+          </div>
+        </div>
       </Card>
 
       {personas.map((p) => (

@@ -108,7 +108,7 @@ export default function MarketSizing() {
           </table>
         </div>
         <p style={{ color: C.muted, fontSize: 10, marginTop: 8, marginBottom: 0 }}>
-          ADR = avg daily rate per pax · LOS = avg length of stay · Peak Oct–Mar = ước tính % volume mùa khô. Source: VNAT 2024 quarterly bulletins · Tourism Australia · STB Singapore · Ministry of Tourism India · PH DOT.
+          <strong>ADR:</strong> Chi tiêu trung bình/ngày · <strong>LOS:</strong> Số ngày lưu trú trung bình · <strong>Peak Oct–Mar:</strong> Ước tính % volume mùa khô · <strong>YoY:</strong> Tăng trưởng so với năm trước.
         </p>
       </Card>
 
