@@ -37,14 +37,17 @@ export const TABS = [
   { id: "channels",   label: "📡 Kênh phân phối" },
   { id: "roi2026",    label: "🎯 ROI 2026" },
   { id: "insights",   label: "💡 Nhận định" },
-  { id: "executive",   label: "📋 Tóm tắt EN" },
+];
+
+export const EN_INBOUND_TABS = [
+  { id: "executive",   label: "📋 Tóm tắt chiến lược" },
   { id: "market",      label: "📏 Định cỡ thị trường" },
   { id: "personas",    label: "👥 7 Persona" },
   { id: "ota",         label: "🛒 OTA & Kênh" },
   { id: "benchmark",   label: "⚖️ Benchmark đối thủ" },
   { id: "seasonality", label: "📆 Mùa vụ" },
   { id: "philippines", label: "🇵🇭 Philippines" },
-  { id: "archetypes",  label: "🏗️ Archetype" },
+  { id: "archetypes",  label: "🏗️ 6 Archetype" },
   { id: "gtm",         label: "🚀 GTM Roadmap" },
   { id: "risks",       label: "⚠️ Rủi ro & Test" },
 ];

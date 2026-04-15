@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { C } from "../data/colors.js";
-import { TABS } from "../data/index.js";
+import { TABS, EN_INBOUND_TABS } from "../data/index.js";
 
 const W = 232; // sidebar width px
 
@@ -113,7 +113,15 @@ export default function Sidebar({ view, setView, mobileOpen, setMobileOpen }) {
 
       {/* Asia */}
       {groupLabel("Asia → Vietnam 2025")}
-      {TABS.map(t => navItem(t.label, isAsia(t.id), () => goAsia(t.id)))}
+      {TABS.map(t => (
+        <div key={t.id}>{navItem(t.label, isAsia(t.id), () => goAsia(t.id))}</div>
+      ))}
+
+      {/* EN Inbound Research */}
+      {groupLabel("Tour EN Inbound · 2026–27")}
+      {EN_INBOUND_TABS.map(t => (
+        <div key={t.id}>{navItem(t.label, isAsia(t.id), () => goAsia(t.id))}</div>
+      ))}
 
       {/* MKT-001 */}
       {groupLabel("MKT-001 · Cafe + Cruise")}
