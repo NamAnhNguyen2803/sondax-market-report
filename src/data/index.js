@@ -39,6 +39,19 @@ export const TABS = [
   { id: "insights",   label: "💡 Nhận định" },
 ];
 
+export const RPT_001_TABS = [
+  { id: "rpt-home", label: "★ Action Matrix & Overview" },
+  { id: "rpt-s1",   label: "S1 · Thị trường nguồn" },
+  { id: "rpt-s2",   label: "S2 · Tour Categories" },
+  { id: "rpt-s3",   label: "S3 · Destinations" },
+  { id: "rpt-s4",   label: "S4 · OTA Platforms" },
+  { id: "rpt-s5",   label: "S5 · Success Factors" },
+  { id: "rpt-s6",   label: "S6 · Vendor Landscape" },
+  { id: "rpt-s7",   label: "S7 · Differentiation" },
+  { id: "rpt-s8",   label: "S8 · Seasonal Intel" },
+  { id: "rpt-s9",   label: "S9 · Action Matrix" },
+];
+
 export const EN_INBOUND_TABS = [
   { id: "executive",   label: "📋 Tóm tắt chiến lược" },
   { id: "market",      label: "📏 Định cỡ thị trường" },

@@ -45,7 +45,13 @@ const components = {
     const id = headingToId(text);
     return <h1 id={id} style={isPart ? styles.partHeader : styles.h1} {...p}>{children}</h1>;
   },
-  h2: ({ node, ...p }) => <h2 style={styles.h2} {...p} />,
+  h2: ({ node, children, ...p }) => {
+    const text = Array.isArray(children)
+      ? children.map(c => (typeof c === "string" ? c : "")).join("")
+      : String(children ?? "");
+    const id = headingToId(text);
+    return <h2 id={id} style={styles.h2} {...p}>{children}</h2>;
+  },
   h3: ({ node, ...p }) => <h3 style={styles.h3} {...p} />,
   h4: ({ node, ...p }) => <h4 style={styles.h4} {...p} />,
   p:  ({ node, ...p }) => <p  style={styles.p}  {...p} />,

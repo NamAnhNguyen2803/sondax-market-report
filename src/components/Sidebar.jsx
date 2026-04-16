@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { C } from "../data/colors.js";
-import { TABS, EN_INBOUND_TABS } from "../data/index.js";
+import { TABS, EN_INBOUND_TABS, RPT_001_TABS } from "../data/index.js";
 
 const W = 232; // sidebar width px
 
@@ -121,6 +121,12 @@ export default function Sidebar({ view, setView, mobileOpen, setMobileOpen }) {
       {groupLabel("Tour EN Inbound · 2026–27")}
       {EN_INBOUND_TABS.map(t => (
         <div key={t.id}>{navItem(t.label, isAsia(t.id), () => goAsia(t.id))}</div>
+      ))}
+
+      {/* RPT-001 — Vietnam Tours EN Inbound */}
+      {groupLabel("RPT-001 · VN Tours May–Oct")}
+      {RPT_001_TABS.map(t => (
+        <div key={t.id}>{navItem(t.label, view.report === "rpt-001" && view.section === t.id, () => { setView({ report: "rpt-001", section: t.id }); setMobileOpen(false); })}</div>
       ))}
 
       {/* MKT-001 */}

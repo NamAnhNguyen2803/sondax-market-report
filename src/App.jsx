@@ -5,6 +5,8 @@ import AsiaReport from "./reports/asia/index.jsx";
 
 // Lazy-load MKT-001 (heavy markdown chunks ~700KB) — loads only when user navigates to it
 const Mkt001Report = lazy(() => import("./reports/mkt-001/index.jsx"));
+// Lazy-load RPT-001 (Vietnam Tours EN Inbound market overview)
+const Rpt001Report = lazy(() => import("./reports/rpt-001/index.jsx"));
 
 function LoadingPane() {
   return (
@@ -97,7 +99,7 @@ export default function App() {
             </button>
           )}
           <div style={{ fontSize: 10, color: C.accent, textTransform: "uppercase", letterSpacing: 2, fontWeight: 700 }}>
-            {view.report === "asia" ? "BÁO CÁO TỔNG HỢP" : "MARKET ANALYSIS · MKT-001"}
+            {view.report === "asia" ? "BÁO CÁO TỔNG HỢP" : view.report === "rpt-001" ? "RPT-001 · VN TOURS MAY–OCT" : "MARKET ANALYSIS · MKT-001"}
           </div>
           <div style={{ flex: 1 }} />
           <div style={{ fontSize: 10, color: C.muted }}>Sondax Travel Reports</div>
@@ -116,6 +118,11 @@ export default function App() {
             boxSizing: "border-box",
           }}>
             {view.report === "asia" && <AsiaReport tab={view.section} />}
+            {view.report === "rpt-001" && (
+              <Suspense fallback={<LoadingPane />}>
+                <Rpt001Report section={view.section} />
+              </Suspense>
+            )}
             {view.report === "mkt-001" && (
               <Suspense fallback={<LoadingPane />}>
                 <Mkt001Report section={view.section} />
