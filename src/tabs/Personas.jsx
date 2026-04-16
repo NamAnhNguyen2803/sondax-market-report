@@ -18,7 +18,13 @@ const personas = [
     before: "Search 'Vietnam tour for seniors' trên Google → thấy Viator day tours + G Adventures tours có hostel/22-year-old focus → bounce.",
     after: "Tìm được premium-small-group operator (Backyard Travel, Trails of Indochina, Heritage Line combo) → $4K–$7K/pax → mua.",
     outcome: "14 ngày ấm, văn hóa đậm, ảnh đẹp, vợ hài lòng, về nhà kể dinner party suốt 3 tháng. Repeat rate 30–40% theo operator premium feedback.",
-    tech: ["Private transfer luxury van", "English-speaking guide Level 4+", "Insurance Medevac inclusion", "Vegetarian/dietary flag in booking flow", "Physical-accessibility disclosure (boat stairs)"],
+    tech: [
+      { item: "Xe riêng hạng sang (luxury van)", why: "Couple 55+ không muốn chen xe bus tour — cần riêng tư, thoải mái" },
+      { item: "Hướng dẫn viên tiếng Anh Level 4+", why: "Khách Mỹ/Canada kỳ vọng guide kể chuyện văn hóa, không chỉ dịch bảng hiệu" },
+      { item: "Bảo hiểm Medevac (cấp cứu hàng không)", why: "Tuổi 45–65, di chuyển nhiều tỉnh — rủi ro y tế cần bảo hiểm sơ tán" },
+      { item: "Gắn cờ chế độ ăn (chay/kiêng) trong booking", why: "Couple Mỹ thường có dietary restriction — cần biết trước khi book, không phải hỏi sau" },
+      { item: "Công bố khả năng tiếp cận (cầu thang tàu, dốc)", why: "Khách 60+ cần biết trước tàu du thuyền có cầu thang dốc hay không — tránh sự cố" },
+    ],
     unmetNeed: "Itinerary 'curated + private + story-rich' không có ở mass-market Viator/GYG; combo 'retail + cruise' seamless end-to-end không có",
   },
   {
@@ -36,7 +42,13 @@ const personas = [
     before: "Đặt Intrepid 12-day North VN → tour đông 14 người, 1 guide, lịch dày → feel rushed → TripAdvisor review 3/5 'felt like a tourist factory'.",
     after: "Chuyển sang small-group (6–10 pax) hoặc private FIT qua Audley Travel / Trailfinders / Gecko's → £2.5–£4K/pax → satisfied.",
     outcome: "Về UK với 200 ảnh chọn lọc + notebook food/lịch sử → recommend bạn → repeat rate 20%.",
-    tech: ["Slow-paced itinerary 5–6h/ngày (không 8h)", "Guide story-teller (not factoid reciter)", "Book/reading-list pre-trip email", "Fabric/tailor workshop booking Hội An", "Food-tour evening optional add-on"],
+    tech: [
+      { item: "Lịch trình nhẹ 5–6h/ngày (không 8h)", why: "Khách Anh ghét bị 'rush' — 2 tuần phép quý giá, muốn chậm rãi thấm văn hóa" },
+      { item: "Guide kể chuyện (không đọc số liệu)", why: "P2 tìm narrative — guide phải biết kể lịch sử như đọc sách, không phải recite Wikipedia" },
+      { item: "Email gợi ý sách đọc trước chuyến đi", why: "Khách UK thích chuẩn bị — gửi reading list (Graham Greene, báo travel) tạo kỳ vọng" },
+      { item: "Đặt chỗ xưởng may/thêu Hội An", why: "Textile workshop là highlight P2 — cần đặt trước vì xưởng nhỏ, slot hạn chế" },
+      { item: "Food tour buổi tối (tùy chọn thêm)", why: "P2 muốn ăn sâu, không ăn nhanh — buổi tối rảnh = cơ hội upsell food tour premium" },
+    ],
     unmetNeed: "'Slow-paced premium' giữa backpacker (Intrepid $1.6K) và $5K+ luxury (Trails of Indochina) — whitespace tại $2.5–4K/pax mid-premium",
   },
   {
@@ -54,7 +66,13 @@ const personas = [
     before: "Book Bali thứ 5 năm liên tiếp → bored + tourist crowds.",
     after: "Pivot Phú Quốc / Đà Nẵng → 'Bali nhưng mới' → Instagram post viral → bạn AU/NZ follow.",
     outcome: "AUD 2.5K/pax (vs 8K Bali-same-LOS) → satisfied → 2nd trip trong 18 tháng là likely. Refer bạn bè high.",
-    tech: ["Domestic flight bundling (HAN-DAD, HCM-PQC)", "PADI dive-cert partner Phú Quốc", "4-star resort fit-check", "Instagram-friendly shot list", "SIM + eSIM inclusion"],
+    tech: [
+      { item: "Gộp vé bay nội địa (HAN→DAD, HCM→PQC)", why: "Khách AU/NZ muốn fly-in fly-out nhanh — gộp vé giảm ma sát đặt chỗ" },
+      { item: "Đối tác PADI lặn biển Phú Quốc", why: "Diving là draw chính của P3 — cần đối tác uy tín có cert quốc tế" },
+      { item: "Kiểm tra resort 4 sao phù hợp", why: "Budget $1.5–3K = 4 sao, không 5 sao — cần fit-check resort đúng tầm giá" },
+      { item: "Danh sách điểm chụp ảnh Instagram", why: "P3 đi vì content — cung cấp shot list = khách post = marketing miễn phí" },
+      { item: "SIM/eSIM đi kèm gói tour", why: "Khách AU/NZ cần data ngay khi đến — tránh phải tìm mua SIM tại sân bay" },
+    ],
     unmetNeed: "Direct-flight-friendly beach+adventure combo không qua HN/HCM stopover bắt buộc — whitespace cho Đà Nẵng gateway archetype",
   },
   {
@@ -72,7 +90,12 @@ const personas = [
     before: "Book AirBnb 1 tháng qua AirBnb → không có weekend activity → bored.",
     after: "Attach 2 weekend tours Ninh Bình + Hạ Long qua Klook/Viator → life balance.",
     outcome: "Tour operator capture add-on volume — khách 1-month stay mà mua 2 tour weekend = 2x AOV. Unlock P4 = tour operator thoát '1-purchase' mindset.",
-    tech: ["Weekend micro-tour 1–2N product variant", "Co-work partner discount (Toong, Cirrus, Dreamplex)", "Wifi-reliable accom partner listing", "Long-stay visa support info (e-visa 90-day)"],
+    tech: [
+      { item: "Tour ngắn cuối tuần 1–2 đêm", why: "Nomad ở dài 1–3 tháng — chỉ mua tour weekend break, không mua tour 7 ngày" },
+      { item: "Giảm giá co-working (Toong, Cirrus, Dreamplex)", why: "P4 làm việc remote — có deal co-work = lý do chọn operator này thay AirBnb tự book" },
+      { item: "Danh sách chỗ ở wifi ổn định", why: "Wifi chập chờn = deal-breaker cho remote worker — cần cam kết tốc độ" },
+      { item: "Hỗ trợ thông tin visa dài hạn (e-visa 90 ngày)", why: "Nomad cần biết rõ visa policy trước khi commit 1–3 tháng — giảm rào cản quyết định" },
+    ],
     unmetNeed: "Weekend tour variant 1–2N price-right ($80–$150/pax) — whitespace vs standard 3-day tour",
   },
   {
@@ -90,7 +113,13 @@ const personas = [
     before: "Ghép group bạn → mỗi người Google 'best Vietnam itinerary' → 3 người 3 plan khác → đụng → book lastminute.com messy.",
     after: "Book Ha Giang loop qua local operator (~$250 3D2N easy-rider) + retail tour Ninh Bình-Hạ Long combo qua Klook ~$120 → clear plan → high-content trip.",
     outcome: "~$900/pax all-in VN 8D → 'best-value bucket-list trip I did'. Post content 20–50 TikTok/Instagram → operator earn organic reach.",
-    tech: ["UGC-friendly photo spot checklist", "WhatsApp group-of-6 booking flow", "Hostel/hotel-multi-bed option", "Easy-rider partner network Ha Giang", "Reel-worthy dinner location list"],
+    tech: [
+      { item: "Checklist điểm chụp ảnh UGC-ready", why: "Gen-Z đi vì content — cho sẵn spot list = 20–50 TikTok/IG posts miễn phí" },
+      { item: "Booking flow nhóm 6 người qua WhatsApp", why: "Bạn bè Gen-Z book chung nhưng operator chỉ có form 1 người — cần group flow" },
+      { item: "Tùy chọn hostel/hotel giường đôi-3", why: "Budget $500–1.2K = hostel OK nhưng cần multi-bed option cho nhóm" },
+      { item: "Mạng lưới easy-rider Hà Giang", why: "Hà Giang loop = highlight TikTok — cần partner easy-rider đáng tin (an toàn + biết đường)" },
+      { item: "Danh sách nhà hàng quay reel được", why: "P5 chọn nhà hàng theo 'có quay reel đẹp không' — cho list = tăng giá trị tour" },
+    ],
     unmetNeed: "Pre-bundled group-of-6 itinerary price-fixed — operator hiện bán 1-pax pricing; và Hà Giang loop operator-mediated vs DIY",
   },
   {
@@ -108,7 +137,13 @@ const personas = [
     before: "Book Intrepid family 10-day 'Vietnam in Detail' → 4 cities + 3 overnight train → con khóc → bố bất lực → review 2/5.",
     after: "Chọn 1-base operator (Asia Transpacific, Audley, Abercrombie & Kent family, local DMC) → 1 hotel 7N + day-trip fleet → stress ↓.",
     outcome: "Family $3–6K/pax × 4 pax = $12–24K deal. LTV cao — repeat every 2–3 years + refer 1 family/year.",
-    tech: ["Interconnecting family room", "Kid car-seat inclusion (US/AU)", "Cooking class age-filter", "Medical partner clinic pre-listed", "Grandma-accessible vehicle (low-step)"],
+    tech: [
+      { item: "Phòng liên thông (interconnecting room)", why: "Family 4–6 người cần phòng kề nhau — bố mẹ + trẻ nhỏ, ông bà bên cạnh" },
+      { item: "Ghế trẻ em trên xe (US/AU standard)", why: "Khách Mỹ/Úc kỳ vọng car-seat cho trẻ < 8 tuổi — bắt buộc theo thói quen" },
+      { item: "Lớp nấu ăn có phân loại độ tuổi", why: "Trẻ 6 tuổi vs 14 tuổi cần activity khác — age-filter tránh bố mẹ thất vọng" },
+      { item: "Danh sách phòng khám đối tác sẵn", why: "Đi với trẻ nhỏ + ông bà = cần biết trước clinic gần nhất mỗi điểm dừng" },
+      { item: "Xe bậc thấp cho người lớn tuổi", why: "Bà 70 tuổi leo xe SUV cao = rủi ro — cần xe low-step hoặc có bậc phụ" },
+    ],
     unmetNeed: "1-base family-all-ages với grandma accessibility disclosure + cooking class age-rating — gần như không có VN operator public disclosure này",
   },
   {
@@ -126,7 +161,13 @@ const personas = [
     before: "Search 'luxury Vietnam tour' → Viator/GYG không fit → email 3 operator → 2 weeks chờ quote → frustrated.",
     after: "Personal travel designer (Indagare, Trails of Indochina US, Asia DMC) → quote 72h → $15–$30K/pax → book.",
     outcome: "$60–120K/couple × reference-strong. LTV rất cao + word-of-mouth evangelism mạnh.",
-    tech: ["Private-guide docent English/French/Mandarin", "Heritage Line / Aqua / Amansara cruise product", "Helicopter transfer Đà Nẵng-Hội An option", "Chef's-table private booking", "Visa concierge on arrival"],
+    tech: [
+      { item: "Guide riêng cấp docent (Anh/Pháp/Hoa)", why: "HNWI muốn guide như 'private art historian' — không phải tour guide thường" },
+      { item: "Du thuyền Heritage Line / Aqua / Amansara", why: "P7 chỉ chấp nhận tàu hạng luxury — tên thương hiệu tàu = trust signal" },
+      { item: "Tùy chọn trực thăng Đà Nẵng–Hội An", why: "Tiết kiệm 45 phút đi đường + trải nghiệm VIP — khách $15–30K sẵn sàng trả" },
+      { item: "Đặt bàn chef's table riêng", why: "HNWI không ăn cùng tour group — cần private dining, đầu bếp giới thiệu trực tiếp" },
+      { item: "Dịch vụ visa concierge tại sân bay", why: "Khách $15K+ không xếp hàng immigration — concierge đón ngay cửa máy bay" },
+    ],
     unmetNeed: "'Combo cruise (Silversea SG-HK) + Vietnam-land post-disembark 7N private' — whitespace rất ít operator handle cả 2 sides",
     multiMarketNote: "IN: Taj Holidays + Thomas Cook India Signature; SG: Dynasty Travel + Chan Brothers Luxury; ZA: Travelshop SA + Silversea ZA agents. IN HNWI outbound +18% 2023→2024 (Ministry of Tourism India).",
   },
@@ -204,12 +245,18 @@ export default function Personas() {
             </div>
 
             <div style={{ marginTop: 12, padding: 12, background: C.card, borderRadius: 8 }}>
-              <div style={{ fontWeight: 700, fontSize: 11, color: C.muted, marginBottom: 6, textTransform: "uppercase", letterSpacing: 0.5 }}>Tech / Ops (last)</div>
-              <ul style={{ margin: 0, padding: "0 0 0 16px" }}>
+              <div style={{ fontWeight: 700, fontSize: 11, color: C.muted, marginBottom: 8, textTransform: "uppercase", letterSpacing: 0.5 }}>Yêu cầu vận hành — Operator cần chuẩn bị gì?</div>
+              <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
                 {p.tech.map((t, i) => (
-                  <li key={i} style={{ color: C.muted, fontSize: 11, lineHeight: 1.7 }}>{t}</li>
+                  <div key={i} style={{ display: "flex", gap: 8, alignItems: "baseline" }}>
+                    <span style={{ color: C.accent, fontSize: 11, flexShrink: 0 }}>▸</span>
+                    <div>
+                      <span style={{ color: C.text, fontSize: 11, fontWeight: 600 }}>{t.item}</span>
+                      <span style={{ color: C.muted, fontSize: 11 }}> — {t.why}</span>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
 
             <div style={{ marginTop: 10, padding: "8px 12px", background: `${C.accent}10`, borderRadius: 6, borderLeft: `2px solid ${C.accent}` }}>
