@@ -39,17 +39,27 @@ export const TABS = [
   { id: "insights",   label: "💡 Nhận định" },
 ];
 
+// RPT-001 navigation — structured as: overview → insights → explorer → evidence
 export const RPT_001_TABS = [
-  { id: "rpt-home", label: "★ Action Matrix & Overview" },
-  { id: "rpt-s1",   label: "S1 · Thị trường nguồn" },
-  { id: "rpt-s2",   label: "S2 · Tour Categories" },
-  { id: "rpt-s3",   label: "S3 · Destinations" },
-  { id: "rpt-s4",   label: "S4 · OTA Platforms" },
-  { id: "rpt-s5",   label: "S5 · Success Factors" },
-  { id: "rpt-s6",   label: "S6 · Vendor Landscape" },
-  { id: "rpt-s7",   label: "S7 · Differentiation" },
-  { id: "rpt-s8",   label: "S8 · Seasonal Intel" },
-  { id: "rpt-s9",   label: "S9 · Action Matrix" },
+  { id: "rpt-home",          label: "★ Overview" },
+  // Curated insight entry points
+  { id: "rpt-quick-wins",    label: "🏆 Quick Wins" },
+  { id: "rpt-whitespace",    label: "💎 Whitespace" },
+  { id: "rpt-growth-markets", label: "📈 Growth Markets" },
+  { id: "rpt-july-peak",     label: "☀️ July Peak" },
+  { id: "rpt-revenue",       label: "💰 Revenue Leaders" },
+  // Fallback full browse
+  { id: "rpt-explorer",      label: "🔎 Tour Explorer (18)" },
+  // Evidence / raw sections
+  { id: "rpt-s1", label: "S1 · Thị trường nguồn", group: "evidence" },
+  { id: "rpt-s2", label: "S2 · Tour Categories", group: "evidence" },
+  { id: "rpt-s3", label: "S3 · Destinations", group: "evidence" },
+  { id: "rpt-s4", label: "S4 · OTA Platforms", group: "evidence" },
+  { id: "rpt-s5", label: "S5 · Success Factors", group: "evidence" },
+  { id: "rpt-s6", label: "S6 · Vendor Landscape", group: "evidence" },
+  { id: "rpt-s7", label: "S7 · Differentiation", group: "evidence" },
+  { id: "rpt-s8", label: "S8 · Seasonal Intel", group: "evidence" },
+  { id: "rpt-s9", label: "S9 · Monthly Playbook", group: "evidence" },
 ];
 
 export const EN_INBOUND_TABS = [

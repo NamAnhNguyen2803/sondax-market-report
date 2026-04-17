@@ -120,7 +120,10 @@ export default function App() {
             {view.report === "asia" && <AsiaReport tab={view.section} />}
             {view.report === "rpt-001" && (
               <Suspense fallback={<LoadingPane />}>
-                <Rpt001Report section={view.section} />
+                <Rpt001Report
+                  section={view.section}
+                  goto={(sec) => setView({ report: "rpt-001", section: sec })}
+                />
               </Suspense>
             )}
             {view.report === "mkt-001" && (
