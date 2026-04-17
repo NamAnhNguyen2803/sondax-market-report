@@ -122,7 +122,8 @@ export default function App() {
               <Suspense fallback={<LoadingPane />}>
                 <Rpt001Report
                   section={view.section}
-                  goto={(sec) => setView({ report: "rpt-001", section: sec })}
+                  from={view.from}
+                  goto={(sec, from) => setView({ report: "rpt-001", section: sec, from: from ?? null })}
                 />
               </Suspense>
             )}

@@ -159,7 +159,7 @@ export default function InsightPane({ insightId, goto }) {
         <span style={{ color: `${C.muted}aa` }}>click any row to see full detail</span>
       </div>
 
-      <TourListView tours={tours} goto={goto} />
+      <TourListView tours={tours} goto={goto} from={insight.tabId} />
     </>
   );
 }

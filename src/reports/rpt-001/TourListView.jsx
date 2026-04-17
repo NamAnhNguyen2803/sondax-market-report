@@ -15,16 +15,16 @@ export function useIsMobile() {
   return m;
 }
 
-export default function TourListView({ tours, goto }) {
+export default function TourListView({ tours, goto, from }) {
   const [hoverId, setHoverId] = useState(null);
   const isMobile = useIsMobile();
-  if (isMobile) return <MobileCardList tours={tours} goto={goto} />;
-  return <DesktopTable tours={tours} goto={goto} hoverId={hoverId} setHoverId={setHoverId} />;
+  if (isMobile) return <MobileCardList tours={tours} goto={goto} from={from} />;
+  return <DesktopTable tours={tours} goto={goto} from={from} hoverId={hoverId} setHoverId={setHoverId} />;
 }
 
-function DesktopTable({ tours, goto, hoverId, setHoverId }) {
+function DesktopTable({ tours, goto, from, hoverId, setHoverId }) {
   const onKey = (e, t) => {
-    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goto(`tour-${t.id}`); }
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goto(`tour-${t.id}`, from); }
   };
 
   return (
@@ -72,7 +72,7 @@ function DesktopTable({ tours, goto, hoverId, setHoverId }) {
                   role="button"
                   tabIndex={0}
                   aria-label={`Open detail for tour ${t.id}: ${t.shortName}`}
-                  onClick={() => goto(`tour-${t.id}`)}
+                  onClick={() => goto(`tour-${t.id}`, from)}
                   onKeyDown={(e) => onKey(e, t)}
                   onMouseEnter={() => setHoverId(t.id)}
                   onMouseLeave={() => setHoverId(null)}
@@ -164,9 +164,9 @@ function DesktopTable({ tours, goto, hoverId, setHoverId }) {
   );
 }
 
-function MobileCardList({ tours, goto }) {
+function MobileCardList({ tours, goto, from }) {
   const onKey = (e, t) => {
-    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goto(`tour-${t.id}`); }
+    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); goto(`tour-${t.id}`, from); }
   };
 
   return (
@@ -179,7 +179,7 @@ function MobileCardList({ tours, goto }) {
             role="button"
             tabIndex={0}
             aria-label={`Open detail for tour ${t.id}: ${t.shortName}`}
-            onClick={() => goto(`tour-${t.id}`)}
+            onClick={() => goto(`tour-${t.id}`, from)}
             onKeyDown={(e) => onKey(e, t)}
             style={{
               background: C.card,

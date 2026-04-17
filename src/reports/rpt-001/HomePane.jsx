@@ -50,7 +50,9 @@ export default function HomePane({ goto }) {
 }
 
 function InsightCard({ insight, onClick }) {
-  const { title, icon, color, question, teaser, stat } = insight;
+  const { title, icon, color, question, teaser, stat, tourIds } = insight;
+  const previewIds = tourIds?.slice(0, 5) ?? [];
+  const remaining = (tourIds?.length ?? 0) - previewIds.length;
   return (
     <button
       onClick={onClick}
@@ -102,8 +104,36 @@ function InsightCard({ insight, onClick }) {
       <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.55 }}>
         {teaser}
       </div>
+
+      {previewIds.length > 0 && (
+        <div style={{
+          marginTop: 12,
+          paddingTop: 10,
+          borderTop: `1px solid ${color}20`,
+          display: "flex", flexWrap: "wrap", gap: 4, alignItems: "center",
+        }}>
+          {previewIds.map(id => (
+            <span key={id} style={{
+              fontSize: 10, fontWeight: 700,
+              padding: "2px 7px",
+              background: `${color}15`,
+              border: `1px solid ${color}40`,
+              color,
+              borderRadius: 10,
+            }}>T{id}</span>
+          ))}
+          {remaining > 0 && (
+            <span style={{
+              fontSize: 10, fontWeight: 600,
+              color: `${color}cc`,
+              marginLeft: 2,
+            }}>+{remaining} more</span>
+          )}
+        </div>
+      )}
+
       <div style={{
-        marginTop: 12, fontSize: 11, color,
+        marginTop: 10, fontSize: 11, color,
         fontWeight: 700, display: "flex", alignItems: "center", gap: 4,
       }}>
         Explore →

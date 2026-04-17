@@ -62,7 +62,7 @@ function ExplorerPane({ goto }) {
         subtitle="Filter theo Market · Category · Month. Click tour để xem full detail."
         onBack={() => goto("rpt-home")}
       />
-      <TourSummaryTable goto={goto} />
+      <TourSummaryTable goto={goto} from="rpt-explorer" />
     </>
   );
 }
@@ -109,13 +109,13 @@ function parseTourId(section) {
   return null;
 }
 
-export default function Rpt001Report({ section = "rpt-home", goto = () => {} }) {
+export default function Rpt001Report({ section = "rpt-home", from = null, goto = () => {} }) {
   const sectionMap = buildSectionMap(goto);
 
   // Check if section is a tour detail page
   const tourId = parseTourId(section);
   if (tourId) {
-    return <TourDetailPage tourId={tourId} goto={goto} />;
+    return <TourDetailPage tourId={tourId} goto={goto} from={from} />;
   }
 
   const render = sectionMap[section] ?? sectionMap["rpt-home"];

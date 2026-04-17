@@ -7,7 +7,7 @@ const ALL_MARKETS = ["US", "UK", "CA", "AU", "NZ", "SG", "IN", "PH"];
 const ALL_CATEGORIES = Object.keys(CATEGORY_LABELS);
 const ALL_MONTHS = ["May", "Jun", "Jul", "Aug", "Sep", "Oct"];
 
-export default function TourSummaryTable({ goto }) {
+export default function TourSummaryTable({ goto, from }) {
   const [fMarket, setFMarket] = useState(null);
   const [fCategory, setFCategory] = useState(null);
   const [fMonth, setFMonth] = useState(null);
@@ -120,7 +120,7 @@ export default function TourSummaryTable({ goto }) {
         </div>
       </div>
 
-      <TourListView tours={tours} goto={goto} />
+      <TourListView tours={tours} goto={goto} from={from} />
     </>
   );
 }

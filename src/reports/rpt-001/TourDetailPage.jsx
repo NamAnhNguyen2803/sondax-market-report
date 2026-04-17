@@ -1,39 +1,58 @@
 import { C } from "../../data/colors.js";
 import { TOURS } from "./tourData.js";
 import { MARKET_FLAGS, CATEGORY_COLORS, CATEGORY_LABELS, MONTH_COLOR } from "./tourData.js";
+import { INSIGHTS } from "./insights.js";
 
-function SectionHeader({ title, subtitle, onBack }) {
+function Breadcrumb({ goto, from, tourName }) {
+  const fromInsight = from && from.startsWith("rpt-") && from !== "rpt-home" && from !== "rpt-explorer"
+    ? INSIGHTS.find(i => i.tabId === from)
+    : null;
+  const fromExplorer = from === "rpt-explorer";
+
+  const crumbBtn = (label, onClick, color = C.muted) => (
+    <button
+      onClick={onClick}
+      style={{
+        background: "transparent", border: "none",
+        color, cursor: "pointer", padding: 0,
+        fontSize: 11, fontWeight: 600,
+      }}
+    >
+      {label}
+    </button>
+  );
+
   return (
-    <>
-      {onBack && (
-        <div style={{ fontSize: 11, marginBottom: 10 }}>
-          <button
-            onClick={onBack}
-            style={{
-              background: "transparent", border: "none",
-              color: C.muted, cursor: "pointer", padding: 0,
-              fontSize: 11, fontWeight: 600,
-            }}
-          >
-            ★ Overview
-          </button>
+    <div style={{ fontSize: 11, marginBottom: 10, lineHeight: 1.8 }}>
+      {crumbBtn("★ Overview", () => goto("rpt-home"))}
+      {(fromInsight || fromExplorer) && (
+        <>
           <span style={{ color: C.border, margin: "0 8px" }}>›</span>
-          <span style={{ color: C.accent, fontWeight: 700 }}>{title}</span>
+          {fromInsight
+            ? crumbBtn(`${fromInsight.icon} ${fromInsight.title}`, () => goto(fromInsight.tabId), fromInsight.color)
+            : crumbBtn("🔎 Tour Explorer", () => goto("rpt-explorer"), C.muted)}
+        </>
+      )}
+      <span style={{ color: C.border, margin: "0 8px" }}>›</span>
+      <span style={{ color: C.accent, fontWeight: 700 }}>{tourName}</span>
+    </div>
+  );
+}
+
+function TourTitle({ title, subtitle }) {
+  return (
+    <div style={{ margin: "4px 0 14px" }}>
+      <h2 style={{
+        color: C.text, fontSize: 17, fontWeight: 800,
+        margin: "0 0 4px", borderLeft: `4px solid ${C.accent}`,
+        paddingLeft: 12,
+      }}>{title}</h2>
+      {subtitle && (
+        <div style={{ fontSize: 12, color: C.muted, paddingLeft: 16, lineHeight: 1.5 }}>
+          {subtitle}
         </div>
       )}
-      <div style={{ margin: "4px 0 14px" }}>
-        <h2 style={{
-          color: C.text, fontSize: 17, fontWeight: 800,
-          margin: "0 0 4px", borderLeft: `4px solid ${C.accent}`,
-          paddingLeft: 12,
-        }}>{title}</h2>
-        {subtitle && (
-          <div style={{ fontSize: 12, color: C.muted, paddingLeft: 16, lineHeight: 1.5 }}>
-            {subtitle}
-          </div>
-        )}
-      </div>
-    </>
+    </div>
   );
 }
 
@@ -73,7 +92,7 @@ function extractSectionRefs(text) {
   });
 }
 
-export default function TourDetailPage({ tourId, goto }) {
+export default function TourDetailPage({ tourId, goto, from }) {
   const idNum = Number(tourId);
   const tour = TOURS.find(t => t.id === idNum || String(t.id) === String(tourId));
   if (!tour) return <div style={{ padding: 20, color: C.muted }}>Tour not found</div>;
@@ -93,10 +112,10 @@ export default function TourDetailPage({ tourId, goto }) {
 
   return (
     <>
-      <SectionHeader
+      <Breadcrumb goto={goto} from={from} tourName={tour.name} />
+      <TourTitle
         title={tour.name}
         subtitle={`${CATEGORY_LABELS[tour.category]} · ${tour.duration} · ${tour.priceRange}`}
-        onBack={() => goto("rpt-home")}
       />
 
       {/* Tour Badge & Metadata */}
@@ -135,6 +154,46 @@ export default function TourDetailPage({ tourId, goto }) {
           <span style={{ color: C.muted }}>
             <span style={{ color: C.green, fontWeight: 700 }}>💰</span> {tour.priceRange}
           </span>
+        </div>
+      </div>
+
+      {/* Why Invest — promoted to top as primary decision driver */}
+      <div style={{
+        background: `${C.orange}08`,
+        border: `1px solid ${C.orange}30`,
+        borderLeft: `3px solid ${C.orange}`,
+        borderRadius: "0 8px 8px 0",
+        padding: "14px 16px",
+        marginBottom: 16,
+      }}>
+        <div style={{
+          fontSize: 9, color: C.orange, textTransform: "uppercase",
+          letterSpacing: 1.4, fontWeight: 800, marginBottom: 6,
+        }}>
+          🎯 Tại sao nên đầu tư — Khoảng trống cụ thể
+        </div>
+        <div style={{ fontSize: 13, color: C.text, lineHeight: 1.65 }}>
+          {tour.whyInvest}
+        </div>
+      </div>
+
+      {/* Revenue Highlight — paired with Why Invest at top */}
+      <div style={{
+        background: "#0b1222",
+        border: `1px solid ${C.border}`,
+        borderLeft: `3px solid ${C.green}`,
+        borderRadius: "0 8px 8px 0",
+        padding: "14px 16px",
+        marginBottom: 16,
+      }}>
+        <div style={{
+          fontSize: 9, color: C.green, textTransform: "uppercase",
+          letterSpacing: 1.4, fontWeight: 800, marginBottom: 6,
+        }}>
+          💰 Revenue / Chuyến
+        </div>
+        <div style={{ fontSize: 15, color: C.text, fontWeight: 700 }}>
+          {tour.revenue}
         </div>
       </div>
 
@@ -215,26 +274,6 @@ export default function TourDetailPage({ tourId, goto }) {
         {section("Route / Destinations", tour.route, C.text)}
       </div>
 
-      {/* Revenue Highlight */}
-      <div style={{
-        background: "#0b1222",
-        border: `1px solid ${C.border}`,
-        borderLeft: `3px solid ${C.green}`,
-        borderRadius: "0 8px 8px 0",
-        padding: "14px 16px",
-        marginBottom: 16,
-      }}>
-        <div style={{
-          fontSize: 9, color: C.green, textTransform: "uppercase",
-          letterSpacing: 1.4, fontWeight: 800, marginBottom: 6,
-        }}>
-          💰 Revenue / Chuyến
-        </div>
-        <div style={{ fontSize: 15, color: C.text, fontWeight: 700 }}>
-          {tour.revenue}
-        </div>
-      </div>
-
       {/* Rationale */}
       <div style={{
         background: C.card,
@@ -244,26 +283,6 @@ export default function TourDetailPage({ tourId, goto }) {
         marginBottom: 16,
       }}>
         {section("Rationale (từ S1–S8)", tour.rationale)}
-      </div>
-
-      {/* Why Invest */}
-      <div style={{
-        background: `${C.orange}08`,
-        border: `1px solid ${C.orange}30`,
-        borderLeft: `3px solid ${C.orange}`,
-        borderRadius: "0 8px 8px 0",
-        padding: "14px 16px",
-        marginBottom: 16,
-      }}>
-        <div style={{
-          fontSize: 9, color: C.orange, textTransform: "uppercase",
-          letterSpacing: 1.4, fontWeight: 800, marginBottom: 6,
-        }}>
-          🎯 Tại sao nên đầu tư — Khoảng trống cụ thể
-        </div>
-        <div style={{ fontSize: 13, color: C.text, lineHeight: 1.65 }}>
-          {tour.whyInvest}
-        </div>
       </div>
 
       {/* Competitors & Barrier */}
