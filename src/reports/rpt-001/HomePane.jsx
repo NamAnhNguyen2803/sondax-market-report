@@ -1,206 +1,236 @@
-import { C } from "../../data/colors.js";
+import { T } from "../../data/colors.js";
 import { INSIGHTS } from "./insights.js";
+
+// V4 Soft Pastel rebuild. Each card = a question the salesperson asks → curated insight.
+// 5 insights + 1 explorer entry = 6 cards on the landing.
+
+// Map insight color → V4 accent token (mint/peach/lavender) for pill + cta + stat.
+const ACCENT_BY_INSIGHT = {
+  "quick-wins":     "mint",
+  "whitespace":     "lavender",
+  "growth-markets": "peach",
+  "july-peak":      "peach",
+  "revenue":        "lavender",
+};
 
 export default function HomePane({ goto }) {
   return (
     <>
-      {/* Slim Hero */}
-      <div style={{
-        background: `linear-gradient(135deg, ${C.card} 0%, #1a2744 100%)`,
-        border: `1px solid ${C.border}`,
-        borderRadius: 12,
-        padding: "24px 24px 22px",
-        marginBottom: 20,
-      }}>
-        <div style={{ fontSize: 9, color: C.accent, textTransform: "uppercase", letterSpacing: 2, fontWeight: 800, marginBottom: 8 }}>
-          RPT-260416-001 · Market Overview
-        </div>
-        <h1 style={{ color: C.text, fontSize: 22, fontWeight: 800, lineHeight: 1.3, marginBottom: 10 }}>
-          Vietnam Tours · EN-Speaking Inbound · May–Oct
-        </h1>
-        <p style={{ color: C.muted, fontSize: 13, lineHeight: 1.6, margin: 0 }}>
-          Mỗi ô dưới đây là một câu hỏi kinh doanh bạn có thể đang hỏi — click để đi sâu.
-          Cần toàn cảnh? → <span style={{ color: C.accent, cursor: "pointer", fontWeight: 700 }} onClick={() => goto("rpt-explorer")}>Tour Explorer (18)</span>.
-        </p>
-      </div>
-
-      {/* 6 entry-point cards: 5 insights + 1 explorer */}
-      <div style={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-        gap: 12,
-        marginBottom: 20,
-      }}>
-        {INSIGHTS.map(ins => (
-          <InsightCard key={ins.id} insight={ins} onClick={() => goto(ins.tabId)} />
-        ))}
-        <ExplorerCard onClick={() => goto("rpt-explorer")} />
-      </div>
-
-      {/* Thin footer pointing to evidence */}
-      <div style={{
-        fontSize: 11, color: C.muted, textAlign: "center",
-        padding: "14px 0 4px",
-        borderTop: `1px solid ${C.border}`,
-      }}>
-        Cần xem dữ liệu gốc (S1–S9)? Mở sidebar → scroll xuống nhóm section sources.
-      </div>
+      <Hero goto={goto} />
+      <CardsGrid goto={goto} />
+      <FooterHint />
     </>
   );
 }
 
-function InsightCard({ insight, onClick }) {
-  const { title, icon, color, question, teaser, stat, tourIds } = insight;
-  const previewIds = tourIds?.slice(0, 5) ?? [];
-  const remaining = (tourIds?.length ?? 0) - previewIds.length;
+function Hero({ goto }) {
+  return (
+    <div style={{ marginBottom: 32, maxWidth: 760 }}>
+      <div style={{
+        fontSize: 10, color: T.lavender, fontWeight: 700,
+        textTransform: "uppercase", letterSpacing: 1.6, marginBottom: 10,
+      }}>
+        ✦ RPT-260416-001 · Vietnam Tours · EN-Speaking Inbound · May–Oct 2026
+      </div>
+      <h1 className="serif" style={{
+        fontSize: 36, lineHeight: 1.1, color: T.ink, fontWeight: 600, marginBottom: 14,
+      }}>
+        Mùa thấp điểm 2026: thị trường nào nóng, sàn nào ăn, tour nào nên ship trước?
+      </h1>
+      <p style={{ fontSize: 14.5, color: T.inkSoft, lineHeight: 1.6 }}>
+        5 ô insight + 1 ô explorer dưới đây = 6 quyết định Sondax cần ra trong tháng này.
+        Bấm card để drill xuống danh sách tour curated. Cần xem hết{" "}
+        <span
+          onClick={() => goto("rpt-explorer")}
+          style={{ color: T.peach, fontWeight: 700, cursor: "pointer", borderBottom: `1px dashed ${T.peach}` }}
+        >18 tour cùng lúc</span> → mở Tour Explorer.
+      </p>
+    </div>
+  );
+}
+
+function CardsGrid({ goto }) {
+  return (
+    <div style={{
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+      gap: 18,
+      marginBottom: 32,
+    }}>
+      {INSIGHTS.map(ins => (
+        <InsightCard
+          key={ins.id}
+          insight={ins}
+          accent={ACCENT_BY_INSIGHT[ins.id] ?? "lavender"}
+          onClick={() => goto(ins.tabId)}
+        />
+      ))}
+      <ExplorerCard onClick={() => goto("rpt-explorer")} />
+    </div>
+  );
+}
+
+const ACCENT_MAP = {
+  mint:     { ink: T.mintInk,     soft: T.mintSoft,     base: T.mint },
+  peach:    { ink: T.peachInk,    soft: T.peachSoft,    base: T.peach },
+  lavender: { ink: T.lavenderInk, soft: T.lavenderSoft, base: T.lavender },
+};
+
+function InsightCard({ insight, accent, onClick }) {
+  const A = ACCENT_MAP[accent];
+  const previewIds = insight.tourIds?.slice(0, 5) ?? [];
+  const remaining = (insight.tourIds?.length ?? 0) - previewIds.length;
+
   return (
     <button
       onClick={onClick}
-      aria-label={`Open insight: ${title}`}
+      aria-label={`Open insight: ${insight.title}`}
       style={{
         textAlign: "left",
-        background: `linear-gradient(135deg, ${color}12 0%, ${C.card} 70%)`,
-        border: `1px solid ${color}40`,
-        borderRadius: 12,
-        padding: "16px 18px",
+        background: T.surface,
+        border: `1px solid ${T.line}`,
+        borderRadius: 16,
+        padding: "22px 22px 20px",
         cursor: "pointer",
-        transition: "transform 0.15s, box-shadow 0.15s, border-color 0.15s",
+        transition: "transform .25s ease, box-shadow .25s ease",
         outline: "none",
         color: "inherit",
         fontFamily: "inherit",
+        boxShadow: "0 1px 2px rgba(168,143,191,0.08), 0 8px 24px -16px rgba(168,143,191,0.18)",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = "translateY(-2px)";
-        e.currentTarget.style.boxShadow = `0 8px 24px rgba(0,0,0,0.3), 0 0 0 1px ${color}60`;
-        e.currentTarget.style.borderColor = color;
+        e.currentTarget.style.transform = "translateY(-3px)";
+        e.currentTarget.style.boxShadow = "0 16px 32px -16px rgba(168,143,191,0.35)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "none";
-        e.currentTarget.style.borderColor = `${color}40`;
+        e.currentTarget.style.boxShadow = "0 1px 2px rgba(168,143,191,0.08), 0 8px 24px -16px rgba(168,143,191,0.18)";
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
-        <span style={{ fontSize: 26, lineHeight: 1 }}>{icon}</span>
-        <div style={{
-          fontSize: 10, color, fontWeight: 800,
-          textTransform: "uppercase", letterSpacing: 1.2,
-          background: `${color}15`,
-          border: `1px solid ${color}40`,
-          borderRadius: 6, padding: "3px 8px",
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+        <span style={{
+          fontSize: 10, color: T.lavender, fontWeight: 700,
+          textTransform: "uppercase", letterSpacing: 1.4,
         }}>
-          {stat.value} <span style={{ color: `${color}aa`, fontWeight: 600 }}>{stat.label}</span>
-        </div>
+          {insight.title}
+        </span>
+        <span style={{
+          display: "inline-flex", alignItems: "center",
+          fontSize: 10.5, fontWeight: 700,
+          padding: "3px 11px", borderRadius: 999,
+          letterSpacing: 0.8, textTransform: "uppercase",
+          background: A.soft, color: A.ink,
+        }}>
+          {insight.stat.value} {insight.stat.label}
+        </span>
       </div>
-      <div style={{
-        fontSize: 15, fontWeight: 800, color: C.text,
-        marginBottom: 6, lineHeight: 1.3,
+
+      <h3 className="serif" style={{
+        fontSize: 21, color: T.ink, fontWeight: 600, lineHeight: 1.25, marginBottom: 14,
       }}>
-        {title}
-      </div>
-      <div style={{ fontSize: 11, color, fontWeight: 600, marginBottom: 8, fontStyle: "italic", lineHeight: 1.4 }}>
-        {question}
-      </div>
-      <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.55 }}>
-        {teaser}
-      </div>
+        {insight.question}
+      </h3>
+
+      <p style={{ fontSize: 13, color: T.inkSoft, lineHeight: 1.6, marginBottom: 16 }}>
+        {insight.teaser}
+      </p>
 
       {previewIds.length > 0 && (
         <div style={{
-          marginTop: 12,
-          paddingTop: 10,
-          borderTop: `1px solid ${color}20`,
-          display: "flex", flexWrap: "wrap", gap: 4, alignItems: "center",
+          marginBottom: 16,
+          display: "flex", flexWrap: "wrap", gap: 5, alignItems: "center",
         }}>
           {previewIds.map(id => (
             <span key={id} style={{
               fontSize: 10, fontWeight: 700,
-              padding: "2px 7px",
-              background: `${color}15`,
-              border: `1px solid ${color}40`,
-              color,
+              padding: "2px 8px",
+              background: A.soft,
+              color: A.ink,
               borderRadius: 10,
             }}>T{id}</span>
           ))}
           {remaining > 0 && (
-            <span style={{
-              fontSize: 10, fontWeight: 600,
-              color: `${color}cc`,
-              marginLeft: 2,
-            }}>+{remaining} more</span>
+            <span style={{ fontSize: 10, fontWeight: 600, color: T.inkSoft, marginLeft: 2 }}>
+              +{remaining} more
+            </span>
           )}
         </div>
       )}
 
-      <div style={{
-        marginTop: 10, fontSize: 11, color,
-        fontWeight: 700, display: "flex", alignItems: "center", gap: 4,
-      }}>
-        Explore →
+      <div style={{ fontSize: 12.5, fontWeight: 700, color: T.peach }}>
+        {insight.icon} Explore {insight.tourIds?.length ?? 0} tours →
       </div>
     </button>
   );
 }
 
 function ExplorerCard({ onClick }) {
-  const color = "#94A3B8";
   return (
     <button
       onClick={onClick}
       aria-label="Open Tour Explorer (all 18 tours)"
       style={{
         textAlign: "left",
-        background: `linear-gradient(135deg, ${color}10 0%, ${C.card} 70%)`,
-        border: `1px dashed ${color}60`,
-        borderRadius: 12,
-        padding: "16px 18px",
+        background: T.lavenderSoft,
+        border: `1px dashed ${T.lavender}`,
+        borderRadius: 16,
+        padding: "22px 22px 20px",
         cursor: "pointer",
-        transition: "all 0.15s",
+        transition: "all 0.25s ease",
         outline: "none",
         color: "inherit",
         fontFamily: "inherit",
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.borderStyle = "solid";
-        e.currentTarget.style.borderColor = C.accent;
-        e.currentTarget.style.transform = "translateY(-2px)";
+        e.currentTarget.style.transform = "translateY(-3px)";
+        e.currentTarget.style.boxShadow = "0 16px 32px -16px rgba(168,143,191,0.35)";
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.borderStyle = "dashed";
-        e.currentTarget.style.borderColor = `${color}60`;
         e.currentTarget.style.transform = "translateY(0)";
+        e.currentTarget.style.boxShadow = "none";
       }}
     >
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 10 }}>
-        <span style={{ fontSize: 26, lineHeight: 1 }}>🔎</span>
-        <div style={{
-          fontSize: 10, color: C.muted, fontWeight: 700,
-          textTransform: "uppercase", letterSpacing: 1.2,
-          background: `${C.muted}10`,
-          border: `1px solid ${C.muted}40`,
-          borderRadius: 6, padding: "3px 8px",
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 12 }}>
+        <span style={{
+          fontSize: 10, color: T.lavenderInk, fontWeight: 700,
+          textTransform: "uppercase", letterSpacing: 1.4,
+        }}>
+          Tour Explorer
+        </span>
+        <span style={{
+          fontSize: 10.5, fontWeight: 700,
+          padding: "3px 11px", borderRadius: 999,
+          background: T.surface, color: T.lavenderInk,
         }}>
           18 tours · 3 filters
-        </div>
+        </span>
       </div>
-      <div style={{
-        fontSize: 15, fontWeight: 800, color: C.text,
-        marginBottom: 6, lineHeight: 1.3,
+      <h3 className="serif" style={{
+        fontSize: 21, color: T.ink, fontWeight: 600, lineHeight: 1.25, marginBottom: 12,
       }}>
-        Tour Explorer
-      </div>
-      <div style={{ fontSize: 11, color: C.muted, fontWeight: 600, marginBottom: 8, fontStyle: "italic", lineHeight: 1.4 }}>
-        Không biết bắt đầu từ đâu? Browse hết — filter theo Market / Category / Month.
-      </div>
-      <div style={{ fontSize: 12, color: C.muted, lineHeight: 1.55 }}>
-        Tất cả 18 tours trong 1 bảng tương tác. Thích hợp khi bạn muốn so sánh hoặc tìm tour cụ thể.
-      </div>
-      <div style={{
-        marginTop: 12, fontSize: 11, color: C.accent,
-        fontWeight: 700, display: "flex", alignItems: "center", gap: 4,
-      }}>
-        Browse all →
+        🔎 Không biết bắt đầu từ đâu? Browse hết.
+      </h3>
+      <p style={{ fontSize: 13, color: T.inkSoft, lineHeight: 1.6, marginBottom: 16 }}>
+        Tất cả 18 tours trong 1 bảng tương tác — filter theo Market / Category / Month.
+        Phù hợp khi bạn muốn so sánh hoặc tìm tour cụ thể.
+      </p>
+      <div style={{ fontSize: 12.5, fontWeight: 700, color: T.peach }}>
+        Browse all 18 →
       </div>
     </button>
+  );
+}
+
+function FooterHint() {
+  return (
+    <div style={{
+      fontSize: 12, color: T.inkSoft, textAlign: "center",
+      padding: "16px 0 4px",
+      borderTop: `1px solid ${T.line}`,
+    }}>
+      Cần xem dữ liệu gốc (S1–S9)? Mở sidebar → scroll xuống nhóm <b>Evidence · Section sources</b>.
+    </div>
   );
 }

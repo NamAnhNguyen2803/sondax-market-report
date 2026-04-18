@@ -1,4 +1,4 @@
-import { C } from "../data/colors.js";
+import { T } from "../data/colors.js";
 
 /**
  * Horizontal strip of KPI cards shown at the top of each report section.
@@ -8,27 +8,34 @@ export default function StatStrip({ items }) {
   if (!items?.length) return null;
   return (
     <div style={{
-      display: "flex", gap: 8, flexWrap: "wrap",
-      margin: "0 0 18px",
+      display: "flex", gap: 10, flexWrap: "wrap",
+      margin: "0 0 22px",
     }}>
       {items.map((item, i) => (
         <div key={i} style={{
-          background: C.card,
-          border: `1px solid ${C.border}`,
-          borderLeft: `3px solid ${C.accent}`,
-          borderRadius: 8,
-          padding: "10px 14px",
-          minWidth: 120,
-          flex: "1 1 120px",
+          background: T.surface,
+          border: `1px solid ${T.line}`,
+          borderLeft: `3px solid ${T.lavender}`,
+          borderRadius: 14,
+          padding: "12px 16px",
+          minWidth: 140,
+          flex: "1 1 140px",
+          boxShadow: "0 1px 2px rgba(168,143,191,0.05)",
         }}>
-          <div style={{ fontSize: 20, fontWeight: 800, color: C.accent, lineHeight: 1.1, letterSpacing: -0.5 }}>
+          <div className="serif num" style={{
+            fontSize: 22, fontWeight: 600, color: T.lavender,
+            lineHeight: 1.1, letterSpacing: -0.3,
+          }}>
             {item.value}
           </div>
-          <div style={{ fontSize: 11, color: C.text, fontWeight: 600, marginTop: 4, lineHeight: 1.4 }}>
+          <div style={{
+            fontSize: 11.5, color: T.ink, fontWeight: 600,
+            marginTop: 5, lineHeight: 1.4,
+          }}>
             {item.label}
           </div>
           {item.note && (
-            <div style={{ fontSize: 10, color: C.muted, marginTop: 2, lineHeight: 1.3 }}>
+            <div style={{ fontSize: 10.5, color: T.inkSoft, marginTop: 3, lineHeight: 1.4 }}>
               {item.note}
             </div>
           )}

@@ -1,13 +1,13 @@
-import MarkdownReport  from "../../components/MarkdownReport.jsx";
-import PartNav         from "../../components/PartNav.jsx";
-import SubSectionNav   from "../../components/SubSectionNav.jsx";
+import MarkdownReport     from "../../components/MarkdownReport.jsx";
+import PartNav            from "../../components/PartNav.jsx";
+import SubSectionNav      from "../../components/SubSectionNav.jsx";
 import { stripNoiseSections } from "../../utils/mdSplit.js";
-import { C } from "../../data/colors.js";
-import HomePane from "./HomePane.jsx";
-import InsightPane from "./InsightPane.jsx";
-import TourSummaryTable from "./TourSummaryTable.jsx";
-import TourDetailPage from "./TourDetailPage.jsx";
-import { INSIGHTS } from "./insights.js";
+import { T }              from "../../data/colors.js";
+import HomePane           from "./HomePane.jsx";
+import InsightPane        from "./InsightPane.jsx";
+import TourSummaryTable   from "./TourSummaryTable.jsx";
+import TourDetailPage     from "./TourDetailPage.jsx";
+import { INSIGHTS }       from "./insights.js";
 
 import s1 from "./Section-01-source-markets.md?raw";
 import s2 from "./Section-02-tour-categories.md?raw";
@@ -23,29 +23,29 @@ function SectionHeader({ title, subtitle, onBack }) {
   return (
     <>
       {onBack && (
-        <div style={{ fontSize: 11, marginBottom: 10 }}>
+        <div style={{ fontSize: 12, marginBottom: 14, lineHeight: 1.7 }}>
           <button
             onClick={onBack}
             style={{
               background: "transparent", border: "none",
-              color: C.muted, cursor: "pointer", padding: 0,
-              fontSize: 11, fontWeight: 600,
+              color: T.peach, cursor: "pointer", padding: 0,
+              fontSize: 12, fontWeight: 700, fontFamily: "inherit",
             }}
           >
-            ★ Overview
+            ← Tổng quan tour EN Inbound
           </button>
-          <span style={{ color: C.border, margin: "0 8px" }}>›</span>
-          <span style={{ color: C.accent, fontWeight: 700 }}>{title}</span>
+          <span style={{ color: T.lineStrong, margin: "0 10px" }}>›</span>
+          <span style={{ color: T.ink, fontWeight: 600 }}>{title}</span>
         </div>
       )}
-      <div style={{ margin: "4px 0 14px" }}>
-        <h2 style={{
-          color: C.text, fontSize: 17, fontWeight: 800,
-          margin: "0 0 4px", borderLeft: `4px solid ${C.accent}`,
-          paddingLeft: 12,
-        }}>{title}</h2>
+      <div style={{ margin: "8px 0 18px", maxWidth: 760 }}>
+        <h2 className="serif" style={{
+          fontSize: 30, color: T.ink, fontWeight: 600, lineHeight: 1.2, marginBottom: 6,
+        }}>
+          {title}
+        </h2>
         {subtitle && (
-          <div style={{ fontSize: 12, color: C.muted, paddingLeft: 16, lineHeight: 1.5 }}>
+          <div style={{ fontSize: 14, color: T.inkSoft, lineHeight: 1.55 }}>
             {subtitle}
           </div>
         )}
@@ -79,7 +79,6 @@ function SectionView({ source, title, goto }) {
   );
 }
 
-// Build SECTION_MAP: home + explorer + 5 insights + S1-S9 evidence + tour detail pages
 function buildSectionMap(goto) {
   const map = {
     "rpt-home":     () => <HomePane goto={goto} />,
@@ -94,14 +93,12 @@ function buildSectionMap(goto) {
     "rpt-s8":       () => <SectionView source={s8} title="S8 · Seasonal Intel" goto={goto} />,
     "rpt-s9":       () => <SectionView source={s9} title="S9 · Action Matrix + Monthly Playbook" goto={goto} />,
   };
-  // Add insight routes dynamically
   INSIGHTS.forEach(ins => {
     map[ins.tabId] = () => <InsightPane insightId={ins.id} goto={goto} />;
   });
   return map;
 }
 
-// Parse tour ID from section string (e.g., "tour-T01" → "T01")
 function parseTourId(section) {
   if (section?.startsWith("tour-")) {
     return section.substring(5);
@@ -112,7 +109,6 @@ function parseTourId(section) {
 export default function Rpt001Report({ section = "rpt-home", from = null, goto = () => {} }) {
   const sectionMap = buildSectionMap(goto);
 
-  // Check if section is a tour detail page
   const tourId = parseTourId(section);
   if (tourId) {
     return <TourDetailPage tourId={tourId} goto={goto} from={from} />;

@@ -1,217 +1,215 @@
 import { useState, useEffect } from "react";
-import { C } from "../data/colors.js";
-import { TABS, EN_INBOUND_TABS, RPT_001_TABS } from "../data/index.js";
+import { T } from "../data/colors.js";
+import { ASIA_NAV }    from "../reports/asia/nav.js";
+import { MKT_NAV }     from "../reports/mkt-001/nav.js";
+import { RPT_NAV }     from "../reports/rpt-001/nav.js";
 
-const W = 232;
+const W = 244;
 
-// MKT-001 nav tree
-const MKT_NAV = [
-  { id: "executive", label: "📝 Executive Summary" },
-  {
-    id: "cafe", label: "☕ Cafe Workshop HN",
-    children: [
-      { id: "cafe-market", label: "Thị trường & Khách hàng" },
-      { id: "cafe-competition", label: "Cạnh tranh & Vận hành" },
-    ],
-  },
-  {
-    id: "cruise", label: "🚢 Cruise Vịnh Hạ Long",
-    children: [
-      { id: "cruise-market", label: "Thị trường & Khách hàng" },
-      { id: "cruise-competition", label: "Cạnh tranh & Vận hành" },
-    ],
-  },
-  { id: "synthesis", label: "🎯 Synthesis & Roadmap" },
-];
-
-// Top-level groups — ordered. RPT-001 is 2nd, right after Asia.
+// Top-level groups — ordered. Each one knows its report id + nav tree.
 const GROUPS = [
-  { id: "asia",      label: "Asia → Vietnam 2025",    report: "asia"    },
-  { id: "rpt-001",   label: "RPT-001 · VN Tours May–Oct", report: "rpt-001" },
-  { id: "en-inbound", label: "Tour EN Inbound · 2026–27", report: "asia"   },
-  { id: "mkt-001",   label: "MKT-001 · Cafe + Cruise", report: "mkt-001" },
+  { id: "asia",    report: "asia",    label: "Asia → Vietnam 2025",       nav: ASIA_NAV },
+  { id: "rpt-001", report: "rpt-001", label: "RPT-001 · VN Tours May–Oct", nav: RPT_NAV  },
+  { id: "mkt-001", report: "mkt-001", label: "MKT-001 · Cafe + Cruise",   nav: MKT_NAV  },
 ];
 
-export default function Sidebar({ view, setView, mobileOpen, setMobileOpen }) {
-  // Only the active group is expanded by default; RPT-001 open on first load
+export default function Sidebar({ view, setView, goReport, mobileOpen, setMobileOpen }) {
+  // Only the active group is expanded by default
   const [expanded, setExpanded] = useState(() => {
     const initial = {};
-    GROUPS.forEach(g => { initial[g.id] = false; });
-    // Default-expanded based on current view
-    if (view.report === "rpt-001") initial["rpt-001"] = true;
-    else if (view.report === "mkt-001") initial["mkt-001"] = true;
-    else initial["asia"] = true;
-    // MKT subgroup state
-    initial.cafe = view.section?.startsWith("cafe") ?? false;
-    initial.cruise = view.section?.startsWith("cruise") ?? false;
+    GROUPS.forEach(g => { initial[g.id] = g.report === view.report; });
     return initial;
   });
 
-  // Auto-expand the group that matches the active view when it changes
+  // Auto-expand the group that matches the active report
   useEffect(() => {
     setExpanded(prev => {
       const next = { ...prev };
-      if (view.report === "rpt-001") next["rpt-001"] = true;
-      else if (view.report === "mkt-001") next["mkt-001"] = true;
-      else if (view.report === "asia") {
-        // keep both asia groups agnostic — don't force collapse user's choice
-        if (!next["asia"] && !next["en-inbound"]) next["asia"] = true;
-      }
+      GROUPS.forEach(g => { if (g.report === view.report) next[g.id] = true; });
       return next;
     });
   }, [view.report]);
 
   const toggle = (id) => setExpanded(p => ({ ...p, [id]: !p[id] }));
 
-  const isAsia = (tab) => view.report === "asia" && view.section === tab;
-  const isMkt  = (sec) => view.report === "mkt-001" && view.section === sec;
-  const isRpt  = (sec) => view.report === "rpt-001" && view.section === sec;
+  const isActive = (report, section) => view.report === report && view.section === section;
 
-  const go = (report, section) => { setView({ report, section }); setMobileOpen(false); };
+  const go = (report, section) => {
+    setView({ report, section });
+    setMobileOpen?.(false);
+  };
 
+  // ─── Styles ────────────────────────────────────────────────────────────────
   const sidebarStyle = {
     width: W, minWidth: W,
-    background: "#0b1222",
-    borderRight: `1px solid ${C.border}`,
+    background: T.surface,
+    borderRight: `1px solid ${T.line}`,
     display: "flex", flexDirection: "column",
     overflowY: "auto",
     position: "sticky", top: 0,
     height: "100vh", flexShrink: 0,
   };
 
-  // Collapsible top-level group header
-  const groupToggle = (id, label, count) => {
-    const open = !!expanded[id];
+  // Top-level group header (collapsible)
+  const groupHeader = (g, count) => {
+    const open = !!expanded[g.id];
     return (
       <button
-        onClick={() => toggle(id)}
+        onClick={() => toggle(g.id)}
         style={{
           display: "flex", alignItems: "center", justifyContent: "space-between",
           width: "100%", textAlign: "left",
-          padding: "10px 14px 8px",
-          marginTop: 6,
-          background: open ? `${C.accent}0a` : "transparent",
+          padding: "12px 16px 10px",
+          marginTop: 4,
+          background: open ? T.lavenderSoft : "transparent",
           border: "none",
-          borderLeft: `2px solid ${open ? C.accent : "transparent"}`,
-          color: open ? C.accent : C.muted,
-          fontSize: 9, fontWeight: 800,
+          borderLeft: `3px solid ${open ? T.lavender : "transparent"}`,
+          color: open ? T.lavenderInk : T.inkSoft,
+          fontSize: 10, fontWeight: 700,
           textTransform: "uppercase", letterSpacing: 1.4,
           cursor: "pointer",
           transition: "color 0.15s, background 0.15s",
+          fontFamily: "inherit",
         }}
       >
-        <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
+        <span style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <span style={{
             display: "inline-block",
             transform: open ? "rotate(90deg)" : "rotate(0deg)",
             transition: "transform 0.15s",
-            fontSize: 9, color: open ? C.accent : C.muted,
+            fontSize: 9,
+            color: open ? T.lavender : T.inkSoft,
           }}>▶</span>
-          {label}
+          {g.label}
         </span>
         {count != null && (
           <span style={{
-            fontSize: 9, color: open ? C.accent : `${C.muted}80`,
-            fontWeight: 700,
+            fontSize: 9, fontWeight: 700,
+            color: open ? T.lavender : T.inkSoft,
+            opacity: 0.75,
           }}>{count}</span>
         )}
       </button>
     );
   };
 
-  const navItem = (label, active, onClick, indent = false) => (
-    <button onClick={onClick} style={{
-      display: "block", width: "100%", textAlign: "left",
-      padding: indent ? "6px 14px 6px 28px" : "6px 14px 6px 22px",
-      background: active ? `${C.accent}18` : "transparent",
-      borderLeft: active ? `2px solid ${C.accent}` : "2px solid transparent",
-      color: active ? C.accent : C.muted,
-      fontWeight: active ? 700 : 400,
-      fontSize: indent ? 11 : 12,
-      border: "none",
-      cursor: "pointer",
-      lineHeight: 1.45,
-      transition: "color .15s, background .15s",
-    }}>
-      {label}
-    </button>
-  );
-
-  const mktSubgroupHeader = (id, label) => {
-    const open = !!expanded[id];
+  // Top-level item (the L1 home of a report)
+  const homeItem = (g) => {
+    const homeId = g.nav[0]?.id;
+    if (!homeId) return null;
+    const active = isActive(g.report, homeId);
     return (
-      <button onClick={() => toggle(id)} style={{
-        display: "flex", alignItems: "center", justifyContent: "space-between",
-        width: "100%", textAlign: "left",
-        padding: "6px 14px 6px 22px",
-        background: "transparent",
-        border: "none",
-        color: C.text, fontSize: 12, fontWeight: 600,
-        cursor: "pointer",
-      }}>
-        <span>{label}</span>
-        <span style={{ fontSize: 9, color: C.muted, marginLeft: 6 }}>
-          {open ? "▲" : "▼"}
-        </span>
+      <button
+        onClick={() => goReport(g.report, homeId)}
+        style={{
+          display: "block", width: "100%", textAlign: "left",
+          padding: "8px 18px 8px 28px",
+          background: active ? T.mintSoft : "transparent",
+          borderLeft: active ? `3px solid ${T.mint}` : "3px solid transparent",
+          color: active ? T.mintInk : T.ink,
+          fontWeight: active ? 700 : 600,
+          fontSize: 13,
+          border: "none",
+          cursor: "pointer",
+          lineHeight: 1.4,
+          transition: "color .15s, background .15s",
+          fontFamily: "inherit",
+        }}
+      >
+        ★ {g.nav[0].label}
       </button>
     );
   };
+
+  // Regular nav item (L2)
+  const navItem = (item, report, indent = false) => {
+    const active = isActive(report, item.id);
+    return (
+      <button
+        key={item.id}
+        onClick={() => go(report, item.id)}
+        style={{
+          display: "block", width: "100%", textAlign: "left",
+          padding: indent ? "5px 14px 5px 36px" : "5px 14px 5px 28px",
+          background: active ? T.mintSoft : "transparent",
+          borderLeft: active ? `3px solid ${T.mint}` : "3px solid transparent",
+          color: active ? T.mintInk : T.inkSoft,
+          fontWeight: active ? 700 : 500,
+          fontSize: indent ? 11.5 : 12.5,
+          border: "none",
+          cursor: "pointer",
+          lineHeight: 1.5,
+          transition: "color .15s, background .15s",
+          fontFamily: "inherit",
+        }}
+      >
+        {item.label}
+      </button>
+    );
+  };
+
+  const subgroupHeader = (label) => (
+    <div style={{
+      padding: "10px 16px 4px 28px",
+      fontSize: 9, color: T.lavender,
+      fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.2,
+    }}>
+      {label}
+    </div>
+  );
 
   return (
     <div style={sidebarStyle}>
       {/* Branding */}
       <div style={{
-        padding: "16px 14px 12px",
-        borderBottom: `1px solid ${C.border}`,
-        fontSize: 11, fontWeight: 800, color: C.accent, letterSpacing: 1,
-        textTransform: "uppercase",
+        padding: "18px 18px 14px",
+        borderBottom: `1px solid ${T.line}`,
       }}>
-        Sondax Travel
+        <div className="serif" style={{
+          fontSize: 17, color: T.ink, fontWeight: 600,
+        }}>
+          Sondax Travel
+        </div>
+        <div style={{
+          fontSize: 9, color: T.lavender, marginTop: 2,
+          letterSpacing: 1.4, textTransform: "uppercase", fontWeight: 700,
+        }}>
+          Inbound Reports · 2025–26
+        </div>
       </div>
 
-      {/* 1. Asia → Vietnam 2025 */}
-      {groupToggle("asia", "Asia → Vietnam 2025", TABS.length)}
-      {expanded["asia"] && TABS.map(t => (
-        <div key={t.id}>{navItem(t.label, isAsia(t.id), () => go("asia", t.id))}</div>
-      ))}
-
-      {/* 2. RPT-001 — Vietnam Tours EN Inbound (moved up) */}
-      {groupToggle("rpt-001", "RPT-001 · VN Tours May–Oct", RPT_001_TABS.length)}
-      {expanded["rpt-001"] && (
-        <>
-          {RPT_001_TABS.filter(t => !t.group).map(t => (
-            <div key={t.id}>{navItem(t.label, isRpt(t.id), () => go("rpt-001", t.id))}</div>
-          ))}
-          {mktSubgroupHeader("rpt-evidence", "📊 Evidence · S1–S9")}
-          {(expanded["rpt-evidence"] || RPT_001_TABS.some(t => t.group === "evidence" && isRpt(t.id)))
-            && RPT_001_TABS.filter(t => t.group === "evidence").map(t => (
-              <div key={t.id}>{navItem(t.label, isRpt(t.id), () => go("rpt-001", t.id), true)}</div>
-            ))}
-        </>
-      )}
-
-      {/* 3. EN Inbound Research */}
-      {groupToggle("en-inbound", "Tour EN Inbound · 2026–27", EN_INBOUND_TABS.length)}
-      {expanded["en-inbound"] && EN_INBOUND_TABS.map(t => (
-        <div key={t.id}>{navItem(t.label, isAsia(t.id), () => go("asia", t.id))}</div>
-      ))}
-
-      {/* 4. MKT-001 */}
-      {groupToggle("mkt-001", "MKT-001 · Cafe + Cruise", MKT_NAV.length)}
-      {expanded["mkt-001"] && MKT_NAV.map(item => {
-        if (!item.children) {
-          return (
-            <div key={item.id}>
-              {navItem(item.label, isMkt(item.id), () => go("mkt-001", item.id))}
-            </div>
-          );
-        }
-        const anyChildActive = item.children.some(c => isMkt(c.id));
+      {GROUPS.map(g => {
+        const visibleCount = g.nav.filter(it => !it.hidden).length;
         return (
-          <div key={item.id}>
-            {mktSubgroupHeader(item.id, item.label)}
-            {(expanded[item.id] || anyChildActive) && item.children.map(child =>
-              navItem(child.label, isMkt(child.id), () => go("mkt-001", child.id), true)
+          <div key={g.id}>
+            {groupHeader(g, visibleCount)}
+            {expanded[g.id] && (
+              <div style={{ paddingBottom: 6 }}>
+                {/* L1 home item — first nav entry */}
+                {homeItem(g)}
+
+                {/* Remaining L2 items, with optional grouping */}
+                {(() => {
+                  const rest = g.nav.slice(1);
+                  // Group by `group` key
+                  const groupOrder = [];
+                  const grouped = {};
+                  rest.forEach(it => {
+                    const key = it.group ?? "_main";
+                    if (!grouped[key]) {
+                      grouped[key] = [];
+                      groupOrder.push(key);
+                    }
+                    grouped[key].push(it);
+                  });
+                  return groupOrder.map(key => (
+                    <div key={key}>
+                      {key !== "_main" && subgroupHeader(GROUP_LABEL[key] ?? key)}
+                      {grouped[key].map(it => navItem(it, g.report, key !== "_main"))}
+                    </div>
+                  ));
+                })()}
+              </div>
             )}
           </div>
         );
@@ -221,10 +219,10 @@ export default function Sidebar({ view, setView, mobileOpen, setMobileOpen }) {
 
       {/* Watermark */}
       <div style={{
-        padding: "12px 14px",
-        borderTop: `1px solid ${C.border}`,
-        fontSize: 10,
-        color: `${C.muted}80`,
+        padding: "14px 18px",
+        borderTop: `1px solid ${T.line}`,
+        fontSize: 9.5,
+        color: T.inkSoft,
         fontWeight: 600,
         letterSpacing: 1.2,
         textTransform: "uppercase",
@@ -234,3 +232,11 @@ export default function Sidebar({ view, setView, mobileOpen, setMobileOpen }) {
     </div>
   );
 }
+
+// Subgroup labels — translated for display
+const GROUP_LABEL = {
+  evidence: "📊 Evidence · Section sources",
+  cafe:     "☕ Cafe Workshop HN",
+  cruise:   "🚢 Cruise Vịnh Hạ Long",
+  detail:   "🔍 Drill-down",
+};

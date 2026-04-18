@@ -1,10 +1,11 @@
-import Overview       from "../../tabs/Overview.jsx";
-import Country        from "../../tabs/Country.jsx";
-import Quarterly      from "../../tabs/Quarterly.jsx";
-import Behavior       from "../../tabs/Behavior.jsx";
-import Channels       from "../../tabs/Channels.jsx";
-import Roi2026        from "../../tabs/Roi2026.jsx";
-import Insights       from "../../tabs/Insights.jsx";
+import HomePane         from "./HomePane.jsx";
+import Overview         from "../../tabs/Overview.jsx";
+import Country          from "../../tabs/Country.jsx";
+import Quarterly        from "../../tabs/Quarterly.jsx";
+import Behavior         from "../../tabs/Behavior.jsx";
+import Channels         from "../../tabs/Channels.jsx";
+import Roi2026          from "../../tabs/Roi2026.jsx";
+import Insights         from "../../tabs/Insights.jsx";
 import ExecutiveSummary from "../../tabs/ExecutiveSummary.jsx";
 import MarketSizing     from "../../tabs/MarketSizing.jsx";
 import Personas         from "../../tabs/Personas.jsx";
@@ -17,13 +18,13 @@ import GTMRoadmap       from "../../tabs/GTMRoadmap.jsx";
 import Risks            from "../../tabs/Risks.jsx";
 
 const TAB_COMPONENTS = {
-  overview:  Overview,
-  country:   Country,
-  quarterly: Quarterly,
-  behavior:  Behavior,
-  channels:  Channels,
-  roi2026:   Roi2026,
-  insights:  Insights,
+  overview:    Overview,
+  country:     Country,
+  quarterly:   Quarterly,
+  behavior:    Behavior,
+  channels:    Channels,
+  roi2026:     Roi2026,
+  insights:    Insights,
   executive:   ExecutiveSummary,
   market:      MarketSizing,
   personas:    Personas,
@@ -36,7 +37,8 @@ const TAB_COMPONENTS = {
   risks:       Risks,
 };
 
-export default function AsiaReport({ tab = "overview" }) {
-  const Active = TAB_COMPONENTS[tab] ?? Overview;
+export default function AsiaReport({ section = "asia-home", goto = () => {} }) {
+  if (section === "asia-home") return <HomePane goto={goto} />;
+  const Active = TAB_COMPONENTS[section] ?? TAB_COMPONENTS.overview;
   return <Active />;
 }

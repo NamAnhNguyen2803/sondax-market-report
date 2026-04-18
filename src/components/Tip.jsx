@@ -1,13 +1,20 @@
-import { C } from "../data/colors.js";
+import { T } from "../data/colors.js";
 
 export default function Tip({ active, payload, label }) {
   if (!active || !payload) return null;
   return (
-    <div style={{ background: C.card, border: `1px solid ${C.border}`, borderRadius: 8, padding: "8px 12px", fontSize: 12 }}>
-      <p style={{ color: C.text, fontWeight: 600, marginBottom: 4 }}>{label}</p>
+    <div style={{
+      background: T.surface,
+      border: `1px solid ${T.line}`,
+      borderRadius: 12,
+      padding: "10px 14px",
+      fontSize: 12,
+      boxShadow: "0 8px 20px -12px rgba(168,143,191,0.4)",
+    }}>
+      <p style={{ color: T.ink, fontWeight: 700, marginBottom: 4 }}>{label}</p>
       {payload.map((p, i) => (
-        <p key={i} style={{ color: p.color || p.fill, margin: "2px 0" }}>
-          {p.name}: <strong>{typeof p.value === "number" ? p.value.toLocaleString("vi-VN") : p.value}</strong>
+        <p key={i} style={{ color: p.color || p.fill, margin: "2px 0", fontWeight: 600 }}>
+          {p.name}: <strong style={{ color: T.ink }}>{typeof p.value === "number" ? p.value.toLocaleString("vi-VN") : p.value}</strong>
         </p>
       ))}
     </div>

@@ -1,8 +1,14 @@
-import { C } from "../data/colors.js";
+import { T } from "../data/colors.js";
 
 export default function H2({ children }) {
   return (
-    <h2 style={{ color: C.text, fontSize: 17, fontWeight: 700, margin: "24px 0 12px", borderLeft: `4px solid ${C.accent}`, paddingLeft: 12 }}>
+    <h2 className="serif" style={{
+      color: T.ink, fontSize: 22, fontWeight: 600,
+      margin: "26px 0 14px",
+      borderLeft: `4px solid ${T.lavender}`,
+      paddingLeft: 14,
+      lineHeight: 1.3,
+    }}>
       {children}
     </h2>
   );

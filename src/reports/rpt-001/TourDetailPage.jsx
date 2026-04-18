@@ -1,6 +1,5 @@
-import { C } from "../../data/colors.js";
-import { TOURS } from "./tourData.js";
-import { MARKET_FLAGS, CATEGORY_COLORS, CATEGORY_LABELS, MONTH_COLOR } from "./tourData.js";
+import { T } from "../../data/colors.js";
+import { TOURS, MARKET_FLAGS, CATEGORY_COLORS, CATEGORY_LABELS, MONTH_COLOR } from "./tourData.js";
 import { INSIGHTS } from "./insights.js";
 
 function Breadcrumb({ goto, from, tourName }) {
@@ -9,13 +8,13 @@ function Breadcrumb({ goto, from, tourName }) {
     : null;
   const fromExplorer = from === "rpt-explorer";
 
-  const crumbBtn = (label, onClick, color = C.muted) => (
+  const link = (label, onClick, color = T.peach) => (
     <button
       onClick={onClick}
       style={{
         background: "transparent", border: "none",
         color, cursor: "pointer", padding: 0,
-        fontSize: 11, fontWeight: 600,
+        fontSize: 12, fontWeight: 700, fontFamily: "inherit",
       }}
     >
       {label}
@@ -23,35 +22,18 @@ function Breadcrumb({ goto, from, tourName }) {
   );
 
   return (
-    <div style={{ fontSize: 11, marginBottom: 10, lineHeight: 1.8 }}>
-      {crumbBtn("★ Overview", () => goto("rpt-home"))}
+    <div style={{ fontSize: 12, marginBottom: 14, lineHeight: 1.7 }}>
+      {link("← Tổng quan tour EN Inbound", () => goto("rpt-home"))}
       {(fromInsight || fromExplorer) && (
         <>
-          <span style={{ color: C.border, margin: "0 8px" }}>›</span>
+          <span style={{ color: T.lineStrong, margin: "0 10px" }}>›</span>
           {fromInsight
-            ? crumbBtn(`${fromInsight.icon} ${fromInsight.title}`, () => goto(fromInsight.tabId), fromInsight.color)
-            : crumbBtn("🔎 Tour Explorer", () => goto("rpt-explorer"), C.muted)}
+            ? link(`${fromInsight.icon} ${fromInsight.title}`, () => goto(fromInsight.tabId), T.lavenderInk)
+            : link("🔎 Tour Explorer", () => goto("rpt-explorer"), T.lavenderInk)}
         </>
       )}
-      <span style={{ color: C.border, margin: "0 8px" }}>›</span>
-      <span style={{ color: C.accent, fontWeight: 700 }}>{tourName}</span>
-    </div>
-  );
-}
-
-function TourTitle({ title, subtitle }) {
-  return (
-    <div style={{ margin: "4px 0 14px" }}>
-      <h2 style={{
-        color: C.text, fontSize: 17, fontWeight: 800,
-        margin: "0 0 4px", borderLeft: `4px solid ${C.accent}`,
-        paddingLeft: 12,
-      }}>{title}</h2>
-      {subtitle && (
-        <div style={{ fontSize: 12, color: C.muted, paddingLeft: 16, lineHeight: 1.5 }}>
-          {subtitle}
-        </div>
-      )}
+      <span style={{ color: T.lineStrong, margin: "0 10px" }}>›</span>
+      <span style={{ color: T.ink, fontWeight: 600 }}>{tourName}</span>
     </div>
   );
 }
@@ -59,79 +41,81 @@ function TourTitle({ title, subtitle }) {
 const chip = (text, color) => (
   <span key={text} style={{
     display: "inline-block",
-    padding: "3px 9px",
-    marginRight: 5, marginBottom: 5,
-    background: `${color}18`,
-    border: `1px solid ${color}50`,
-    borderRadius: 14,
-    color, fontSize: 11, fontWeight: 600,
+    padding: "3px 10px",
+    marginRight: 6, marginBottom: 6,
+    background: `${color}1f`,
+    border: `1px solid ${color}55`,
+    borderRadius: 999,
+    color, fontSize: 11.5, fontWeight: 600,
     whiteSpace: "nowrap",
   }}>{text}</span>
 );
 
-const section = (label, value, color = C.muted) => (
-  <div style={{ marginBottom: 14 }}>
-    <div style={{
-      fontSize: 9, color: C.muted, textTransform: "uppercase",
-      letterSpacing: 1.4, fontWeight: 700, marginBottom: 6,
-    }}>
-      {label}
-    </div>
-    <div style={{ fontSize: 13, color, lineHeight: 1.65 }}>{value}</div>
+const SectionLabel = ({ children, color = T.lavender }) => (
+  <div style={{
+    fontSize: 9.5, color, textTransform: "uppercase",
+    letterSpacing: 1.4, fontWeight: 800, marginBottom: 8,
+  }}>
+    {children}
   </div>
 );
 
-// Extract section references from text (e.g., "S1", "S2", "S8")
+const Surface = ({ children, accent = null, style = {} }) => (
+  <div style={{
+    background: T.surface,
+    border: `1px solid ${T.line}`,
+    borderLeft: accent ? `4px solid ${accent}` : `1px solid ${T.line}`,
+    borderRadius: 14,
+    padding: "16px 18px",
+    marginBottom: 16,
+    boxShadow: "0 1px 2px rgba(168,143,191,0.06)",
+    ...style,
+  }}>{children}</div>
+);
+
 function extractSectionRefs(text) {
   if (!text) return [];
   const matches = text.match(/\bS[1-9]\b/g) || [];
-  return [...new Set(matches)].sort((a, b) => {
-    const aNum = parseInt(a.substring(1));
-    const bNum = parseInt(b.substring(1));
-    return aNum - bNum;
-  });
+  return [...new Set(matches)].sort((a, b) => parseInt(a.substring(1)) - parseInt(b.substring(1)));
 }
 
 export default function TourDetailPage({ tourId, goto, from }) {
   const idNum = Number(tourId);
   const tour = TOURS.find(t => t.id === idNum || String(t.id) === String(tourId));
-  if (!tour) return <div style={{ padding: 20, color: C.muted }}>Tour not found</div>;
+  if (!tour) return <div style={{ padding: 20, color: T.inkSoft }}>Tour not found</div>;
 
-  const catColor = CATEGORY_COLORS[tour.category] ?? C.accent;
+  const catColor = CATEGORY_COLORS[tour.category] ?? T.lavender;
 
-  // Extract evidence section references from rationale & whyInvest
   const referencedSections = [
     ...extractSectionRefs(tour.rationale),
     ...extractSectionRefs(tour.whyInvest),
   ];
-  const uniqueSections = [...new Set(referencedSections)].sort((a, b) => {
-    const aNum = parseInt(a.substring(1));
-    const bNum = parseInt(b.substring(1));
-    return aNum - bNum;
-  });
+  const uniqueSections = [...new Set(referencedSections)].sort((a, b) =>
+    parseInt(a.substring(1)) - parseInt(b.substring(1)));
 
   return (
     <>
       <Breadcrumb goto={goto} from={from} tourName={tour.name} />
-      <TourTitle
-        title={tour.name}
-        subtitle={`${CATEGORY_LABELS[tour.category]} · ${tour.duration} · ${tour.priceRange}`}
-      />
 
-      {/* Tour Badge & Metadata */}
-      <div style={{
-        background: C.card,
-        border: `1px solid ${C.border}`,
-        borderRadius: 10,
-        padding: "16px 18px",
-        marginBottom: 16,
-        borderLeft: `4px solid ${catColor}`,
-      }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
+      {/* Title */}
+      <div style={{ margin: "8px 0 18px", maxWidth: 760 }}>
+        <h2 className="serif" style={{
+          fontSize: 30, color: T.ink, fontWeight: 600, lineHeight: 1.2, marginBottom: 6,
+        }}>
+          {tour.name}
+        </h2>
+        <div style={{ fontSize: 13, color: T.inkSoft, lineHeight: 1.5 }}>
+          {CATEGORY_LABELS[tour.category]} · {tour.duration} · {tour.priceRange}
+        </div>
+      </div>
+
+      {/* Tour metadata badge bar */}
+      <Surface accent={catColor}>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14, flexWrap: "wrap" }}>
           <span style={{
-            background: catColor, color: "#0F172A",
+            background: catColor, color: T.surface,
             fontSize: 10, fontWeight: 800,
-            padding: "4px 10px", borderRadius: 6,
+            padding: "4px 11px", borderRadius: 6,
             letterSpacing: 0.5,
           }}>
             TOUR #{tour.id}
@@ -144,223 +128,135 @@ export default function TourDetailPage({ tourId, goto, from }) {
           </span>
         </div>
 
-        <div style={{ display: "flex", flexWrap: "wrap", gap: 16, fontSize: 12 }}>
-          <span style={{ color: C.muted }}>
-            <span style={{ color: C.accent, fontWeight: 700 }}>⏱</span> {tour.duration}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 18, fontSize: 12.5 }}>
+          <span style={{ color: T.inkSoft }}>
+            <span style={{ color: T.lavender, fontWeight: 700 }}>⏱</span> {tour.duration}
           </span>
-          <span style={{ color: C.muted }}>
-            <span style={{ color: C.orange, fontWeight: 700 }}>📅</span> {tour.bestMonthsLabel}
+          <span style={{ color: T.inkSoft }}>
+            <span style={{ color: T.peach, fontWeight: 700 }}>📅</span> {tour.bestMonthsLabel}
           </span>
-          <span style={{ color: C.muted }}>
-            <span style={{ color: C.green, fontWeight: 700 }}>💰</span> {tour.priceRange}
+          <span style={{ color: T.inkSoft }}>
+            <span style={{ color: T.mintInk, fontWeight: 700 }}>💰</span> {tour.priceRange}
           </span>
         </div>
-      </div>
+      </Surface>
 
-      {/* Why Invest — promoted to top as primary decision driver */}
+      {/* Why Invest — promoted to top */}
       <div style={{
-        background: `${C.orange}08`,
-        border: `1px solid ${C.orange}30`,
-        borderLeft: `3px solid ${C.orange}`,
-        borderRadius: "0 8px 8px 0",
-        padding: "14px 16px",
+        background: T.peachSoft,
+        border: `1px solid ${T.peach}66`,
+        borderLeft: `3px solid ${T.peach}`,
+        borderRadius: 14,
+        padding: "16px 18px",
         marginBottom: 16,
       }}>
-        <div style={{
-          fontSize: 9, color: C.orange, textTransform: "uppercase",
-          letterSpacing: 1.4, fontWeight: 800, marginBottom: 6,
-        }}>
-          🎯 Tại sao nên đầu tư — Khoảng trống cụ thể
-        </div>
-        <div style={{ fontSize: 13, color: C.text, lineHeight: 1.65 }}>
+        <SectionLabel color={T.peachInk}>🎯 Tại sao nên đầu tư — Khoảng trống cụ thể</SectionLabel>
+        <div style={{ fontSize: 13.5, color: T.ink, lineHeight: 1.7 }}>
           {tour.whyInvest}
         </div>
       </div>
 
-      {/* Revenue Highlight — paired with Why Invest at top */}
+      {/* Revenue */}
       <div style={{
-        background: "#0b1222",
-        border: `1px solid ${C.border}`,
-        borderLeft: `3px solid ${C.green}`,
-        borderRadius: "0 8px 8px 0",
-        padding: "14px 16px",
+        background: T.mintSoft,
+        border: `1px solid ${T.mint}66`,
+        borderLeft: `3px solid ${T.mint}`,
+        borderRadius: 14,
+        padding: "14px 18px",
         marginBottom: 16,
       }}>
-        <div style={{
-          fontSize: 9, color: C.green, textTransform: "uppercase",
-          letterSpacing: 1.4, fontWeight: 800, marginBottom: 6,
-        }}>
-          💰 Revenue / Chuyến
-        </div>
-        <div style={{ fontSize: 15, color: C.text, fontWeight: 700 }}>
+        <SectionLabel color={T.mintInk}>💰 Revenue / Chuyến</SectionLabel>
+        <div className="serif num" style={{ fontSize: 18, color: T.ink, fontWeight: 600 }}>
           {tour.revenue}
         </div>
       </div>
 
       {/* Target Markets & Platforms */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16, marginBottom: 16 }}>
-        <div style={{
-          background: C.card,
-          border: `1px solid ${C.border}`,
-          borderRadius: 10,
-          padding: "14px 16px",
-        }}>
-          <div style={{
-            fontSize: 9, color: C.muted, textTransform: "uppercase",
-            letterSpacing: 1.4, fontWeight: 700, marginBottom: 8,
-          }}>
-            Target Markets
-          </div>
+        <Surface>
+          <SectionLabel>Target Markets</SectionLabel>
           <div>
             {tour.markets.map(m => (
               <span key={m} style={{
                 display: "inline-block",
-                padding: "3px 9px",
-                marginRight: 5, marginBottom: 5,
-                background: `${C.accent}12`,
-                border: `1px solid ${C.accent}40`,
-                borderRadius: 14,
-                color: C.accent, fontSize: 11, fontWeight: 600,
+                padding: "3px 10px",
+                marginRight: 6, marginBottom: 6,
+                background: T.lavenderSoft,
+                border: `1px solid ${T.lavender}66`,
+                borderRadius: 999,
+                color: T.lavenderInk, fontSize: 11.5, fontWeight: 600,
               }}>
                 {MARKET_FLAGS[m] ?? ""} {m}
               </span>
             ))}
           </div>
-        </div>
+        </Surface>
 
-        <div style={{
-          background: C.card,
-          border: `1px solid ${C.border}`,
-          borderRadius: 10,
-          padding: "14px 16px",
-        }}>
-          <div style={{
-            fontSize: 9, color: C.muted, textTransform: "uppercase",
-            letterSpacing: 1.4, fontWeight: 700, marginBottom: 8,
-          }}>
-            Best Platforms
-          </div>
-          <div>{tour.platforms.map(p => chip(p, C.purple ?? "#A78BFA"))}</div>
-        </div>
+        <Surface>
+          <SectionLabel>Best Platforms</SectionLabel>
+          <div>{tour.platforms.map(p => chip(p, T.lavender))}</div>
+        </Surface>
       </div>
 
       {/* Best Months */}
-      <div style={{
-        background: C.card,
-        border: `1px solid ${C.border}`,
-        borderRadius: 10,
-        padding: "14px 16px",
-        marginBottom: 16,
-      }}>
-        <div style={{
-          fontSize: 9, color: C.muted, textTransform: "uppercase",
-          letterSpacing: 1.4, fontWeight: 700, marginBottom: 8,
-        }}>
-          Best Months
-        </div>
+      <Surface>
+        <SectionLabel>Best Months</SectionLabel>
         <div>
-          {tour.bestMonths.map(m => chip(m, MONTH_COLOR[m] ?? C.accent))}
+          {tour.bestMonths.map(m => chip(m, MONTH_COLOR[m] ?? T.lavender))}
         </div>
-      </div>
+      </Surface>
 
-      {/* Route / Destinations */}
-      <div style={{
-        background: C.card,
-        border: `1px solid ${C.border}`,
-        borderRadius: 10,
-        padding: "14px 16px",
-        marginBottom: 16,
-      }}>
-        {section("Route / Destinations", tour.route, C.text)}
-      </div>
+      {/* Route */}
+      <Surface>
+        <SectionLabel>Route / Destinations</SectionLabel>
+        <div style={{ fontSize: 13.5, color: T.ink, lineHeight: 1.7 }}>{tour.route}</div>
+      </Surface>
 
       {/* Rationale */}
-      <div style={{
-        background: C.card,
-        border: `1px solid ${C.border}`,
-        borderRadius: 10,
-        padding: "14px 16px",
-        marginBottom: 16,
-      }}>
-        {section("Rationale (từ S1–S8)", tour.rationale)}
-      </div>
+      <Surface>
+        <SectionLabel>Rationale (từ S1–S8)</SectionLabel>
+        <div style={{ fontSize: 13, color: T.inkSoft, lineHeight: 1.7 }}>{tour.rationale}</div>
+      </Surface>
 
       {/* Competitors & Barrier */}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16, marginBottom: 16 }}>
-        <div style={{
-          background: C.card,
-          border: `1px solid ${C.border}`,
-          borderRadius: 10,
-          padding: "14px 16px",
-        }}>
-          <div style={{
-            fontSize: 9, color: C.muted, textTransform: "uppercase",
-            letterSpacing: 1.4, fontWeight: 700, marginBottom: 8,
-          }}>
-            Đối thủ dẫn đầu
-          </div>
-          <div style={{ fontSize: 12, color: C.text, lineHeight: 1.6 }}>
-            {tour.competitors}
-          </div>
-        </div>
-
-        <div style={{
-          background: C.card,
-          border: `1px solid ${C.border}`,
-          borderRadius: 10,
-          padding: "14px 16px",
-        }}>
-          <div style={{
-            fontSize: 9, color: C.pink, textTransform: "uppercase",
-            letterSpacing: 1.4, fontWeight: 700, marginBottom: 8,
-          }}>
-            Rào cản gia nhập
-          </div>
-          <div style={{ fontSize: 12, color: C.text, lineHeight: 1.6 }}>
-            {tour.barrier}
-          </div>
-        </div>
+        <Surface>
+          <SectionLabel>Đối thủ dẫn đầu</SectionLabel>
+          <div style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.65 }}>{tour.competitors}</div>
+        </Surface>
+        <Surface>
+          <SectionLabel color={T.peachInk}>Rào cản gia nhập</SectionLabel>
+          <div style={{ fontSize: 12.5, color: T.ink, lineHeight: 1.65 }}>{tour.barrier}</div>
+        </Surface>
       </div>
 
-      {/* Evidence Cross-References */}
+      {/* Evidence cross-refs */}
       {uniqueSections.length > 0 && (
         <div style={{
-          background: `${C.accent}08`,
-          border: `1px solid ${C.accent}30`,
-          borderLeft: `3px solid ${C.accent}`,
-          borderRadius: "0 8px 8px 0",
-          padding: "14px 16px",
+          background: T.lavenderSoft,
+          border: `1px solid ${T.lavender}66`,
+          borderLeft: `3px solid ${T.lavender}`,
+          borderRadius: 14,
+          padding: "14px 18px",
         }}>
-          <div style={{
-            fontSize: 9, color: C.accent, textTransform: "uppercase",
-            letterSpacing: 1.4, fontWeight: 800, marginBottom: 10,
-          }}>
-            📖 Referenced in Evidence Sections
-          </div>
+          <SectionLabel>📖 Referenced in Evidence Sections</SectionLabel>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
             {uniqueSections.map(sectionId => (
               <button
                 key={sectionId}
                 onClick={() => goto(`rpt-${sectionId.toLowerCase()}`)}
                 style={{
-                  background: `${C.accent}18`,
-                  border: `1px solid ${C.accent}50`,
-                  color: C.accent,
-                  borderRadius: 8,
-                  padding: "6px 12px",
-                  fontSize: 11,
-                  fontWeight: 600,
+                  background: T.surface,
+                  border: `1px solid ${T.lavender}`,
+                  color: T.lavenderInk,
+                  borderRadius: 999,
+                  padding: "5px 13px",
+                  fontSize: 11.5,
+                  fontWeight: 700,
                   cursor: "pointer",
                   transition: "all 0.15s",
                   outline: "none",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = `${C.accent}30`;
-                  e.currentTarget.style.borderColor = C.accent;
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = `${C.accent}18`;
-                  e.currentTarget.style.borderColor = `${C.accent}50`;
+                  fontFamily: "inherit",
                 }}
               >
                 {sectionId}

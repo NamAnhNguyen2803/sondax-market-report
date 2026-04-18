@@ -1,4 +1,4 @@
-import { C } from "../data/colors.js";
+import { T } from "../data/colors.js";
 import { headingToId } from "../utils/mdSplit.js";
 
 /**
@@ -11,10 +11,9 @@ export default function SubSectionNav({ source }) {
     const m = line.match(/^## (.+)/);
     if (m) {
       const raw = m[1].trim();
-      // shorten: "9.1 Action Matrix — 18 Tour Recommendations" → "9.1 Action Matrix"
       const short = raw
-        .replace(/\s*[—–-]\s*.{20,}$/, "")   // drop long subtitles
-        .replace(/\(.*?\)/g, "")              // drop parenthetical
+        .replace(/\s*[—–-]\s*.{20,}$/, "")
+        .replace(/\(.*?\)/g, "")
         .trim()
         .slice(0, 36);
       items.push({ id: headingToId(raw), label: short });
@@ -30,19 +29,19 @@ export default function SubSectionNav({ source }) {
   return (
     <div style={{
       display: "flex", alignItems: "center", gap: 6, flexWrap: "wrap",
-      background: `${C.card}`,
-      border: `1px solid ${C.border}`,
-      borderRadius: 8,
-      padding: "8px 12px",
-      margin: "0 0 16px",
+      background: T.surface,
+      border: `1px solid ${T.line}`,
+      borderRadius: 12,
+      padding: "9px 14px",
+      margin: "0 0 18px",
       position: "sticky",
       top: 0,
       zIndex: 10,
     }}>
       <span style={{
-        fontSize: 9, color: C.muted, fontWeight: 700,
-        textTransform: "uppercase", letterSpacing: 1.2,
-        marginRight: 4, whiteSpace: "nowrap",
+        fontSize: 9.5, color: T.lavender, fontWeight: 800,
+        textTransform: "uppercase", letterSpacing: 1.4,
+        marginRight: 6, whiteSpace: "nowrap",
       }}>
         Sections
       </span>
@@ -52,17 +51,18 @@ export default function SubSectionNav({ source }) {
           onClick={() => scrollTo(p.id)}
           style={{
             background: "transparent",
-            border: `1px solid ${C.accent}40`,
-            borderRadius: 5,
-            color: C.accent,
-            fontSize: 10,
-            fontWeight: 600,
-            padding: "3px 8px",
+            border: `1px solid ${T.lavender}55`,
+            borderRadius: 999,
+            color: T.lavenderInk,
+            fontSize: 10.5,
+            fontWeight: 700,
+            padding: "3px 10px",
             cursor: "pointer",
             whiteSpace: "nowrap",
             transition: "background .15s",
+            fontFamily: "inherit",
           }}
-          onMouseEnter={(e) => e.target.style.background = `${C.accent}20`}
+          onMouseEnter={(e) => e.target.style.background = T.lavenderSoft}
           onMouseLeave={(e) => e.target.style.background = "transparent"}
         >
           {p.label}

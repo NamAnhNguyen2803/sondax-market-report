@@ -1,21 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import mermaid from "mermaid";
-import { C } from "../data/colors.js";
+import { T } from "../data/colors.js";
 
 mermaid.initialize({
   startOnLoad: false,
-  theme: "dark",
-  darkMode: true,
+  theme: "base",
   themeVariables: {
-    background:         "#0b1222",
-    primaryColor:       "#1E3A5F",
-    primaryTextColor:   "#E2E8F0",
-    primaryBorderColor: "#38BDF8",
-    lineColor:          "#38BDF8",
-    secondaryColor:     "#0F172A",
-    tertiaryColor:      "#1a2744",
-    edgeLabelBackground:"#0b1222",
-    fontFamily:         "'Segoe UI', -apple-system, sans-serif",
+    background:         T.surface,
+    primaryColor:       T.lavenderSoft,
+    primaryTextColor:   T.ink,
+    primaryBorderColor: T.lavender,
+    lineColor:          T.lavender,
+    secondaryColor:     T.mintSoft,
+    tertiaryColor:      T.peachSoft,
+    edgeLabelBackground: T.surface,
+    fontFamily:         "'Inter', -apple-system, sans-serif",
     fontSize:           "13px",
   },
 });
@@ -31,7 +30,6 @@ export default function MermaidDiagram({ code }) {
     setSvg(null);
     setError(false);
 
-    // Mermaid v11 needs an in-DOM container to render into
     const scratch = document.createElement("div");
     scratch.style.visibility = "hidden";
     scratch.style.position   = "absolute";
@@ -39,28 +37,23 @@ export default function MermaidDiagram({ code }) {
 
     const id = `md-${++uid}`;
     mermaid.render(id, code.trim(), scratch)
-      .then(({ svg: s, bindFunctions }) => {
-        setSvg(s);
-        // bindFunctions is called later on the visible container if needed
-      })
+      .then(({ svg: s }) => setSvg(s))
       .catch(() => setError(true))
-      .finally(() => {
-        document.body.removeChild(scratch);
-      });
+      .finally(() => { document.body.removeChild(scratch); });
   }, [code]);
 
   if (error) return (
     <pre style={{
-      background: "#0b1222", color: C.muted,
-      padding: 12, borderRadius: 8, fontSize: 11,
-      border: `1px dashed ${C.border}`, overflow: "auto",
+      background: T.bgAlt, color: T.inkSoft,
+      padding: 14, borderRadius: 12, fontSize: 11.5,
+      border: `1px dashed ${T.line}`, overflow: "auto",
     }}>
       {code}
     </pre>
   );
 
   if (!svg) return (
-    <div style={{ color: C.muted, fontSize: 11, padding: "12px 0" }}>
+    <div style={{ color: T.inkSoft, fontSize: 11.5, padding: "12px 0" }}>
       Rendering diagram…
     </div>
   );
@@ -68,10 +61,11 @@ export default function MermaidDiagram({ code }) {
   return (
     <div
       style={{
-        overflowX: "auto", margin: "14px 0",
-        background: "#0b1222", borderRadius: 10,
-        padding: "16px 12px",
-        border: `1px solid ${C.border}`,
+        overflowX: "auto", margin: "16px 0",
+        background: T.surface, borderRadius: 14,
+        padding: "18px 14px",
+        border: `1px solid ${T.line}`,
+        boxShadow: "0 1px 2px rgba(168,143,191,0.05)",
       }}
       dangerouslySetInnerHTML={{ __html: svg }}
     />

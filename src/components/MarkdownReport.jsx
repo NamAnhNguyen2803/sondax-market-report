@@ -1,39 +1,95 @@
 import { lazy, Suspense } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { C } from "../data/colors.js";
+import { T } from "../data/colors.js";
 import { headingToId } from "../utils/mdSplit.js";
 
 // Lazy-load mermaid renderer — keeps it out of the initial bundle
 const MermaidDiagram = lazy(() => import("./MermaidDiagram.jsx"));
 
 const styles = {
-  h1: { color: C.text, fontSize: 20, fontWeight: 800, margin: "24px 0 12px", borderLeft: `4px solid ${C.accent}`, paddingLeft: 12 },
-  // Special style for # PHẦN / # PART dividers
-  partHeader: {
-    color: C.text, fontSize: 14, fontWeight: 800,
-    margin: "32px -4px 16px",
-    padding: "10px 16px",
-    background: `linear-gradient(90deg, ${C.accent}1a 0%, transparent 80%)`,
-    borderLeft: `4px solid ${C.accent}`,
-    textTransform: "uppercase", letterSpacing: 0.8,
-    borderRadius: "0 8px 8px 0",
+  h1: {
+    color: T.ink, fontSize: 26, fontWeight: 600,
+    margin: "28px 0 14px",
+    borderLeft: `4px solid ${T.lavender}`,
+    paddingLeft: 14,
+    fontFamily: "'Fraunces', Georgia, serif",
+    letterSpacing: "-0.015em",
+    lineHeight: 1.25,
   },
-  h2: { color: C.text, fontSize: 17, fontWeight: 700, margin: "22px 0 10px", borderLeft: `4px solid ${C.accent}`, paddingLeft: 12 },
-  h3: { color: C.text, fontSize: 15, fontWeight: 700, margin: "18px 0 8px" },
-  h4: { color: C.accent, fontSize: 13, fontWeight: 700, margin: "14px 0 6px", textTransform: "uppercase", letterSpacing: 1 },
-  p:  { color: C.muted, fontSize: 13, lineHeight: 1.75, margin: "8px 0" },
-  li: { color: C.muted, fontSize: 13, lineHeight: 1.75, marginBottom: 4 },
-  a:  { color: C.accent, textDecoration: "none", borderBottom: `1px dashed ${C.accent}60` },
-  code: { background: "#0b1222", color: C.accent, padding: "1px 6px", borderRadius: 4, fontSize: 12, fontFamily: "ui-monospace, SFMono-Regular, monospace" },
-  pre: { background: "#0b1222", color: C.text, padding: 14, borderRadius: 8, border: `1px solid ${C.border}`, overflow: "auto", fontSize: 12, lineHeight: 1.6, margin: "10px 0" },
-  blockquote: { borderLeft: `3px solid ${C.accent}`, background: `${C.accent}10`, padding: "10px 14px", margin: "12px 0", color: C.text, borderRadius: "0 8px 8px 0", fontSize: 13, lineHeight: 1.7 },
-  hr: { border: 0, borderTop: `1px solid ${C.border}`, margin: "24px 0" },
-  table: { width: "100%", borderCollapse: "separate", borderSpacing: 0, background: C.card, borderRadius: 10, overflow: "hidden", border: `1px solid ${C.border}`, fontSize: 12, margin: "10px 0" },
-  th: { padding: "10px 12px", textAlign: "left", color: C.muted, fontWeight: 700, background: "#1a2744", borderBottom: `1px solid ${C.border}`, fontSize: 11 },
-  td: { padding: "9px 12px", color: C.text, borderBottom: `1px solid ${C.border}`, lineHeight: 1.55, verticalAlign: "top" },
-  strong: { color: C.text, fontWeight: 700 },
-  em: { color: C.pink, fontStyle: "italic" },
+  partHeader: {
+    color: T.lavenderInk, fontSize: 14, fontWeight: 700,
+    margin: "32px -4px 18px",
+    padding: "12px 18px",
+    background: T.lavenderSoft,
+    borderLeft: `4px solid ${T.lavender}`,
+    textTransform: "uppercase", letterSpacing: 1.2,
+    borderRadius: "0 12px 12px 0",
+  },
+  h2: {
+    color: T.ink, fontSize: 21, fontWeight: 600,
+    margin: "26px 0 12px",
+    borderLeft: `4px solid ${T.lavender}`,
+    paddingLeft: 14,
+    fontFamily: "'Fraunces', Georgia, serif",
+    letterSpacing: "-0.015em",
+    lineHeight: 1.3,
+  },
+  h3: {
+    color: T.ink, fontSize: 17, fontWeight: 600,
+    margin: "20px 0 10px",
+    fontFamily: "'Fraunces', Georgia, serif",
+    letterSpacing: "-0.01em",
+  },
+  h4: {
+    color: T.lavender, fontSize: 11, fontWeight: 800,
+    margin: "16px 0 8px",
+    textTransform: "uppercase", letterSpacing: 1.4,
+  },
+  p:  { color: T.ink, fontSize: 14, lineHeight: 1.75, margin: "10px 0" },
+  li: { color: T.ink, fontSize: 14, lineHeight: 1.75, marginBottom: 4 },
+  a:  {
+    color: T.peach, textDecoration: "none",
+    borderBottom: `1px dashed ${T.peach}88`, fontWeight: 600,
+  },
+  code: {
+    background: T.lavenderSoft, color: T.lavenderInk,
+    padding: "1px 7px", borderRadius: 6, fontSize: 12.5,
+    fontFamily: "ui-monospace, SFMono-Regular, monospace",
+  },
+  pre: {
+    background: T.bgAlt, color: T.ink,
+    padding: 16, borderRadius: 12, border: `1px solid ${T.line}`,
+    overflow: "auto", fontSize: 12.5, lineHeight: 1.6,
+    margin: "12px 0",
+  },
+  blockquote: {
+    borderLeft: `3px solid ${T.peach}`,
+    background: T.peachSoft,
+    padding: "12px 16px", margin: "14px 0",
+    color: T.ink, borderRadius: "0 12px 12px 0",
+    fontSize: 14, lineHeight: 1.7,
+  },
+  hr: { border: 0, borderTop: `1px solid ${T.line}`, margin: "28px 0" },
+  table: {
+    width: "100%", borderCollapse: "separate", borderSpacing: 0,
+    background: T.surface, borderRadius: 14, overflow: "hidden",
+    border: `1px solid ${T.line}`, fontSize: 12.5, margin: "12px 0",
+    boxShadow: "0 1px 2px rgba(168,143,191,0.05)",
+  },
+  th: {
+    padding: "11px 14px", textAlign: "left",
+    color: T.lavender, fontWeight: 800,
+    background: T.lavenderSoft, borderBottom: `1px solid ${T.line}`,
+    fontSize: 11, textTransform: "uppercase", letterSpacing: 1.2,
+  },
+  td: {
+    padding: "10px 14px", color: T.ink,
+    borderBottom: `1px solid ${T.line}`,
+    lineHeight: 1.6, verticalAlign: "top",
+  },
+  strong: { color: T.ink, fontWeight: 700 },
+  em: { color: T.peachInk, fontStyle: "italic" },
 };
 
 const components = {
@@ -61,7 +117,7 @@ const components = {
     const lang = (className ?? "").replace("language-", "");
     if (!inline && lang === "mermaid") {
       return (
-        <Suspense fallback={<div style={{ color: C.muted, fontSize: 11, padding: 8 }}>Rendering diagram…</div>}>
+        <Suspense fallback={<div style={{ color: T.inkSoft, fontSize: 11, padding: 8 }}>Rendering diagram…</div>}>
           <MermaidDiagram code={String(children)} />
         </Suspense>
       );
@@ -74,7 +130,7 @@ const components = {
   blockquote: ({ node, ...p }) => <blockquote style={styles.blockquote} {...p} />,
   hr: () => <hr style={styles.hr} />,
   table: ({ node, ...p }) => (
-    <div style={{ overflowX: "auto", margin: "10px 0" }}>
+    <div style={{ overflowX: "auto", margin: "12px 0" }}>
       <table style={styles.table} {...p} />
     </div>
   ),
