@@ -235,8 +235,11 @@ export default function Sidebar({ view, setView, goReport, mobileOpen, setMobile
 
 // Subgroup labels — translated for display
 const GROUP_LABEL = {
+  peak:     "📆 Mùa cao điểm · Tháng 5–10",
+  offpeak:  "❄️ Mùa thấp điểm · Tháng 10–3",
   evidence: "📊 Evidence · Section sources",
   cafe:     "☕ Cafe Workshop HN",
   cruise:   "🚢 Cruise Vịnh Hạ Long",
+  "en-inbound": "🌐 EN Inbound · Tour 2026–27",
   detail:   "🔍 Drill-down",
 };

@@ -67,6 +67,34 @@ function ExplorerPane({ goto }) {
   );
 }
 
+function OffPeakPane({ goto }) {
+  return (
+    <>
+      <SectionHeader
+        title="❄️ Mùa thấp điểm · Tháng 10 – 3"
+        subtitle="Báo cáo này hiện chỉ cover mùa cao điểm (Tháng 5–10) cho EN Inbound. Phần phân tích Tháng 10 → Tháng 3 (shoulder + low season: domestic, intra-Asia, weather windows ven biển miền Trung) dự kiến release ở phiên bản kế tiếp."
+        onBack={() => goto("rpt-home")}
+      />
+      <div style={{
+        marginTop: 18, padding: "20px 22px",
+        background: T.lavenderSoft,
+        border: `1px solid ${T.line}`,
+        borderRadius: 14,
+        color: T.lavenderInk,
+        fontSize: 13.5, lineHeight: 1.7,
+      }}>
+        <div style={{ fontWeight: 700, marginBottom: 6, fontSize: 14 }}>Roadmap nội dung mùa 10–3</div>
+        <ul style={{ margin: 0, paddingLeft: 18 }}>
+          <li>Source markets dịch chuyển: Hàn Quốc / Nhật / Đài Loan thay vì Anglo block</li>
+          <li>Destinations chuyển trục: Hà Giang mùa hoa, Phú Quốc khô, Mekong nước rút</li>
+          <li>Sản phẩm: tour Tết, golf inbound, MICE Q4</li>
+          <li>OTA mix: Klook/KKday vs Viator/GYG ratio đảo chiều</li>
+        </ul>
+      </div>
+    </>
+  );
+}
+
 function SectionView({ source, title, goto }) {
   const clean = stripNoiseSections(source);
   return (
@@ -83,6 +111,7 @@ function buildSectionMap(goto) {
   const map = {
     "rpt-home":     () => <HomePane goto={goto} />,
     "rpt-explorer": () => <ExplorerPane goto={goto} />,
+    "rpt-offpeak":  () => <OffPeakPane goto={goto} />,
     "rpt-s1":       () => <SectionView source={s1} title="S1 · Thị trường nguồn" goto={goto} />,
     "rpt-s2":       () => <SectionView source={s2} title="S2 · Tour Categories" goto={goto} />,
     "rpt-s3":       () => <SectionView source={s3} title="S3 · Destinations" goto={goto} />,
