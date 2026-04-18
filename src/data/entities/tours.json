@@ -33,6 +33,7 @@
     "competition": "High review moat — Real Foodie 4,794 reviews 4.9★ ($29-35), Local Delicacies 1,680 reviews, Ella 1,029 reviews; must carve niche filter instead of competing generic",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "north-food",
     "source_refs": [
       "RPT-260417-002-featured-tours/sections/Section-02-T1-hanoi-street-food.md",
       "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
@@ -75,6 +76,7 @@
     "competition": "Fragmented — top motorbike Ha Giang 3D2N 943 reviews 4.8★ ($180-250); top Jeep-specific Open Air Jeep only 395 reviews 4.7★ ($229-315); no dominant brand, hostel-affiliated ops invisible on OTA",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "north-mountain",
     "source_refs": [
       "RPT-260417-002-featured-tours/sections/Section-03-T4-ha-giang-jeep.md",
       "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
@@ -117,6 +119,7 @@
     "competition": "Monopoly in Indian-specialized segment — Omkara (no public reviews, single junk ~6K pax/year); generic competitors (Sunlight 500+ reviews, Paradise Elegance 1,500+) offer 'veg on request' not certified Jain",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "halong-bay",
     "source_refs": [
       "RPT-260417-002-featured-tours/sections/Section-04-T10-india-halong.md",
       "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
@@ -159,6 +162,7 @@
     "competition": "Whitespace absolute — zero true integrated day retreat; adjacent: Four Seasons Nam Hai (not bookable on OTA, $280-500), Naia Retreat (full-retreat format), generic yoga studios (~113 aggregated Viator reviews), Tra Que + spa combos ($30-55)",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "central-coast",
     "source_refs": [
       "RPT-260417-002-featured-tours/sections/Section-05-T12-hoi-an-wellness.md",
       "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
@@ -202,6 +206,7 @@
     "competition": "Whitespace absolute — no dedicated PH-market listings on Klook PH/Traveloka PH; indirect: generic VN operators (Deluxe Vietnam Tours, Asia Pioneer, Viet Vision) + PH-side agents (Regent, Rakso, Blue Horizons) + DIY Klook self-assembly baseline $245-290 land-only",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "south-city",
     "source_refs": [
       "RPT-260417-002-featured-tours/sections/Section-06-T18-ph-barkada-hcmc.md",
       "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
@@ -240,6 +245,7 @@
     "competition": "Mid-premium cruise+land combo slot unoccupied — Heritage Line cruise-only ~$1K, Trails of Indochina $5K+ land-only, Intrepid $1.6K mass group",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "halong-bay",
     "source_refs": [
       "INBOUND-EN-PERSONA-01/sections/Section-07-archetypes.md#A1",
       "INBOUND-EN-PERSONA-01/sections/Section-02-personas.md#P1"
@@ -278,6 +284,7 @@
     "competition": "Whitespace — no current operator packages cruise-extend overnight shore-ex; Viator Cruises vertical lists only single-day shore-ex",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "halong-bay",
     "source_refs": [
       "INBOUND-EN-PERSONA-01/sections/Section-07-archetypes.md#A3",
       "INBOUND-EN-PERSONA-01/sections/Section-01-market-sizing.md#cruise-port-calls"
@@ -316,6 +323,7 @@
     "competition": "PH-tailored variant explicitly required (no current operator has barkada group-of-6 VN bucket-list 7D package at flat-price on Klook PH)",
     "confidence": "HIGH",
     "coverage_gap": false,
+    "cover_theme": "multi-region",
     "source_refs": [
       "INBOUND-EN-PERSONA-01/sections/Section-07-archetypes.md#A5",
       "INBOUND-EN-PERSONA-01/sections/Section-06-philippines.md"
@@ -355,7 +363,8 @@
     "coverage_gap": true,
     "source_refs": [
       "RPT-260416-001/sections/Section-02-tour-categories.md#rank-1-food"
-    ]
+    ],
+    "cover_theme": "north-food"
   },
   {
     "id": "CAT-02",
@@ -391,7 +400,8 @@
     "coverage_gap": true,
     "source_refs": [
       "RPT-260416-001/sections/Section-02-tour-categories.md#rank-2-cooking"
-    ]
+    ],
+    "cover_theme": "central-coast"
   },
   {
     "id": "CAT-03",

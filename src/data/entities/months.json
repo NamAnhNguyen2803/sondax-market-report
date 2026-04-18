@@ -231,6 +231,49 @@
     "source_refs": [
       "RPT-260416-001/sections/Section-08-seasonal.md#L57-L66",
       "RPT-260416-001/sections/Section-08-seasonal.md#L100-L118"
+    ],
+    "demand_matrix": [
+      {"market_id": "US", "level": "MEDIUM", "rationale": "Memorial Day weekend kickoff"},
+      {"market_id": "UK", "level": "LOW", "rationale": "No school holiday driver"},
+      {"market_id": "CA", "level": "LOW", "rationale": "School still in session"},
+      {"market_id": "AU", "level": "LOW-MEDIUM", "rationale": "Pre-winter-break period"},
+      {"market_id": "NZ", "level": "LOW", "rationale": "No holiday window"},
+      {"market_id": "IE", "level": "LOW", "rationale": "Schools still running"},
+      {"market_id": "SG", "level": "MEDIUM", "rationale": "Pre-holiday bookings, June holiday starts May 30"},
+      {"market_id": "IN", "level": "HIGH", "rationale": "Summer holiday peak"},
+      {"market_id": "PH", "level": "HIGH", "rationale": "Summer break in full swing"},
+      {"market_id": "ZA", "level": "LOW", "rationale": "No holiday driver"}
+    ],
+    "regional_suitability": [
+      {"region": "Central Coast (Da Nang, Hoi An, Hue)", "rating": "EXCELLENT", "best_for": "Beach + Cultural tours", "note": "DRY SEASON May-Aug — insight quan trọng nhất"},
+      {"region": "Nha Trang / South-Central Coast", "rating": "EXCELLENT", "best_for": "Beach resort, island hopping", "note": "Mùa khô dài nhất VN, vẫn nhiều nắng"},
+      {"region": "Northern Mountains (Sapa, Ha Giang, Mu Cang Chai)", "rating": "GOOD", "best_for": "Trekking, photography, homestays", "note": "Water-mirror rice terraces — pouring water season"},
+      {"region": "Central Highlands (Da Lat, Buon Ma Thuot)", "rating": "GOOD", "best_for": "Wellness, slow travel, coffee tours", "note": "Mát mẻ quanh năm 18-25°C, all-season"},
+      {"region": "Ha Long Bay / Cat Ba", "rating": "GOOD", "best_for": "Cruises, kayaking", "note": "Còn tốt trước khi Jul-Aug vào mùa bão"},
+      {"region": "Ho Chi Minh City", "rating": "GOOD", "best_for": "Food tours, city tours, Cu Chi tunnels", "note": "Urban tours ít bị ảnh hưởng thời tiết"},
+      {"region": "Mekong Delta", "rating": "GOOD", "best_for": "Floating markets, river tours, fruit orchards", "note": "Chưa vào mùa lũ — cảnh bình thường"},
+      {"region": "Phu Quoc", "rating": "GOOD", "best_for": "Beach, snorkeling, resort", "note": "Transition — chưa vào mùa mưa Jun-Sep"},
+      {"region": "Phong Nha / Quang Binh", "rating": "GOOD", "best_for": "Cave exploration, adventure", "note": "Best window trước mùa lớn Aug-Oct"},
+      {"region": "Hanoi", "rating": "GOOD", "best_for": "Food tours, cultural, Old Quarter", "note": "Best months May-Jun trước khi Jul-Aug rất nóng"}
+    ],
+    "festivals_detail": [
+      {"name": "Da Nang International Fireworks Festival (DIFF 2026)", "dates": "May 30 → Jul 11", "location": "Da Nang (Han River)", "duration": "~6 tuần, 4-5 đêm thi", "tourist_appeal": "Very High — spectacular international fireworks competition, 8 teams từ 8 nước", "tie_in": "Package 'DIFF Night + Hoi An Day' tour; upsell premium riverside viewing", "confidence": "HIGH"},
+      {"name": "Hue Festival 2026 — Summer Festival", "dates": "Apr-Jun (peak week Apr 1-7)", "location": "Hue city", "duration": "Year-round program, peak 2 tuần", "tourist_appeal": "High — cultural performances, royal court reenactments, ao dai shows, 80+ events", "tie_in": "Combo 'Hue Festival + Da Nang DIFF' cho Central Coast itinerary", "confidence": "HIGH"},
+      {"name": "Buddha's Birthday (Phat Dan)", "dates": "May 24-31, 2026", "location": "Nationwide (Hue temples, HCMC pagodas)", "duration": "~1 tuần", "tourist_appeal": "Medium — temple decorations, lantern ceremonies, processions", "tie_in": "Add-on cho cultural tours; Hue + Hoi An lantern combo", "confidence": "MEDIUM"},
+      {"name": "Hoi An Lantern Festival (Full Moon)", "dates": "May 27, 2026", "location": "Hoi An Ancient Town", "duration": "1 đêm", "tourist_appeal": "Very High — iconic, photogenic, must-do Hoi An experience", "tie_in": "TIME tour departures để khách có mặt Hoi An đúng đêm trăng", "confidence": "HIGH"},
+      {"name": "Sapa 'Pouring Water' Season", "dates": "May-Jun (rice planting)", "location": "Sapa, Mu Cang Chai, Ha Giang", "duration": "~4-6 tuần", "tourist_appeal": "Medium-High — ruộng bậc thang đổ nước, ảnh đẹp, unique visual", "tie_in": "Photography tours 'water mirror terraces'; timing tốt cho AU/SG travelers", "confidence": "MEDIUM"}
+    ],
+    "packaging_ideas": [
+      {"title": "Central Vietnam Festival Trail", "markets": ["SG", "IN", "PH"], "pitch": "5-7 day Hue-Da Nang-Hoi An với DIFF night + Hue festival + lantern night"}
+    ],
+    "wet_season_messaging": [
+      {"segment": "IN Family Groups", "primary_msg": "Summer family adventure: Vietnam is cooler than India in May-June", "secondary_msg": "Best value season + kid-friendly activities + vegetarian options available", "channel": "Klook, Viator — targeting Apr-May early bookings"},
+      {"segment": "SG Weekend Escapers", "primary_msg": "June holiday deal: same Vietnam, 30% less. Book fast, fly in 2 hours", "secondary_msg": "Rain? 2 hours max. Then the sunset is even more beautiful", "channel": "Klook, Traveloka — targeting May-Jun pre-booking"}
+    ],
+    "data_gaps": [
+      "Philippines seasonal pattern — flexible year-round, hạn chế behavioral data",
+      "Booking volume by month — demand matrix dùng school holiday proxy, chưa có actual numbers từ OTAs",
+      "Price elasticity by season — chưa biết optimal discount point cho IN/SG/PH markets"
     ]
   },
   {
@@ -281,6 +324,50 @@
     "source_refs": [
       "RPT-260416-001/sections/Section-08-seasonal.md#L40-L66",
       "RPT-260416-001/sections/Section-08-seasonal.md#L100-L118"
+    ],
+    "demand_matrix": [
+      {"market_id": "US", "level": "HIGH", "rationale": "Summer break starts late May"},
+      {"market_id": "UK", "level": "LOW-MEDIUM", "rationale": "Scotland break approaching late Jun"},
+      {"market_id": "CA", "level": "MEDIUM", "rationale": "Summer starts late Jun"},
+      {"market_id": "AU", "level": "MEDIUM-HIGH", "rationale": "Winter break starts, early breakers"},
+      {"market_id": "NZ", "level": "LOW-MEDIUM", "rationale": "Winter break late Jun"},
+      {"market_id": "IE", "level": "LOW-MEDIUM", "rationale": "Secondary schools end late May"},
+      {"market_id": "SG", "level": "HIGH", "rationale": "June holiday — biggest annual window"},
+      {"market_id": "IN", "level": "HIGH", "rationale": "Summer holiday continues"},
+      {"market_id": "PH", "level": "MEDIUM-HIGH", "rationale": "Summer break tail to mid-Jun"},
+      {"market_id": "ZA", "level": "LOW-MEDIUM", "rationale": "Winter break starts Jun 27"}
+    ],
+    "regional_suitability": [
+      {"region": "Central Coast (Da Nang, Hoi An, Hue)", "rating": "EXCELLENT", "best_for": "Beach + Cultural tours", "note": "DRY SEASON tiếp tục — window tốt nhất"},
+      {"region": "Nha Trang / South-Central Coast", "rating": "GOOD", "best_for": "Beach resort, island hopping", "note": "Vẫn nhiều nắng, mùa khô dài"},
+      {"region": "Northern Mountains (Sapa, Ha Giang, Mu Cang Chai)", "rating": "GOOD", "best_for": "Trekking, photography, homestays", "note": "Green rice starts — ruộng xanh mướt"},
+      {"region": "Central Highlands (Da Lat, Buon Ma Thuot)", "rating": "GOOD", "best_for": "Wellness, slow travel, coffee tours", "note": "Thác nước đẹp nhất Jun-Sep"},
+      {"region": "Ha Long Bay / Cat Ba", "rating": "GOOD", "best_for": "Cruises, kayaking", "note": "Còn tốt trước mùa bão Jul-Aug"},
+      {"region": "Ho Chi Minh City", "rating": "GOOD", "best_for": "Food tours, city tours, Cu Chi tunnels", "note": "Mưa chiều/tối 2-3h, không ảnh hưởng ban ngày"},
+      {"region": "Mekong Delta", "rating": "GOOD", "best_for": "Floating markets, river tours, fruit orchards", "note": "Chưa vào mùa lũ — bình thường"},
+      {"region": "Phu Quoc", "rating": "CAUTION", "best_for": "Beach, snorkeling, resort", "note": "Mùa mưa bắt đầu, gió mạnh phía Tây; east beach calm"},
+      {"region": "Phong Nha / Quang Binh", "rating": "GOOD", "best_for": "Cave exploration, adventure", "note": "Best window cho cave tours trước mùa lớn"},
+      {"region": "Hanoi", "rating": "GOOD", "best_for": "Food tours, cultural, Old Quarter", "note": "Vẫn trong window best May-Jun trước Jul-Aug nóng"}
+    ],
+    "festivals_detail": [
+      {"name": "Da Nang International Fireworks Festival (DIFF 2026)", "dates": "May 30 → Jul 11", "location": "Da Nang (Han River)", "duration": "~6 tuần, 4-5 đêm thi", "tourist_appeal": "Very High — spectacular international fireworks competition, 8 teams từ 8 nước", "tie_in": "Package 'DIFF Night + Hoi An Day' tour; upsell premium riverside viewing", "confidence": "HIGH"},
+      {"name": "Hue Festival 2026 — Summer Festival", "dates": "Apr-Jun", "location": "Hue city", "duration": "Year-round program, peak 2 tuần", "tourist_appeal": "High — cultural performances, royal court reenactments, ao dai shows", "tie_in": "Combo 'Hue Festival + Da Nang DIFF' cho Central Coast itinerary", "confidence": "HIGH"},
+      {"name": "International Children's Day", "dates": "Jun 1", "location": "Nationwide", "duration": "1 ngày", "tourist_appeal": "Low-Medium — parks, amusement venues có special events", "tie_in": "Relevant cho Indian/US family segment traveling Jun", "confidence": "LOW"},
+      {"name": "Hoi An Lantern Festival (Full Moon)", "dates": "Jun 25, 2026", "location": "Hoi An Ancient Town", "duration": "1 đêm", "tourist_appeal": "Very High — iconic, photogenic, must-do Hoi An experience", "tie_in": "TIME tour departures để khách có mặt Hoi An đúng đêm trăng", "confidence": "HIGH"},
+      {"name": "Sapa 'Pouring Water' Season", "dates": "May-Jun (rice planting)", "location": "Sapa, Mu Cang Chai, Ha Giang", "duration": "~4-6 tuần", "tourist_appeal": "Medium-High — ruộng bậc thang đổ nước, ảnh đẹp", "tie_in": "Photography tours 'water mirror terraces' cho AU/SG", "confidence": "MEDIUM"}
+    ],
+    "packaging_ideas": [
+      {"title": "Central Vietnam Festival Trail", "markets": ["SG", "IN", "PH"], "pitch": "5-7 day Hue-Da Nang-Hoi An với DIFF night + Hue festival + lantern night"}
+    ],
+    "wet_season_messaging": [
+      {"segment": "SG Weekend Escapers", "primary_msg": "June holiday deal: same Vietnam, 30% less. Book fast, fly in 2 hours", "secondary_msg": "Rain? 2 hours max. Then the sunset is even more beautiful", "channel": "Klook, Traveloka — targeting May-Jun pre-booking"},
+      {"segment": "IN Family Groups", "primary_msg": "Summer family adventure: Vietnam is cooler than India in May-June", "secondary_msg": "Best value season + kid-friendly activities + vegetarian options available", "channel": "Klook, Viator — targeting Apr-May early bookings"},
+      {"segment": "AU/NZ Winter Escapers", "primary_msg": "Escape your winter — Vietnam is warm, green, and uncrowded", "secondary_msg": "Australian winter = Vietnam's adventure season. Rice terraces at their greenest", "channel": "Viator, GYG — targeting Jun-Jul listings"}
+    ],
+    "data_gaps": [
+      "Philippines seasonal pattern — flexible year-round, hạn chế behavioral data",
+      "Booking volume by month — demand matrix dùng school holiday proxy",
+      "Weather impact on cancellations — chưa có data tỷ lệ cancel/refund theo mùa"
     ]
   },
   {
@@ -332,6 +419,49 @@
     "source_refs": [
       "RPT-260416-001/sections/Section-08-seasonal.md#L60-L66",
       "RPT-260416-001/sections/Section-08-seasonal.md#L100-L118"
+    ],
+    "demand_matrix": [
+      {"market_id": "US", "level": "HIGH", "rationale": "Peak family travel month"},
+      {"market_id": "UK", "level": "MEDIUM", "rationale": "Scotland peak, England starts mid-Jul"},
+      {"market_id": "CA", "level": "HIGH", "rationale": "Peak summer month"},
+      {"market_id": "AU", "level": "HIGH", "rationale": "Mid-year winter break peak"},
+      {"market_id": "NZ", "level": "MEDIUM-HIGH", "rationale": "Winter break Jul 4-19"},
+      {"market_id": "IE", "level": "HIGH", "rationale": "Summer starts Jul 1"},
+      {"market_id": "SG", "level": "MEDIUM", "rationale": "June holiday ends Jun 28"},
+      {"market_id": "IN", "level": "MEDIUM", "rationale": "Summer holiday winding down"},
+      {"market_id": "PH", "level": "MEDIUM", "rationale": "Flexible year-round travel"},
+      {"market_id": "ZA", "level": "MEDIUM", "rationale": "Winter break Jun 27 - Jul 20"}
+    ],
+    "regional_suitability": [
+      {"region": "Central Coast (Da Nang, Hoi An, Hue)", "rating": "GOOD", "best_for": "Beach + Cultural tours", "note": "Vẫn DRY — competitive advantage vs miền Bắc"},
+      {"region": "Nha Trang / South-Central Coast", "rating": "GOOD", "best_for": "Beach resort, island hopping", "note": "Vẫn nhiều nắng, mùa khô kéo dài"},
+      {"region": "Northern Mountains (Sapa, Ha Giang, Mu Cang Chai)", "rating": "GOOD", "best_for": "Trekking, photography, homestays", "note": "Lush green peak — ruộng xanh mướt nhất"},
+      {"region": "Central Highlands (Da Lat, Buon Ma Thuot)", "rating": "GOOD", "best_for": "Wellness, slow travel, coffee tours", "note": "Mát mẻ 18-25°C, thác nước đẹp"},
+      {"region": "Ha Long Bay / Cat Ba", "rating": "CAUTION", "best_for": "Cruises, kayaking", "note": "Nóng + mưa nhiều + risk bão"},
+      {"region": "Ho Chi Minh City", "rating": "GOOD", "best_for": "Food tours, city tours, Cu Chi tunnels", "note": "Urban tours ít bị ảnh hưởng thời tiết"},
+      {"region": "Mekong Delta", "rating": "GOOD-EXCELLENT", "best_for": "Floating markets, river tours, fruit orchards", "note": "Mùa LŨ bắt đầu — HIGH SEASON, nước đang dâng"},
+      {"region": "Phu Quoc", "rating": "CAUTION", "best_for": "Beach, snorkeling, resort", "note": "Mùa mưa, gió mạnh phía Tây; east beach vẫn calm"},
+      {"region": "Phong Nha / Quang Binh", "rating": "GOOD", "best_for": "Cave exploration, adventure", "note": "Vẫn tốt trước mùa lớn Aug-Oct"},
+      {"region": "Hanoi", "rating": "CAUTION", "best_for": "Food tours, cultural, Old Quarter", "note": "Rất nóng 35-37°C; night food tours là workaround"}
+    ],
+    "festivals_detail": [
+      {"name": "Da Nang International Fireworks Festival (DIFF 2026) — Finals", "dates": "May 30 → Jul 11", "location": "Da Nang (Han River)", "duration": "Tuần cuối — đêm chung kết", "tourist_appeal": "Very High — đêm chung kết spectacular, draw hàng chục ngàn tourists", "tie_in": "Package 'Fireworks Finale + Lantern Night' combo; upsell premium riverside", "confidence": "HIGH"},
+      {"name": "Hoi An Lantern Festival (Full Moon)", "dates": "Jul 25, 2026", "location": "Hoi An Ancient Town", "duration": "1 đêm", "tourist_appeal": "Very High — iconic, photogenic, must-do Hoi An experience", "tie_in": "TIME tour departures để khách có mặt Hoi An đúng đêm trăng", "confidence": "HIGH"},
+      {"name": "Mekong Delta Floating Market High Season", "dates": "Jul-Oct (starts Jul)", "location": "Can Tho, Cai Rang, Phong Dien", "duration": "Ongoing (peak flood season)", "tourist_appeal": "High — floating markets nhộn nhịp nhất khi nước dâng cao, authentic, photogenic", "tie_in": "Position Mekong tours 'Rising Waters' — peak season messaging", "confidence": "MEDIUM"}
+    ],
+    "packaging_ideas": [
+      {"title": "Fireworks Finale + Lantern Night", "markets": ["US", "AU", "CA"], "pitch": "Combo DIFF chung kết + Hoi An Full Moon (Jul 25) cho Central Coast itinerary"},
+      {"title": "Mekong Delta 'Rising Waters' Tour", "markets": ["US", "AU", "CA"], "pitch": "Launch peak flood-season Mekong tour — floating markets ở đỉnh nước"}
+    ],
+    "wet_season_messaging": [
+      {"segment": "US/CA Summer Families", "primary_msg": "Summer in Vietnam: morning sun, afternoon tropical shower, evening magic", "secondary_msg": "Central Vietnam beaches are actually in DRY season May-August. Best-kept secret", "channel": "Viator — targeting Jul-Aug family tour listings"},
+      {"segment": "AU/NZ Winter Escapers", "primary_msg": "Escape your winter — Vietnam is warm, green, and uncrowded", "secondary_msg": "Australian winter = Vietnam's adventure season. Rice terraces at their greenest", "channel": "Viator, GYG — targeting Jun-Jul listings"},
+      {"segment": "UK/IE Summer Travelers", "primary_msg": "Fewer crowds, greener landscapes, lower prices — Vietnam's green season", "secondary_msg": "Off-peak means ON for authentic experiences. Talk to locals, not other tourists", "channel": "GYG, TripAdvisor — targeting late Jul (Scotland peak)"}
+    ],
+    "data_gaps": [
+      "Booking volume by month — demand matrix dùng school holiday proxy, chưa có actual numbers từ OTAs",
+      "Weather impact on cancellations — chưa có data tỷ lệ cancel/refund mùa Jul bão",
+      "Festival attendance by international tourists — không biết % international vs domestic tại DIFF finals"
     ]
   },
   {
@@ -383,6 +513,44 @@
     "source_refs": [
       "RPT-260416-001/sections/Section-08-seasonal.md#L40-L66",
       "RPT-260416-001/sections/Section-08-seasonal.md#L80-L100"
+    ],
+    "demand_matrix": [
+      {"market_id": "US", "level": "HIGH", "rationale": "Late summer family travel continues"},
+      {"market_id": "UK", "level": "HIGH", "rationale": "England summer peak month"},
+      {"market_id": "CA", "level": "HIGH", "rationale": "Summer peak continues"},
+      {"market_id": "AU", "level": "MEDIUM", "rationale": "Winter break ended mid-Jul"},
+      {"market_id": "NZ", "level": "LOW-MEDIUM", "rationale": "Between winter and Sep break"},
+      {"market_id": "IE", "level": "HIGH", "rationale": "Summer peak Aug"},
+      {"market_id": "SG", "level": "MEDIUM-HIGH", "rationale": "National Day Aug 9 long weekend"},
+      {"market_id": "IN", "level": "MEDIUM", "rationale": "Independence Day Aug 15 mini-peak"},
+      {"market_id": "PH", "level": "MEDIUM", "rationale": "Year-round flexible"},
+      {"market_id": "ZA", "level": "LOW", "rationale": "Winter break ended Jul 20"}
+    ],
+    "regional_suitability": [
+      {"region": "Central Coast (Da Nang, Hoi An, Hue)", "rating": "GOOD", "best_for": "Beach + Cultural tours", "note": "Vẫn khô cuối mùa; độ ẩm bắt đầu tăng cuối tháng"},
+      {"region": "Nha Trang / South-Central Coast", "rating": "GOOD", "best_for": "Beach resort, island hopping", "note": "Mùa khô dài — vẫn tốt, chuyển mùa nhẹ"},
+      {"region": "Northern Mountains (Sapa, Ha Giang, Mu Cang Chai)", "rating": "CAUTION", "best_for": "Trekking, photography, homestays", "note": "Mưa lớn + risk sạt lở — tháng khó nhất"},
+      {"region": "Central Highlands (Da Lat, Buon Ma Thuot)", "rating": "GOOD", "best_for": "Wellness, slow travel, coffee tours", "note": "Mát mẻ quanh năm, thác nước đẹp"},
+      {"region": "Ha Long Bay / Cat Ba", "rating": "CAUTION", "best_for": "Cruises, kayaking", "note": "Nóng + mưa + risk bão; flexible cancellation cần thiết"},
+      {"region": "Ho Chi Minh City", "rating": "GOOD", "best_for": "Food tours, city tours, Cu Chi tunnels", "note": "Urban tours không bị ảnh hưởng; mưa chiều 1-2h"},
+      {"region": "Mekong Delta", "rating": "EXCELLENT", "best_for": "Floating markets, river tours, fruit orchards", "note": "Peak flood season — nước dâng cao nhất, competitive advantage lớn"},
+      {"region": "Phu Quoc", "rating": "CAUTION", "best_for": "Beach, snorkeling, resort", "note": "Mùa mưa cao điểm; giá rẻ 20-40%, east beach calm"},
+      {"region": "Phong Nha / Quang Binh", "rating": "CAUTION", "best_for": "Cave exploration, adventure", "note": "Mùa lớn bắt đầu — có thể cause flooding"},
+      {"region": "Hanoi", "rating": "CAUTION", "best_for": "Food tours, cultural, Old Quarter", "note": "Nóng + ẩm; night food tours là workaround tốt"}
+    ],
+    "festivals_detail": [
+      {"name": "Hoi An Lantern Festival (Full Moon)", "dates": "Aug 23, 2026", "location": "Hoi An Ancient Town", "duration": "1 đêm", "tourist_appeal": "Very High — iconic, photogenic, must-do Hoi An experience", "tie_in": "TIME tour departures để khách có mặt Hoi An đúng đêm trăng", "confidence": "HIGH"},
+      {"name": "Mekong Delta Floating Market High Season", "dates": "Jul-Oct (peak Aug)", "location": "Can Tho, Cai Rang, Phong Dien", "duration": "Ongoing (peak flood season)", "tourist_appeal": "High — floating markets nhộn nhịp nhất, nước dâng cao", "tie_in": "Position Mekong tours 'peak season' — competitive advantage messaging", "confidence": "MEDIUM"}
+    ],
+    "packaging_ideas": [],
+    "wet_season_messaging": [
+      {"segment": "UK/IE Summer Travelers", "primary_msg": "Fewer crowds, greener landscapes, lower prices — Vietnam's green season", "secondary_msg": "Off-peak means ON for authentic experiences. Talk to locals, not other tourists", "channel": "GYG, TripAdvisor — targeting late Jul-Aug"},
+      {"segment": "US/CA Summer Families", "primary_msg": "Summer in Vietnam: morning sun, afternoon tropical shower, evening magic", "secondary_msg": "Central Vietnam beaches are actually in DRY season May-August. Best-kept secret", "channel": "Viator — targeting Jul-Aug family tour listings"}
+    ],
+    "data_gaps": [
+      "Weather impact on cancellations — không có data tỷ lệ cancel/refund Aug (tháng khó nhất)",
+      "Booking volume by month — demand matrix dùng school holiday proxy",
+      "Philippines seasonal pattern — flexible year-round, limited behavioral data"
     ]
   },
   {
@@ -438,6 +606,50 @@
     "source_refs": [
       "RPT-260416-001/sections/Section-08-seasonal.md#L62-L66",
       "RPT-260416-001/sections/Section-08-seasonal.md#L100-L127"
+    ],
+    "demand_matrix": [
+      {"market_id": "US", "level": "MEDIUM", "rationale": "Labor Day tail early Sep"},
+      {"market_id": "UK", "level": "LOW-MEDIUM", "rationale": "Early Sep school return"},
+      {"market_id": "CA", "level": "LOW", "rationale": "Sep school return"},
+      {"market_id": "AU", "level": "MEDIUM", "rationale": "Term 3 break late Sep"},
+      {"market_id": "NZ", "level": "MEDIUM", "rationale": "Late Sep break Sep 26 - Oct 11"},
+      {"market_id": "IE", "level": "LOW", "rationale": "Schools returned"},
+      {"market_id": "SG", "level": "MEDIUM", "rationale": "Sep break Sep 5-13"},
+      {"market_id": "IN", "level": "LOW-MEDIUM", "rationale": "No major holiday"},
+      {"market_id": "PH", "level": "MEDIUM", "rationale": "Year-round flexible"},
+      {"market_id": "ZA", "level": "LOW", "rationale": "No holiday driver"}
+    ],
+    "regional_suitability": [
+      {"region": "Central Coast (Da Nang, Hoi An, Hue)", "rating": "CAUTION", "best_for": "Beach + Cultural tours", "note": "Mùa bắt đầu, peak Oct-Nov có risk bão"},
+      {"region": "Nha Trang / South-Central Coast", "rating": "CAUTION", "best_for": "Beach resort, island hopping", "note": "Mùa mưa bắt đầu, nhẹ hơn Central"},
+      {"region": "Northern Mountains (Sapa, Ha Giang, Mu Cang Chai)", "rating": "EXCELLENT", "best_for": "Trekking, photography, homestays", "note": "Lúa chín vàng! Harvest season — peak photography"},
+      {"region": "Central Highlands (Da Lat, Buon Ma Thuot)", "rating": "GOOD", "best_for": "Wellness, slow travel, coffee tours", "note": "Mát mẻ quanh năm, thác nước đẹp"},
+      {"region": "Ha Long Bay / Cat Ba", "rating": "CAUTION", "best_for": "Cruises, kayaking", "note": "Cải thiện dần nhưng vẫn có risk bão"},
+      {"region": "Ho Chi Minh City", "rating": "GOOD", "best_for": "Food tours, city tours, Cu Chi tunnels", "note": "Urban tours không bị ảnh hưởng"},
+      {"region": "Mekong Delta", "rating": "EXCELLENT", "best_for": "Floating markets, river tours, fruit orchards", "note": "Vẫn peak flood season — nước dâng cao, authentic"},
+      {"region": "Phu Quoc", "rating": "CAUTION", "best_for": "Beach, snorkeling, resort", "note": "Mùa mưa cuối; giá rẻ, east beach vẫn calm"},
+      {"region": "Phong Nha / Quang Binh", "rating": "CAUTION-AVOID", "best_for": "Cave exploration, adventure", "note": "Flooding risk — đa số cave tours dừng"},
+      {"region": "Hanoi", "rating": "GOOD", "best_for": "Food tours, cultural, Old Quarter", "note": "Best month — mát hơn, ít mưa hơn"}
+    ],
+    "festivals_detail": [
+      {"name": "Vietnam National Day", "dates": "Sep 2, 2026", "location": "Nationwide (Hanoi biggest celebrations)", "duration": "1 ngày + long weekend", "tourist_appeal": "Medium — parades, fireworks in Hanoi; domestic tourism spike", "tie_in": "Book tours/hotels sớm; international tourists có thể enjoy festive atmosphere", "confidence": "MEDIUM"},
+      {"name": "Mu Cang Chai Paragliding Festival", "dates": "Sep (late Sep typically)", "location": "Mu Cang Chai, Yen Bai", "duration": "2-3 ngày", "tourist_appeal": "High — paragliding over golden rice terraces, growing international interest", "tie_in": "Package 'Paragliding + Harvest Trek' cho Adventure Seeker persona; align SG/AU/NZ Sep break", "confidence": "MEDIUM"},
+      {"name": "Hoi An Lantern Festival (Full Moon)", "dates": "Sep 22, 2026", "location": "Hoi An Ancient Town", "duration": "1 đêm", "tourist_appeal": "Very High — iconic, photogenic, must-do Hoi An experience", "tie_in": "TIME tour departures để khách có mặt Hoi An đúng đêm trăng", "confidence": "HIGH"},
+      {"name": "Mid-Autumn Festival (Tet Trung Thu)", "dates": "Sep 25, 2026", "location": "Nationwide (Hoi An, Hanoi Old Quarter, HCMC)", "duration": "~3-5 ngày leading up", "tourist_appeal": "High — mooncakes, lion dances, lanterns, children's activities", "tie_in": "Family-friendly cultural; 'Moon Festival in Hoi An' tour cho SG/AU Sep break", "confidence": "HIGH"},
+      {"name": "Mekong Delta Floating Market High Season", "dates": "Jul-Oct", "location": "Can Tho, Cai Rang, Phong Dien", "duration": "Ongoing (peak flood season)", "tourist_appeal": "High — floating markets vẫn nhộn nhịp, nước dâng cao", "tie_in": "'Peak season' messaging — competitive advantage", "confidence": "MEDIUM"}
+    ],
+    "packaging_ideas": [
+      {"title": "Golden Harvest + Moon Festival", "markets": ["SG", "AU", "NZ"], "pitch": "5-day Northern Vietnam với Mu Cang Chai paragliding + golden rice + Mid-Autumn"},
+      {"title": "Hoi An Moon Festival Night", "markets": ["SG", "AU", "NZ"], "pitch": "Day tour với Mid-Autumn celebrations tại Hoi An Old Town"}
+    ],
+    "wet_season_messaging": [
+      {"segment": "SG Weekend Escapers", "primary_msg": "June holiday deal: same Vietnam, 30% less. Book fast, fly in 2 hours", "secondary_msg": "Rain? 2 hours max. Then the sunset is even more beautiful", "channel": "Klook, Traveloka — targeting Sep break window"}
+    ],
+    "data_gaps": [
+      "Philippines seasonal pattern — flexible year-round, limited behavioral data",
+      "Festival attendance by international tourists — không biết % international tại Mid-Autumn",
+      "Booking volume by month — Sep shoulder, chưa có actual OTA numbers",
+      "Price elasticity by season — optimal discount cho shoulder Sep"
     ]
   },
   {
@@ -494,6 +706,44 @@
     "source_refs": [
       "RPT-260416-001/sections/Section-08-seasonal.md#L62-L66",
       "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L82-L91"
+    ],
+    "demand_matrix": [
+      {"market_id": "US", "level": "LOW", "rationale": "Schools in full session"},
+      {"market_id": "UK", "level": "LOW", "rationale": "Half-term is late Oct, small window"},
+      {"market_id": "CA", "level": "LOW", "rationale": "Schools in session"},
+      {"market_id": "AU", "level": "LOW-MEDIUM", "rationale": "Term 3 break tail early Oct"},
+      {"market_id": "NZ", "level": "MEDIUM", "rationale": "Oct break Sep 26 - Oct 11"},
+      {"market_id": "IE", "level": "LOW", "rationale": "Schools in session"},
+      {"market_id": "SG", "level": "LOW-MEDIUM", "rationale": "Sep break ended, no major Oct holiday"},
+      {"market_id": "IN", "level": "LOW", "rationale": "No major holiday driver"},
+      {"market_id": "PH", "level": "MEDIUM", "rationale": "Year-round flexible"},
+      {"market_id": "ZA", "level": "LOW", "rationale": "No holiday driver"}
+    ],
+    "regional_suitability": [
+      {"region": "Central Coast (Da Nang, Hoi An, Hue)", "rating": "AVOID", "best_for": "Beach + Cultural tours", "note": "Mùa peak Oct-Nov — risk bão cao"},
+      {"region": "Nha Trang / South-Central Coast", "rating": "CAUTION", "best_for": "Beach resort, island hopping", "note": "Mùa mưa tiếp tục, nhẹ hơn Central"},
+      {"region": "Northern Mountains (Sapa, Ha Giang, Mu Cang Chai)", "rating": "EXCELLENT", "best_for": "Trekking, photography, homestays", "note": "Harvest season peak — lúa chín vàng rực rỡ"},
+      {"region": "Central Highlands (Da Lat, Buon Ma Thuot)", "rating": "GOOD", "best_for": "Wellness, slow travel, coffee tours", "note": "Mát mẻ quanh năm, all-season destination"},
+      {"region": "Ha Long Bay / Cat Ba", "rating": "GOOD", "best_for": "Cruises, kayaking", "note": "Cải thiện dần, mùa mưa nhẹ đi"},
+      {"region": "Ho Chi Minh City", "rating": "GOOD", "best_for": "Food tours, city tours, Cu Chi tunnels", "note": "Urban tours không bị ảnh hưởng"},
+      {"region": "Mekong Delta", "rating": "GOOD", "best_for": "Floating markets, river tours, fruit orchards", "note": "Cuối mùa lũ, vẫn đẹp"},
+      {"region": "Phu Quoc", "rating": "GOOD", "best_for": "Beach, snorkeling, resort", "note": "Improving — mùa mưa kết thúc dần"},
+      {"region": "Phong Nha / Quang Binh", "rating": "AVOID", "best_for": "Cave exploration, adventure", "note": "Flooding cao điểm — đa số cave tours dừng"},
+      {"region": "Hanoi", "rating": "GOOD", "best_for": "Food tours, cultural, Old Quarter", "note": "Best months — mát, ít mưa"}
+    ],
+    "festivals_detail": [
+      {"name": "Hoi An Lantern Festival (Full Moon)", "dates": "Oct 21, 2026", "location": "Hoi An Ancient Town", "duration": "1 đêm", "tourist_appeal": "Very High — iconic, photogenic, must-do Hoi An experience", "tie_in": "TIME tour departures để khách có mặt Hoi An đúng đêm trăng", "confidence": "HIGH"},
+      {"name": "Mekong Delta Floating Market High Season", "dates": "Jul-Oct (cuối mùa)", "location": "Can Tho, Cai Rang, Phong Dien", "duration": "Ongoing (flood season tail)", "tourist_appeal": "High — floating markets vẫn nhộn nhịp, nước dâng cao cuối mùa", "tie_in": "'Peak season' messaging — last chance trước khi water recedes", "confidence": "MEDIUM"}
+    ],
+    "packaging_ideas": [
+      {"title": "Golden Harvest + Moon Festival", "markets": ["SG", "AU", "NZ"], "pitch": "5-day Northern Vietnam với harvest season + Hoi An Full Moon (Oct 21)"}
+    ],
+    "wet_season_messaging": [],
+    "data_gaps": [
+      "Booking volume by month — Oct low-medium, chưa có actual OTA numbers",
+      "Philippines seasonal pattern — flexible year-round, limited behavioral data",
+      "Weather impact on cancellations — không có data tỷ lệ cancel/refund Oct bão",
+      "Price elasticity by season — optimal discount point cho shoulder Oct"
     ]
   },
   {
