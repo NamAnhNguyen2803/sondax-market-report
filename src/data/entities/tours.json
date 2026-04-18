@@ -1,0 +1,689 @@
+[
+  {
+    "id": "T1",
+    "name": "Half-Day Hanoi Street Food Tour",
+    "type": "featured",
+    "tagline": "Craft beer + morning market + egg coffee heritage walk — niche niche instead of generic pho/bun cha",
+    "duration": "Half-day 4h",
+    "price_range": {
+      "min_usd": 45,
+      "max_usd": 55,
+      "tier": "mid",
+      "note": "mid-tier niche ($45-55); private tier $85-120; cannot match Real Foodie $29-35 budget tier"
+    },
+    "region": "North",
+    "hotness_score": 7.725,
+    "fund_decision": "hold",
+    "launch_budget_usd": 42500,
+    "peak_month_ids": [5, 6, 9, 10],
+    "shoulder_month_ids": [7, 8],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P7"],
+    "origin_market_ids": ["US", "UK", "AU", "CA"],
+    "OTA_channels": ["Viator", "GetYourGuide", "Airbnb Experiences", "Klook"],
+    "vendors": ["Dong Xuan Market vendors", "Pasteur Street craft beer", "Furbrew", "Bia Hoi Corner", "Giang Cafe", "Bun Cha Huong Lien"],
+    "unique_selling_point": "Only operator positioning craft beer morning + Dong Xuan dawn vendors + egg coffee heritage — Real Foodie dominates generic food sort but not this niche filter",
+    "risks": [
+      "Real Foodie 4,794-review moat on Viator (9 years head-start)",
+      "Hanoi Jul-Aug 37°C heat requires morning-only variant",
+      "Guide attrition = 0.2-0.4 star rating drop",
+      "Viator algorithm dependency (70% of Y1 bookings)",
+      "Real Foodie could launch craft beer variant (dilution risk)"
+    ],
+    "competition": "High review moat — Real Foodie 4,794 reviews 4.9★ ($29-35), Local Delicacies 1,680 reviews, Ella 1,029 reviews; must carve niche filter instead of competing generic",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "RPT-260417-002-featured-tours/sections/Section-02-T1-hanoi-street-food.md",
+      "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
+      "RPT-260417-002-featured-tours/Summary.md"
+    ]
+  },
+  {
+    "id": "T4",
+    "name": "3-Day Ha Giang Loop by Jeep",
+    "type": "featured",
+    "tagline": "Ha Giang's most breathtaking roads without motorbike anxiety — enclosed 4x4 Land Cruiser, max 6 guests, non-rider 35+ premium small-group",
+    "duration": "3-4 days",
+    "price_range": {
+      "min_usd": 599,
+      "max_usd": 999,
+      "tier": "premium",
+      "note": "$599 mid-premium, $799 premium (upgraded homestay), $999 private (group of 3-4); cannot match $229-315 motorbike/Open Air Jeep — unit economics demand ≥$599"
+    },
+    "region": "North",
+    "hotness_score": 7.075,
+    "fund_decision": "Q4",
+    "launch_budget_usd": 112500,
+    "peak_month_ids": [6, 7, 9, 10],
+    "shoulder_month_ids": [5, 8],
+    "target_persona_ids": ["P2", "P3"],
+    "secondary_persona_ids": ["P1", "P7"],
+    "origin_market_ids": ["AU", "UK", "US", "NZ"],
+    "OTA_channels": ["Viator", "TripAdvisor Experiences", "GetYourGuide", "TourRadar", "Klook"],
+    "vendors": ["Land Cruiser/UAZ Jeep supplier Ha Giang", "Ha Giang-based fixer (permit + homestay)", "Dong Van homestays (Lo Lo Chai, Hmong Village)", "Meo Vac homestays (Auberge de Meo Vac)", "Green Limousine / Hoang Long transfer", "Generali/Liberty outdoor insurance"],
+    "unique_selling_point": "Jeep-only non-rider 35+ positioning — motorbike dominates 85% supply but excludes non-rider + solo-female + older demographic; enclosed cabin + female-guide option + 6-pax small group",
+    "risks": [
+      "Border-zone permit (NĐ 34/2014/NĐ-CP) — enforcement tightened 2024-2025; permit denial = tour cancel",
+      "Ma Pi Leng Pass safety — cliff drop 700m, landslide risk Jun-Aug (esp. August)",
+      "Fog Nov-Feb severely limits visibility on cliff road",
+      "Jeep breakdown on Ma Pi Leng (2.5-3h evac to Ha Giang hospital)",
+      "Homestay quality variance between operators",
+      "Motorbike operators could add Jeep variant (6-12 month reaction)",
+      "Insurance claim spike could raise premium 30-50% next renewal"
+    ],
+    "competition": "Fragmented — top motorbike Ha Giang 3D2N 943 reviews 4.8★ ($180-250); top Jeep-specific Open Air Jeep only 395 reviews 4.7★ ($229-315); no dominant brand, hostel-affiliated ops invisible on OTA",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "RPT-260417-002-featured-tours/sections/Section-03-T4-ha-giang-jeep.md",
+      "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
+      "RPT-260417-002-featured-tours/Summary.md"
+    ]
+  },
+  {
+    "id": "T10",
+    "name": "India Family Halong Bay Cruise",
+    "type": "featured",
+    "tagline": "Vietnam's first and only Halong Bay cruise with independently certified Jain kitchen — no root vegetables, no cross-contamination",
+    "duration": "2-3 days",
+    "price_range": {
+      "min_usd": 95,
+      "max_usd": 420,
+      "tier": "mid",
+      "note": "V1 day cruise $115 (loss-leader); V2 overnight $280-310 (primary revenue driver); V3 deluxe 3D2N $420; group discount 10% for 6+"
+    },
+    "region": "North",
+    "hotness_score": 7.3,
+    "fund_decision": "Q3",
+    "launch_budget_usd": 62000,
+    "peak_month_ids": [5, 6, 10, 11, 12, 1, 2],
+    "shoulder_month_ids": [3, 4, 7, 8],
+    "target_persona_ids": ["P6"],
+    "secondary_persona_ids": ["P7"],
+    "origin_market_ids": ["IN"],
+    "OTA_channels": ["MakeMyTrip", "Yatra", "Goibibo", "Booking.com", "Viator", "Klook", "Direct + WhatsApp"],
+    "vendors": ["Bhaya Cruises (primary mid-tier junk partner)", "Paradise Elegance (premium tier junk)", "Indian chef (Mumbai/Delhi origin)", "VN sous-chef (Jain protocol trained)", "Jain Association BKK consultant (certification audit)", "Hanoi-Halong van transfer (12-seat / 45-seat coach)"],
+    "unique_selling_point": "Single-player monopoly (Omkara) does not claim Jain-certified — Sondax first-mover gets external certification + Jain community endorsement before Omkara reacts (6-9 month defense window)",
+    "risks": [
+      "Typhoon Jul-Aug Halong Bay (5-15% sailings cancelled historically)",
+      "Jain kitchen cross-contamination = brand destruction in 7 days via WhatsApp",
+      "VN veg-labelling regulatory grey zone (FSSAI alignment required)",
+      "Omkara could launch Jain variant within 6-9 months",
+      "Hindi-speaking guide pipeline thin (5-15 candidates in Hanoi)",
+      "India-VN visa/bilateral policy volatility",
+      "Junk operator safety incident (brand spillover)"
+    ],
+    "competition": "Monopoly in Indian-specialized segment — Omkara (no public reviews, single junk ~6K pax/year); generic competitors (Sunlight 500+ reviews, Paradise Elegance 1,500+) offer 'veg on request' not certified Jain",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "RPT-260417-002-featured-tours/sections/Section-04-T10-india-halong.md",
+      "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
+      "RPT-260417-002-featured-tours/Summary.md"
+    ]
+  },
+  {
+    "id": "T12",
+    "name": "Hoi An Wellness Day Retreat",
+    "type": "featured",
+    "tagline": "Hoi An's 500-year Cham-heritage herbal healing tradition as a 4-hour immersion — sunrise yoga + herbal bath + plant-based lunch",
+    "duration": "Half-day 3.5-4h",
+    "price_range": {
+      "min_usd": 139,
+      "max_usd": 299,
+      "tier": "premium",
+      "note": "$139 standard + $199 couple + $299 private; mid-tier $99 NOT viable (COGS $95 steady-state); premium positioning justified by Cham-heritage + Yoga Alliance cert"
+    },
+    "region": "Central",
+    "hotness_score": 5.175,
+    "fund_decision": "Q1-2027-cond",
+    "launch_budget_usd": 78500,
+    "peak_month_ids": [2, 3, 4, 12, 1],
+    "shoulder_month_ids": [5, 6, 7, 8],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P7"],
+    "origin_market_ids": ["US", "UK", "AU", "CA", "SG"],
+    "OTA_channels": ["Airbnb Experiences", "Viator", "GetYourGuide", "Klook", "Mindbody/ClassPass"],
+    "vendors": ["Rice-field villa venue (6-month lease) or boutique hotel partnership (Victoria Hoi An, Almanity, La Siesta)", "Cham-heritage herbalist (12-month recipe exclusivity)", "Vegan restaurant partner (Mai's Spring, The Field Restaurant)", "Tra Que herb garden", "VN-certified yoga instructors (Yoga Alliance 200hr)", "Hoi An-based fixer + legal consultant"],
+    "unique_selling_point": "Only integrated 3-5h day retreat in Hoi An — zero direct competitors; Cham-heritage authenticity moat Four Seasons/Naia cannot copy (their brand is global luxury, not regional heritage)",
+    "risks": [
+      "Typhoon Sep-Nov Central Coast (Oct historically worst)",
+      "Spa/massage licensing Hoi An (Sở Y tế Quang Nam) — 45-75 day process, enforcement tightened post-2024",
+      "Four Seasons/Naia could launch day-access package (6-9 months)",
+      "Instructor attrition (single biggest NPS driver)",
+      "Market shallow if top 2 competitors scale (Y2 risk)",
+      "Instagram/TikTok algorithm shift disrupts discovery",
+      "Y2-thesis play — 18-24 month capital payback; kill too early = category window opens to Four Seasons"
+    ],
+    "competition": "Whitespace absolute — zero true integrated day retreat; adjacent: Four Seasons Nam Hai (not bookable on OTA, $280-500), Naia Retreat (full-retreat format), generic yoga studios (~113 aggregated Viator reviews), Tra Que + spa combos ($30-55)",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "RPT-260417-002-featured-tours/sections/Section-05-T12-hoi-an-wellness.md",
+      "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
+      "RPT-260417-002-featured-tours/Summary.md"
+    ]
+  },
+  {
+    "id": "T18",
+    "name": "Philippines Barkada HCMC 4D3N Group Tour",
+    "type": "featured",
+    "tagline": "Walang stranger sa grupo n'yo — your barkada, your private guide, your chat thread; BNPL pay-in-3 with BillEase/Cashalo",
+    "duration": "4D3N",
+    "price_range": {
+      "min_usd": 380,
+      "max_usd": 640,
+      "tier": "mid",
+      "note": "Tier 1 Standard $380 direct / $420 Klook list; Tier 2 Premium $490; Tier 3 VIP $640; Klook commission 20% requires $420+ list or Messenger-direct channel push"
+    },
+    "region": "South",
+    "hotness_score": 6.8,
+    "fund_decision": "fund-now",
+    "launch_budget_usd": 68500,
+    "peak_month_ids": [3, 4, 11, 12, 1],
+    "shoulder_month_ids": [5, 6, 8],
+    "target_persona_ids": ["P5"],
+    "secondary_persona_ids": ["P4"],
+    "origin_market_ids": ["PH"],
+    "OTA_channels": ["Klook PH", "Traveloka PH", "Facebook Page + Messenger", "Direct + Viber concierge", "PH travel agent B2B (Rakso, Blue Horizons, Uni-Orient)"],
+    "vendors": ["Tan Hai Long Hotel / Silverland Jolie / Orchids Saigon (3-star D1 hotels, 8-room weekly block)", "Saigon Adventure / Joy Journeys (Cu Chi + Mekong day tours)", "Back of the Bike Tours (street food walking)", "Ao Dai Thai Tuan studio (photoshoot)", "Level Cafe rooftop + Quan Ut Ut (welcome/farewell F&B)", "BillEase + Cashalo BNPL partners", "12-pax van airport transfer"],
+    "unique_selling_point": "Zero dedicated PH-market HCMC multi-day listings on Klook PH or Traveloka PH — winner is not who discovers gap but who builds stack fastest (5 components: Klook PH merchant + BNPL + Tagalog guide + Viber concierge + FB peer-referral)",
+    "risks": [
+      "HCMC rainy season May-Oct (afternoon storms disrupt Cu Chi/Mekong)",
+      "ASEAN visa-free tightening + PH BNPL SEC compliance",
+      "Klook white-label Barkada product launch (6-12 month threat)",
+      "Deluxe Vietnam Tours adding Klook PH listing (<30 day engineering)",
+      "Tagalog-fluent guide pipeline thin (5-15 freelancers in HCMC)",
+      "PH airline schedule volatility (Cebu Pacific/PAL cancellations)",
+      "BNPL default risk via BillEase/Cashalo (merchant fee spike if >8%)",
+      "F&B incident = WhatsApp group viral destruction in 72h"
+    ],
+    "competition": "Whitespace absolute — no dedicated PH-market listings on Klook PH/Traveloka PH; indirect: generic VN operators (Deluxe Vietnam Tours, Asia Pioneer, Viet Vision) + PH-side agents (Regent, Rakso, Blue Horizons) + DIY Klook self-assembly baseline $245-290 land-only",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "RPT-260417-002-featured-tours/sections/Section-06-T18-ph-barkada-hcmc.md",
+      "RPT-260417-002-featured-tours/sections/Section-01-executive-overview.md#S1.3",
+      "RPT-260417-002-featured-tours/Summary.md"
+    ]
+  },
+  {
+    "id": "A1",
+    "name": "Winter Escape Cruise+Land Combo",
+    "type": "archetype",
+    "tagline": "14 ngày ấm, 2 đêm ngủ trên vịnh, 0 chuyện phải giải thích lại cho vợ",
+    "duration": "12D/11N",
+    "price_range": {
+      "min_usd": 3200,
+      "max_usd": 4800,
+      "tier": "premium",
+      "note": "mid-premium twin; undercuts luxury ($5K+ Trails of Indochina) by ~$1K, premium over Intrepid 8-day ($1.6K) by ~$1.5K"
+    },
+    "region": "Multi",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [12, 1, 2],
+    "shoulder_month_ids": [11, 3],
+    "target_persona_ids": ["P1"],
+    "secondary_persona_ids": ["P7", "P2"],
+    "origin_market_ids": ["US", "CA", "UK", "IE"],
+    "OTA_channels": ["Viator", "TripAdvisor", "ShoreExcursionsGroup (cruise-pax cross-sell)"],
+    "vendors": ["T6 Cruise Dolphin / T7 Sea Lion (Ha Long overnight)", "T1 Food tour HN", "T5 Military Museum HN", "Hội An DMC partner (net-new)", "Hội An tailor-relationship contract"],
+    "unique_selling_point": "Seamless cruise overnight ON Ha Long Bay + land combo at $3.5K — competitors sell cruise-only (Heritage Line) or land-only (Audley); no comparator packages 2N Ha Long cruise inside 12D land itinerary at mid-premium price",
+    "risks": [
+      "Hội An DMC net-new (no current ops presence)",
+      "Cruise inventory competition Dec peak",
+      "Luxury competitor counter-pricing"
+    ],
+    "competition": "Mid-premium cruise+land combo slot unoccupied — Heritage Line cruise-only ~$1K, Trails of Indochina $5K+ land-only, Intrepid $1.6K mass group",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-07-archetypes.md#A1",
+      "INBOUND-EN-PERSONA-01/sections/Section-02-personas.md#P1"
+    ]
+  },
+  {
+    "id": "A3",
+    "name": "Cruise-Extend-Hạ Long Overnight",
+    "type": "archetype",
+    "tagline": "Xuống tàu SG, lên tàu Vịnh — 3 ngày thêm, không phải book lại flight về",
+    "duration": "3D/2N (5D/4N extended A3-L variant)",
+    "price_range": {
+      "min_usd": 550,
+      "max_usd": 1500,
+      "tier": "premium",
+      "note": "$550-850 for 3D/2N standard; $1,100-1,500 for 5D/4N A3-L with Hội An add; premium shore-ex vs $80-150 single-day"
+    },
+    "region": "North",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [11, 12, 1, 2],
+    "shoulder_month_ids": [10, 3],
+    "target_persona_ids": ["P1"],
+    "secondary_persona_ids": ["P7", "P2"],
+    "origin_market_ids": ["US", "UK", "CA", "AU"],
+    "OTA_channels": ["ShoreExcursionsGroup", "Viator Cruises", "Cruise-line direct (RCL Discoveries, Princess) — Year 2 pending 6-9mo approval"],
+    "vendors": ["T10 Shore Hạ Long → HN (day portion)", "T6 Dolphin / T7 Sea Lion (overnight cruise portion)", "Baggage-transfer logistics (net-new)", "Cruise-line approved-operator application (RCL/Princess/HAL, 6-9mo onboarding)"],
+    "unique_selling_point": "Combines single-day shore-ex + 1-night overnight cruise — only way cruise-pax can experience 'sleep on Ha Long Bay' without booking separate 7-day land tour; no comparator packages this as 2-3N extension SKU",
+    "risks": [
+      "Cruise-line approved-operator onboarding takes 6-9 months",
+      "Year 1 aggregator-only channel (higher commission 25-40%)",
+      "Baggage-transfer logistics complexity (port-hotel-port-ship storage)",
+      "Cruise ship delay cascade affects overnight boarding timing"
+    ],
+    "competition": "Whitespace — no current operator packages cruise-extend overnight shore-ex; Viator Cruises vertical lists only single-day shore-ex",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-07-archetypes.md#A3",
+      "INBOUND-EN-PERSONA-01/sections/Section-01-market-sizing.md#cruise-port-calls"
+    ]
+  },
+  {
+    "id": "A5",
+    "name": "PH Barkada Gen-Z Bucket-List Group",
+    "type": "archetype",
+    "tagline": "6 tụi bạn, 7 ngày, 1 giá cố định, từng check-in TikTok-ready",
+    "duration": "7D/6N",
+    "price_range": {
+      "min_usd": 480,
+      "max_usd": 680,
+      "tier": "budget",
+      "note": "flat-price per group-of-6 twin; APAC mid-budget Gen-Z positioning; undercuts Klook solo pricing ~20% via group flat-rate + bundle"
+    },
+    "region": "North",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [10, 3, 12, 1],
+    "shoulder_month_ids": [4, 11],
+    "target_persona_ids": ["P5"],
+    "secondary_persona_ids": ["P3", "P6"],
+    "origin_market_ids": ["PH", "SG"],
+    "OTA_channels": ["Klook", "Klook PH", "Viator", "Instagram Ads direct-to-landing"],
+    "vendors": ["T1 Food tour HN", "T3 Ninh Bình 2 điểm", "Overnight sleeper train HN-NB (net-new logistics)", "Tagalog-speaking guide / interpreter contract", "TikTok-kit content ops (Gimbal rental + check-in map)"],
+    "unique_selling_point": "Flat-price group-of-6 + TikTok kit curation + English+Tagalog guide option = only PH-tailored group package in VN market; no comparator listing 'barkada package' on Klook PH",
+    "risks": [
+      "Tagalog guide hiring pipeline thin",
+      "Sleeper-train logistics net-new",
+      "TikTok algorithm shift disrupts viral content strategy",
+      "PH peso weakness affects budget tier"
+    ],
+    "competition": "PH-tailored variant explicitly required (no current operator has barkada group-of-6 VN bucket-list 7D package at flat-price on Klook PH)",
+    "confidence": "HIGH",
+    "coverage_gap": false,
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-07-archetypes.md#A5",
+      "INBOUND-EN-PERSONA-01/sections/Section-06-philippines.md"
+    ]
+  },
+  {
+    "id": "CAT-01",
+    "name": "Food & Street Food Tours",
+    "type": "category",
+    "tagline": "Category #1 demand on OTAs — half-day evening tours dominate Viator bestsellers",
+    "duration": "Half-day 3-4h",
+    "price_range": {
+      "min_usd": 20,
+      "max_usd": 55,
+      "tier": "budget",
+      "note": "Budget tier $20-35 (Real Foodie, Ella, Local Delicacies); mid-niche $45-55; year-round indoor-activity immune to wet season"
+    },
+    "region": "Multi",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [3, 5, 6, 7, 8, 9, 10],
+    "shoulder_month_ids": [1, 2, 4, 11, 12],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P4", "P5"],
+    "origin_market_ids": ["US", "UK", "AU", "SG"],
+    "OTA_channels": ["Viator", "GetYourGuide", "Airbnb Experiences", "Klook", "TripAdvisor Experiences"],
+    "vendors": null,
+    "unique_selling_point": "Strong UP trend; culinary tourism +25% growth 2025; XO Tours voted top-9 food tour globally by Forbes",
+    "risks": [
+      "Review moat high for incumbents (Real Foodie 4,794 reviews)",
+      "Commodity risk in generic positioning",
+      "Food hygiene incident = brand destruction"
+    ],
+    "competition": "Saturated generic — Viator top sellers dominated by 1000+ review incumbents; niche angles required for new entrants",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-1-food"
+    ]
+  },
+  {
+    "id": "CAT-02",
+    "name": "Cooking Classes",
+    "type": "category",
+    "tagline": "Half-day cooking + market visit + basket boat combos — Hoi An is global epicenter",
+    "duration": "Half-day 3-5h",
+    "price_range": {
+      "min_usd": 25,
+      "max_usd": 85,
+      "tier": "mid",
+      "note": "Hoi An 100+ listings on Cookly; combo with market + basket boat upsells to higher tier; indoor-activity immune to wet season"
+    },
+    "region": "Central",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [2, 3, 4, 5, 6, 7, 8, 12],
+    "shoulder_month_ids": [1, 9, 10, 11],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P6"],
+    "origin_market_ids": ["US", "UK", "AU", "CA"],
+    "OTA_channels": ["Viator", "Cookly", "GetYourGuide", "TripAdvisor Experiences", "Airbnb Experiences"],
+    "vendors": null,
+    "unique_selling_point": "UP trend; Viator 600+ reviews/listing average; TripAdvisor top-15 Vietnam activities",
+    "risks": [
+      "Saturated supply in Hoi An",
+      "Host venue licensing + capacity ≤10",
+      "Chef consistency variance across partners"
+    ],
+    "competition": "Hoi An 100+ Cookly listings; Hanoi + HCMC growing; established category with mature unit economics",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-2-cooking"
+    ]
+  },
+  {
+    "id": "CAT-03",
+    "name": "Ha Long / Lan Ha Bay Cruises",
+    "type": "category",
+    "tagline": "Viator #1 day trip — UNESCO evergreen demand; 300+ cruise itineraries available",
+    "duration": "Day trip (6-13h) or 1-2 night",
+    "price_range": {
+      "min_usd": 35,
+      "max_usd": 500,
+      "tier": "mid",
+      "note": "Day $35-85; overnight 2D1N $150-280; luxury $280-500+ (Paradise Elegance, Emperor, Heritage Line)"
+    },
+    "region": "North",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [10, 11, 12, 1, 2, 3, 5, 6],
+    "shoulder_month_ids": [4, 9],
+    "target_persona_ids": ["P1"],
+    "secondary_persona_ids": ["P2", "P6", "P7"],
+    "origin_market_ids": ["US", "UK", "AU", "IN", "SG"],
+    "OTA_channels": ["Viator", "Klook", "MakeMyTrip", "Direct + B2B wholesaler", "Booking.com"],
+    "vendors": null,
+    "unique_selling_point": "Stable-UP trend; UNESCO status = evergreen demand; Calista Cruise launch 2025 signals supply growth",
+    "risks": [
+      "Typhoon Jul-Aug demand drops ~15-20%",
+      "Some overnight cruises cancel wet season",
+      "Safety incident history (2011 Trường Hải)",
+      "Operator quality variance"
+    ],
+    "competition": "Mature category — saturated at budget and luxury tiers; specialist niches (Jain, Indian, wellness detox) open",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-3-halong"
+    ]
+  },
+  {
+    "id": "CAT-04",
+    "name": "Cu Chi Tunnels + Mekong Delta Combo",
+    "type": "category",
+    "tagline": "Viator VIP combo consistently top-20 — 'two attractions in one day' format",
+    "duration": "Full-day 8-10h",
+    "price_range": {
+      "min_usd": 35,
+      "max_usd": 95,
+      "tier": "budget",
+      "note": "Cu Chi half-day $25-35; Mekong full-day $30-50; combo VIP $60-95; mature stable demand"
+    },
+    "region": "South",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [1, 2, 3, 11, 12, 8],
+    "shoulder_month_ids": [4, 5, 6, 7, 9, 10],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P5"],
+    "origin_market_ids": ["US", "UK", "AU"],
+    "OTA_channels": ["Viator", "Klook", "GetYourGuide"],
+    "vendors": null,
+    "unique_selling_point": "Stable demand — 'two attractions in one day' format = high perceived value; mature category",
+    "risks": [
+      "Commoditized pricing pressure",
+      "Large group sizes dilute experience quality",
+      "Mekong afternoon storm risk wet season"
+    ],
+    "competition": "Mature — multiple Viator bestsellers (Les Rives, Saigon Adventure, Innoviet); premium boat/speedboat variants carve niche",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-4-cuchi-mekong"
+    ]
+  },
+  {
+    "id": "CAT-05",
+    "name": "Motorbike / Ha Giang Loop Tours",
+    "type": "category",
+    "tagline": "Strong UP — TikTok/Instagram viral breakout; max 10 pax small group standard",
+    "duration": "3-4 days (loop); half-day (city)",
+    "price_range": {
+      "min_usd": 180,
+      "max_usd": 450,
+      "tier": "mid",
+      "note": "Motorbike 3D2N $180-250; Jeep 3D2N $229-450; rice terrace green May-Sep = peak landscape"
+    },
+    "region": "North",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [5, 6, 7, 9, 10],
+    "shoulder_month_ids": [3, 4, 8],
+    "target_persona_ids": ["P3"],
+    "secondary_persona_ids": ["P2", "P4"],
+    "origin_market_ids": ["AU", "UK", "US", "NZ"],
+    "OTA_channels": ["Viator", "TripAdvisor", "GetYourGuide", "TourRadar", "Hostel referrals (off-OTA)"],
+    "vendors": null,
+    "unique_selling_point": "Strong UP — TikTok/Instagram virality drove 2023-2025 mainstream breakout; 3-day duration sweet spot; growth vastly exceeds mature categories",
+    "risks": [
+      "Border-zone permit (NĐ 34/2014/NĐ-CP)",
+      "Ma Pi Leng safety (cliff drop 700m, landslide Jun-Aug)",
+      "Motorbike accident risk excludes non-riders",
+      "Fog Nov-Feb limits visibility",
+      "TikTok saturation / demand peaking 2026-2027"
+    ],
+    "competition": "Fragmented — no dominant brand; top motorbike 943 reviews (Ha Giang 3D2N Motorbike); Jeep <15% of supply",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-5-ha-giang"
+    ]
+  },
+  {
+    "id": "CAT-06",
+    "name": "Cultural Walking Tours",
+    "type": "category",
+    "tagline": "GYG top category — Hanoi Old Quarter + Hoi An Ancient Town #1 activity type",
+    "duration": "Half-day 2-4h",
+    "price_range": {
+      "min_usd": 15,
+      "max_usd": 60,
+      "tier": "budget",
+      "note": "Guided $20-60; self-guided variants $15-30; year-round demand, stable trend"
+    },
+    "region": "Multi",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [1, 2, 3, 10, 11, 12],
+    "shoulder_month_ids": [4, 5, 6, 7, 8, 9],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P7"],
+    "origin_market_ids": ["US", "UK", "CA", "IE"],
+    "OTA_channels": ["GetYourGuide", "TripAdvisor Experiences", "Viator", "Airbnb Experiences"],
+    "vendors": null,
+    "unique_selling_point": "Stable mature category — TripAdvisor Hanoi/Hoi An #1 activity type; low operational complexity (walking, no vehicle)",
+    "risks": [
+      "Commoditized pricing",
+      "Generic commentary vs narrative-rich competitors",
+      "Heat exposure Jul-Aug Hanoi/Hoi An"
+    ],
+    "competition": "Mature saturated — guided + self-guided variants; niche angles (literary, architectural, Cham-heritage) differentiate",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-6-cultural-walking"
+    ]
+  },
+  {
+    "id": "CAT-07",
+    "name": "Boat & Sampan Tours",
+    "type": "category",
+    "tagline": "UP trend — Ninh Binh/Trang An as 'Ha Long Bay on land'; Mekong sampan classic; basket boat Hoi An photo-op",
+    "duration": "Half-day to full-day 4-8h",
+    "price_range": {
+      "min_usd": 25,
+      "max_usd": 90,
+      "tier": "budget",
+      "note": "Basket boat Hoi An $25-40; Trang An $30-60; Mekong sampan full-day $35-90"
+    },
+    "region": "Multi",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [1, 2, 3, 6, 7, 8, 11, 12],
+    "shoulder_month_ids": [4, 5, 9, 10],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P4", "P6"],
+    "origin_market_ids": ["US", "UK", "AU", "SG", "IN"],
+    "OTA_channels": ["Viator", "Klook", "GetYourGuide"],
+    "vendors": null,
+    "unique_selling_point": "UP trend — Ninh Binh/Trang An trending as 'Ha Long Bay on land'; basket boat Hoi An unique photo-op for Instagram generation",
+    "risks": [
+      "Weather-dependent (sampan unsafe in storm)",
+      "Mekong flood season Aug = feature not bug but narrow ops",
+      "Boat operator safety cert variance"
+    ],
+    "competition": "Fragmented, multiple local operators; no dominant brand across variants",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-7-boat-sampan"
+    ]
+  },
+  {
+    "id": "CAT-08",
+    "name": "Adventure & Trekking (Sapa, caves)",
+    "type": "category",
+    "tagline": "UP trend — Sapa 2-3 day trek + Phong Nha caves + canyoneering Dalat; wet season = MORE water = better canyoneering",
+    "duration": "Full-day 8h (caves) or 2-3 days (Sapa)",
+    "price_range": {
+      "min_usd": 45,
+      "max_usd": 280,
+      "tier": "mid",
+      "note": "Canyoneering half-day $45-80; Phong Nha cave day $80-150; Sapa 2-3 day trek $120-280"
+    },
+    "region": "Multi",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [3, 7, 9, 10],
+    "shoulder_month_ids": [4, 5, 6, 8, 11],
+    "target_persona_ids": ["P3"],
+    "secondary_persona_ids": ["P2", "P4"],
+    "origin_market_ids": ["AU", "UK", "US"],
+    "OTA_channels": ["Klook", "Viator", "GetYourGuide", "TourRadar"],
+    "vendors": null,
+    "unique_selling_point": "UP trend — Datanla Falls canyoneering trending on Klook; Phong Nha cave system growing listings; Fansipan cable car boosts Sapa access; Sep-Oct golden rice peak Sapa",
+    "risks": [
+      "Outdoor injury risk + liability $3M/pax insurance",
+      "Landslide Sapa wet season",
+      "Cave permit + guide certification required",
+      "Altitude sickness Fansipan"
+    ],
+    "competition": "Fragmented — Sapa has multiple operators; Phong Nha Oxalis dominant for caves; Dalat canyoneering crowded",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-8-adventure"
+    ]
+  },
+  {
+    "id": "CAT-09",
+    "name": "Ba Na Hills / Golden Bridge",
+    "type": "category",
+    "tagline": "Stable-DOWN — Klook top-10; strong Asian market pull but Western 'Instagram-done' fatigue emerging",
+    "duration": "Full-day 8-10h",
+    "price_range": {
+      "min_usd": 50,
+      "max_usd": 120,
+      "tier": "mid",
+      "note": "Cable car + day tour $50-85; VIP private $85-120; May-Aug best weather"
+    },
+    "region": "Central",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [4, 5, 6, 7, 8],
+    "shoulder_month_ids": [1, 2, 3, 12],
+    "target_persona_ids": ["P4"],
+    "secondary_persona_ids": ["P6"],
+    "origin_market_ids": ["SG", "IN", "US"],
+    "OTA_channels": ["Klook", "Traveloka", "Viator"],
+    "vendors": null,
+    "unique_selling_point": "Stable strong Asian market pull; iconic Golden Bridge photo-op",
+    "risks": [
+      "Over-tourism + queue fatigue",
+      "Western 'Instagram-done' saturation",
+      "Da Nang rainy season Sep-Nov cuts visitation",
+      "Category peaking — stable-DOWN trend"
+    ],
+    "competition": "Saturated with similar day tour products from multiple operators; differentiation limited since venue is fixed",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-9-bana-hills"
+    ]
+  },
+  {
+    "id": "CAT-10",
+    "name": "Water Puppet Show + Night Tours",
+    "type": "category",
+    "tagline": "Stable — Viator top-20; bundles with night food tour trending",
+    "duration": "Evening 1-2h (show); half-day (night tour)",
+    "price_range": {
+      "min_usd": 15,
+      "max_usd": 75,
+      "tier": "budget",
+      "note": "Water puppet show stand-alone $15-25; night food tour combo $40-75"
+    },
+    "region": "North",
+    "hotness_score": null,
+    "fund_decision": null,
+    "launch_budget_usd": null,
+    "peak_month_ids": [1, 2, 3, 10, 11, 12],
+    "shoulder_month_ids": [4, 5, 6, 7, 8, 9],
+    "target_persona_ids": ["P2"],
+    "secondary_persona_ids": ["P1", "P3", "P6"],
+    "origin_market_ids": ["US", "UK", "AU", "CA"],
+    "OTA_channels": ["Viator", "Klook", "GetYourGuide"],
+    "vendors": null,
+    "unique_selling_point": "Stable mature category — water puppet show iconic cultural experience; bundling with night food tour adds value",
+    "risks": [
+      "Commoditized pricing — Thang Long Water Puppet Theatre is fixed venue",
+      "Show quality variance by troupe",
+      "Stand-alone demand binh on (not growing)"
+    ],
+    "competition": "Mature — stand-alone show stable; bundles (night food + craft beer scooter + water puppet) differentiate",
+    "confidence": "MEDIUM",
+    "coverage_gap": true,
+    "source_refs": [
+      "RPT-260416-001/sections/Section-02-tour-categories.md#rank-10-water-puppet"
+    ]
+  }
+]

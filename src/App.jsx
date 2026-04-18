@@ -8,6 +8,8 @@ import AsiaReport from "./reports/asia/index.jsx";
 const Mkt001Report = lazy(() => import("./reports/mkt-001/index.jsx"));
 // Lazy-load RPT-001 (Vietnam Tours EN Inbound market overview)
 const Rpt001Report = lazy(() => import("./reports/rpt-001/index.jsx"));
+// Lazy-load Entity Explorer (57-entity cross-report graph)
+const EntitiesReport = lazy(() => import("./reports/entities/index.jsx"));
 
 function LoadingPane() {
   return (
@@ -32,6 +34,7 @@ const DEFAULT_SECTION = {
   asia:      "asia-home",
   "rpt-001": "rpt-home",
   "mkt-001": "mkt-home",
+  entities:  "hub",
 };
 
 export default function App() {
@@ -71,9 +74,10 @@ export default function App() {
       };
 
   const reportLabel =
-    view.report === "asia"    ? "Asia → Vietnam · 2025"
-  : view.report === "rpt-001" ? "RPT-001 · VN Tours May–Oct"
-  :                              "MKT-001 · Cafe + Cruise";
+    view.report === "asia"     ? "Asia → Vietnam · 2025"
+  : view.report === "rpt-001"  ? "RPT-001 · VN Tours May–Oct"
+  : view.report === "entities" ? "Entity Explorer · Cross-report graph"
+  :                               "MKT-001 · Cafe + Cruise";
 
   return (
     <div style={{
@@ -162,6 +166,14 @@ export default function App() {
                 <Mkt001Report
                   section={view.section}
                   goto={(sec) => setView({ report: "mkt-001", section: sec })}
+                />
+              </Suspense>
+            )}
+            {view.report === "entities" && (
+              <Suspense fallback={<LoadingPane />}>
+                <EntitiesReport
+                  section={view.section}
+                  goto={(sec) => setView({ report: "entities", section: sec })}
                 />
               </Suspense>
             )}

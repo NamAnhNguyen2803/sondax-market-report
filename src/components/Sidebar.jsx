@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
 import { T } from "../data/colors.js";
-import { ASIA_NAV }    from "../reports/asia/nav.js";
-import { MKT_NAV }     from "../reports/mkt-001/nav.js";
-import { RPT_NAV }     from "../reports/rpt-001/nav.js";
+import { ASIA_NAV }     from "../reports/asia/nav.js";
+import { MKT_NAV }      from "../reports/mkt-001/nav.js";
+import { RPT_NAV }      from "../reports/rpt-001/nav.js";
+import { ENTITIES_NAV } from "../reports/entities/nav.js";
 
 const W = 244;
 
 // Top-level groups — ordered. Each one knows its report id + nav tree.
 const GROUPS = [
-  { id: "asia",    report: "asia",    label: "Asia → Vietnam 2025",       nav: ASIA_NAV },
-  { id: "rpt-001", report: "rpt-001", label: "RPT-001 · VN Tours May–Oct", nav: RPT_NAV  },
-  { id: "mkt-001", report: "mkt-001", label: "MKT-001 · Cafe + Cruise",   nav: MKT_NAV  },
+  { id: "entities", report: "entities", label: "🔗 Entity Explorer",          nav: ENTITIES_NAV },
+  { id: "asia",     report: "asia",     label: "Asia → Vietnam 2025",         nav: ASIA_NAV },
+  { id: "rpt-001",  report: "rpt-001",  label: "RPT-001 · VN Tours May–Oct",  nav: RPT_NAV  },
+  { id: "mkt-001",  report: "mkt-001",  label: "MKT-001 · Cafe + Cruise",     nav: MKT_NAV  },
 ];
 
 export default function Sidebar({ view, setView, goReport, mobileOpen, setMobileOpen }) {

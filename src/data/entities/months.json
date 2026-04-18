@@ -1,0 +1,617 @@
+[
+  {
+    "id": 1,
+    "name_en": "January",
+    "name_vi": "Tháng 1",
+    "short": "Jan",
+    "season_tag": "peak",
+    "combined_demand": "HIGH",
+    "demand_reason": "Post-Xmas peak continues with US/UK/CA winter escapers; NA school break tail; AU summer peak",
+    "primary_drivers": [
+      "US/CA/UK post-holiday travel",
+      "AU summer peak (Dec-Feb)",
+      "Winter escape from Northern Hemisphere"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A3",
+      "CAT-03", "CAT-06", "CAT-07", "CAT-10"
+    ],
+    "peak_persona_ids": ["P1", "P2", "P6", "P7"],
+    "peak_market_ids": ["US", "UK", "CA", "AU", "IN"],
+    "events": [
+      {
+        "name": "New Year travel tail",
+        "date": "2026-01-01",
+        "impact": "post-holiday demand continues Jan 1-15"
+      },
+      {
+        "name": "Australia summer peak",
+        "date": "2026-01-15",
+        "impact": "AU domestic holidays create AU outbound travel window"
+      }
+    ],
+    "weather_note": {
+      "north": "cool dry, optimal (15-20°C, clear skies)",
+      "central": "dry and warm, excellent (22-25°C)",
+      "south": "warm and dry, good (27-30°C, minimal rain)"
+    },
+    "booking_lead_time": "8-12 weeks (Dec bookings locked)",
+    "confidence": "HIGH",
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L82-L91",
+      "INBOUND-EN-PERSONA-01/sections/Section-02-personas.md#P1,P7"
+    ]
+  },
+  {
+    "id": 2,
+    "name_en": "February",
+    "name_vi": "Tháng 2",
+    "short": "Feb",
+    "season_tag": "peak",
+    "combined_demand": "HIGH",
+    "demand_reason": "Xmas/NY bookings peak through Feb; UK half-term spike mid-Feb; AU summer tail; US spring-break begins",
+    "primary_drivers": [
+      "UK half-term Feb (mid-month)",
+      "AU/NZ summer tail (extends late Feb)",
+      "US spring-break pre-trip bookings",
+      "Lunar NY window (late Jan-Feb varies)"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A3",
+      "CAT-03", "CAT-06", "CAT-07", "CAT-10"
+    ],
+    "peak_persona_ids": ["P1", "P2", "P3", "P6", "P7"],
+    "peak_market_ids": ["US", "UK", "AU", "NZ", "CA"],
+    "events": [
+      {
+        "name": "UK half-term (mid-February)",
+        "date": "2026-02-16",
+        "impact": "UK school holiday mid-month, triggers UK P2/P6 bookings"
+      },
+      {
+        "name": "Lunar New Year (Tết)",
+        "date": "2026-02-17",
+        "impact": "domestic VN spike; international operators adjust capacity"
+      },
+      {
+        "name": "AU/NZ summer school-return",
+        "date": "2026-02-28",
+        "impact": "late-Feb marks AU/NZ school return; tail bookings"
+      }
+    ],
+    "weather_note": {
+      "north": "cool dry, best month (15-20°C)",
+      "central": "dry and warm, optimal (23-26°C)",
+      "south": "warm dry, best (28-31°C)"
+    },
+    "booking_lead_time": "6-10 weeks (from bookings placed Dec-Jan)",
+    "confidence": "HIGH",
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L82-L91",
+      "INBOUND-EN-PERSONA-01/sections/Section-02-personas.md#P2,P3,P6"
+    ]
+  },
+  {
+    "id": 3,
+    "name_en": "March",
+    "name_vi": "Tháng 3",
+    "short": "Mar",
+    "season_tag": "shoulder",
+    "combined_demand": "MEDIUM",
+    "demand_reason": "US spring-break peak (mid-Mar); AU/NZ early autumn; shoulder season pricing; P5 Gen-Z spike",
+    "primary_drivers": [
+      "US spring-break (mid-Mar to early Apr)",
+      "AU/NZ autumn escape",
+      "SG inter-term (late Mar)",
+      "IN school holidays (state-dependent, late Mar)"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A5",
+      "CAT-01", "CAT-03", "CAT-05", "CAT-06", "CAT-07", "CAT-10"
+    ],
+    "peak_persona_ids": ["P3", "P5", "P6"],
+    "peak_market_ids": ["AU", "NZ", "US", "SG"],
+    "events": [
+      {
+        "name": "US spring break (mid-March – early April)",
+        "date": "2026-03-15",
+        "impact": "US families book mid-Mar travel; P6 family segment peaks"
+      },
+      {
+        "name": "SG inter-term (late Mar)",
+        "date": "2026-03-20",
+        "impact": "SG school break, short-haul travelers book"
+      }
+    ],
+    "weather_note": {
+      "north": "warming, slight rain start (20-25°C)",
+      "central": "dry tail, still excellent (24-27°C)",
+      "south": "pre-monsoon, warm (30-33°C)"
+    },
+    "booking_lead_time": "4-8 weeks (families book earlier)",
+    "confidence": "MEDIUM",
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L82-L91",
+      "Projects/Sondax-Travel/reports/INBOUND-EN-PERSONA-01/sections/Section-01-market-sizing.md#L20"
+    ]
+  },
+  {
+    "id": 4,
+    "name_en": "April",
+    "name_vi": "Tháng 4",
+    "short": "Apr",
+    "season_tag": "shoulder",
+    "combined_demand": "MEDIUM",
+    "demand_reason": "Easter holidays (late Mar-Apr) for UK/AU; PH summer break starts; transition to low season",
+    "primary_drivers": [
+      "Easter break (late Mar-Apr)",
+      "UK Easter holidays",
+      "AU ANZAC Day (Apr 25)",
+      "PH school break ends Jun 15"
+    ],
+    "active_tour_ids": [
+      "T4", "T18",
+      "A5",
+      "CAT-01", "CAT-05", "CAT-06", "CAT-09"
+    ],
+    "peak_persona_ids": ["P5", "P6"],
+    "peak_market_ids": ["PH", "UK", "AU"],
+    "events": [
+      {
+        "name": "Easter school holidays (late March-April)",
+        "date": "2026-04-12",
+        "impact": "UK/EU Easter drives P2/P6 bookings; Australian ANZAC Day Apr 25"
+      },
+      {
+        "name": "PH summer break ends mid-June",
+        "date": "2026-06-15",
+        "impact": "PH summer travel window May-Jun; early bookings in Apr"
+      }
+    ],
+    "weather_note": {
+      "north": "pre-monsoon rain start (22-27°C, humid)",
+      "central": "transition, early showers (26-29°C)",
+      "south": "hot pre-monsoon (32-35°C)"
+    },
+    "booking_lead_time": "3-6 weeks",
+    "confidence": "MEDIUM",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-01-source-markets.md#S1-table"
+    ],
+    "coverage_gap": true
+  },
+  {
+    "id": 5,
+    "name_en": "May",
+    "name_vi": "Tháng 5",
+    "short": "May",
+    "season_tag": "shoulder",
+    "combined_demand": "MEDIUM",
+    "demand_reason": "India summer holidays peak; PH summer tail; US Memorial Day; Central Vietnam enters dry season",
+    "primary_drivers": [
+      "India summer holidays (May-Jun peak)",
+      "PH summer break (ends mid-Jun)",
+      "US Memorial Day weekend (late May)",
+      "SG pre-holiday bookings"
+    ],
+    "active_tour_ids": [
+      "T4", "T10", "T18",
+      "A1",
+      "CAT-01", "CAT-03", "CAT-05", "CAT-06", "CAT-09"
+    ],
+    "peak_persona_ids": ["P5", "P6"],
+    "peak_market_ids": ["IN", "PH", "US", "SG"],
+    "events": [
+      {
+        "name": "India summer holidays",
+        "date": "2026-05-01",
+        "impact": "May-Jun peak for Indian family travelers; direct flights from 6 routes"
+      },
+      {
+        "name": "Buddha's Birthday (Phat Dan)",
+        "date": "2026-05-24",
+        "impact": "cultural festival, temple ceremonies, 1-week window"
+      },
+      {
+        "name": "Da Nang Fireworks Festival DIFF opens",
+        "date": "2026-05-30",
+        "impact": "6-week festival runs through Jul 11; major Central Coast draw"
+      }
+    ],
+    "weather_note": {
+      "north": "green rice season starts, warm (24-28°C)",
+      "central": "EXCELLENT DRY SEASON (Da Nang, Hoi An best months May-Aug)",
+      "south": "hot pre-monsoon (32-35°C)"
+    },
+    "booking_lead_time": "4-8 weeks",
+    "confidence": "MEDIUM",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-08-seasonal.md#L57-L66",
+      "RPT-260416-001/sections/Section-08-seasonal.md#L100-L118"
+    ]
+  },
+  {
+    "id": 6,
+    "name_en": "June",
+    "name_vi": "Tháng 6",
+    "short": "Jun",
+    "season_tag": "shoulder",
+    "combined_demand": "HIGH",
+    "demand_reason": "Singapore June holiday peak; India summer continues; US/CA summer begins; Australia winter break; Central Coast DRY",
+    "primary_drivers": [
+      "Singapore June school holiday (biggest annual window)",
+      "India summer continues",
+      "US/CA summer break begins (late Jun)",
+      "Australia winter/mid-year break (Jun-Jul)"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1",
+      "CAT-01", "CAT-03", "CAT-05", "CAT-06", "CAT-07", "CAT-09"
+    ],
+    "peak_persona_ids": ["P4", "P5", "P6"],
+    "peak_market_ids": ["SG", "IN", "US", "AU", "CA"],
+    "events": [
+      {
+        "name": "Singapore June holiday",
+        "date": "2026-06-01",
+        "impact": "May 30-Jun 28: biggest SG school holiday; short-haul peak"
+      },
+      {
+        "name": "International Children's Day",
+        "date": "2026-06-01",
+        "impact": "family-friendly events nationwide; minor tie-in"
+      },
+      {
+        "name": "Sapa green rice water-mirror season",
+        "date": "2026-06-15",
+        "impact": "rice planting water season, photography peak, 4-6 weeks"
+      }
+    ],
+    "weather_note": {
+      "north": "lush green, warm (25-28°C); Sapa beautiful; Hanoi clammy",
+      "central": "DRY SEASON CONTINUES, optimal (24-27°C)",
+      "south": "early monsoon showers (30-32°C, 2-3h afternoon)"
+    },
+    "booking_lead_time": "2-4 weeks (SG last-minute, Asian markets mobile-first)",
+    "confidence": "HIGH",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-08-seasonal.md#L40-L66",
+      "RPT-260416-001/sections/Section-08-seasonal.md#L100-L118"
+    ]
+  },
+  {
+    "id": 7,
+    "name_en": "July",
+    "name_vi": "Tháng 7",
+    "short": "Jul",
+    "season_tag": "peak",
+    "combined_demand": "HIGHEST",
+    "demand_reason": "ONLY month all Western + Asian school holidays overlap (US, CA, AU, NZ, UK, IE, SG, IN peaks)",
+    "primary_drivers": [
+      "US/CA family summer peak",
+      "Australia winter break peak (Jun 27-Jul 12 varies by state)",
+      "UK summer (England Jul-Aug, Scotland peaks Jul)",
+      "New Zealand winter break peak",
+      "Canada Day (Jul 1) travel trigger"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A3",
+      "CAT-01", "CAT-03", "CAT-05", "CAT-06", "CAT-07", "CAT-08"
+    ],
+    "peak_persona_ids": ["P1", "P3", "P6"],
+    "peak_market_ids": ["US", "AU", "CA", "UK", "NZ"],
+    "events": [
+      {
+        "name": "Canada Day",
+        "date": "2026-07-01",
+        "impact": "triggers Canadian travel; 4-day weekend kickoff"
+      },
+      {
+        "name": "DIFF fireworks festival continues (final week)",
+        "date": "2026-07-11",
+        "impact": "Da Nang Fireworks Festival finale; Central Coast peak draw"
+      },
+      {
+        "name": "Hoi An Lantern Festival (monthly Full Moon)",
+        "date": "2026-07-25",
+        "impact": "iconic photogenic night market event; tour timing critical"
+      }
+    ],
+    "weather_note": {
+      "north": "monsoon rain peak but lush green (26-28°C); Sapa green peak; landslide risk",
+      "central": "still DRY (27-30°C) — COMPETITIVE ADVANTAGE vs Northern regions",
+      "south": "hot monsoon (32-34°C, afternoon showers 2-3h)"
+    },
+    "booking_lead_time": "6-10 weeks (Western families book Apr-Jun)",
+    "confidence": "HIGH",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-08-seasonal.md#L60-L66",
+      "RPT-260416-001/sections/Section-08-seasonal.md#L100-L118"
+    ]
+  },
+  {
+    "id": 8,
+    "name_en": "August",
+    "name_vi": "Tháng 8",
+    "short": "Aug",
+    "season_tag": "peak",
+    "combined_demand": "HIGH",
+    "demand_reason": "UK England summer peak; US/CA summer continues; Singapore National Day (Aug 9); India Independence Day; Mekong flood-season high",
+    "primary_drivers": [
+      "UK summer peak (England Aug, Scotland Jul ended)",
+      "US/CA late summer family travel",
+      "Singapore National Day (Aug 9) long weekend",
+      "India Independence Day (Aug 15) weekend travel",
+      "Mekong Delta flood season high (best for floating markets)"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1",
+      "CAT-01", "CAT-03", "CAT-04", "CAT-06", "CAT-07"
+    ],
+    "peak_persona_ids": ["P1", "P6"],
+    "peak_market_ids": ["UK", "US", "CA", "SG", "IN"],
+    "events": [
+      {
+        "name": "Singapore National Day",
+        "date": "2026-08-09",
+        "impact": "3-4 day weekend; SG travelers book last-minute; Nat'l Day spike"
+      },
+      {
+        "name": "India Independence Day",
+        "date": "2026-08-15",
+        "impact": "long weekend; India family travel; mini-peak window"
+      },
+      {
+        "name": "Mekong Delta flood-season high water",
+        "date": "2026-08-15",
+        "impact": "peak flood season = best floating markets, high water = more photogenic; niche advantage"
+      }
+    ],
+    "weather_note": {
+      "north": "heavy monsoon, high landslide risk (28-29°C, daily rain)",
+      "central": "still dry (28-31°C) but humidity rises late month",
+      "south": "peak monsoon, Mekong flooded (excellent for tours); HCMC urban tours unaffected"
+    },
+    "booking_lead_time": "4-8 weeks",
+    "confidence": "MEDIUM",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-08-seasonal.md#L40-L66",
+      "RPT-260416-001/sections/Section-08-seasonal.md#L80-L100"
+    ]
+  },
+  {
+    "id": 9,
+    "name_en": "September",
+    "name_vi": "Tháng 9",
+    "short": "Sep",
+    "season_tag": "shoulder",
+    "combined_demand": "MEDIUM",
+    "demand_reason": "Singapore Sep break; Australia/NZ term-3 break; Mid-Autumn Festival (Sep 25); US Labor Day tail",
+    "primary_drivers": [
+      "Singapore Sep school break (Sep 5-13)",
+      "Australia/NZ Term 3 break (late Sep, ~2 weeks)",
+      "Mid-Autumn Festival (Sep 25)",
+      "US Labor Day (early Sep) tail bookings"
+    ],
+    "active_tour_ids": [
+      "T4", "T10", "T18",
+      "A1", "A5",
+      "CAT-03", "CAT-05", "CAT-06", "CAT-08"
+    ],
+    "peak_persona_ids": ["P5"],
+    "peak_market_ids": ["SG", "AU", "NZ"],
+    "events": [
+      {
+        "name": "Singapore Sep school break",
+        "date": "2026-09-05",
+        "impact": "Sep 5-13 window; short-haul families book"
+      },
+      {
+        "name": "Mid-Autumn Festival (Tet Trung Thu)",
+        "date": "2026-09-25",
+        "impact": "national cultural celebration; mooncakes, lion dances, lanterns; 3-5 days celebration window"
+      },
+      {
+        "name": "Vietnam National Day (Sep 2)",
+        "date": "2026-09-02",
+        "impact": "domestic holiday; long weekend; VN national celebrations"
+      },
+      {
+        "name": "Mu Cang Chai Paragliding Festival",
+        "date": "2026-09-20",
+        "impact": "paragliding over golden rice terraces; adventure niche; Sep timing aligns AU/NZ Sep break"
+      }
+    ],
+    "weather_note": {
+      "north": "improving, rain subsiding (26-28°C); Sapa golden rice begins harvest",
+      "central": "EXCELLENT transition (25-28°C); mua subsiding",
+      "south": "monsoon tail; Mekong still high and beautiful (30-32°C)"
+    },
+    "booking_lead_time": "2-4 weeks (last-minute for Sep break)",
+    "confidence": "MEDIUM",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-08-seasonal.md#L62-L66",
+      "RPT-260416-001/sections/Section-08-seasonal.md#L100-L127"
+    ]
+  },
+  {
+    "id": 10,
+    "name_en": "October",
+    "name_vi": "Tháng 10",
+    "short": "Oct",
+    "season_tag": "shoulder",
+    "combined_demand": "MEDIUM-HIGH",
+    "demand_reason": "Australia/NZ spring escape; UK half-term school holiday; shoulder season pricing; golden rice harvest (Sapa Oct-peak)",
+    "primary_drivers": [
+      "Australia/NZ spring (autumn escape)",
+      "UK half-term school break (late Oct)",
+      "New Zealand school holidays (late Sep - Oct 11)",
+      "Harvest season (Sapa, Mu Cang Chai peak photography)",
+      "Cruise season begins ramping (Oct-Mar)"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A3", "A5",
+      "CAT-03", "CAT-05", "CAT-06", "CAT-08"
+    ],
+    "peak_persona_ids": ["P3", "P5"],
+    "peak_market_ids": ["AU", "NZ", "UK"],
+    "events": [
+      {
+        "name": "NZ school holidays (late Sep - mid Oct)",
+        "date": "2026-10-11",
+        "impact": "late Sep/Oct peak for NZ travelers; winter escape"
+      },
+      {
+        "name": "UK half-term school break (late October)",
+        "date": "2026-10-26",
+        "impact": "UK P2/P6 families book late-Oct window"
+      },
+      {
+        "name": "Golden rice harvest (Sapa, Mu Cang Chai)",
+        "date": "2026-10-15",
+        "impact": "peak photography season; harvest festivals; 4-6 week window"
+      },
+      {
+        "name": "Hoi An Lantern Festival (monthly Full Moon)",
+        "date": "2026-10-21",
+        "impact": "iconic photogenic night market; tour timing critical"
+      }
+    ],
+    "weather_note": {
+      "north": "EXCELLENT, cool and clear (20-24°C); golden rice harvest",
+      "central": "EXCELLENT DRY (24-27°C); end of rainy season Oct-Nov risk",
+      "south": "transitioning to dry (29-32°C)"
+    },
+    "booking_lead_time": "4-8 weeks",
+    "confidence": "MEDIUM",
+    "source_refs": [
+      "RPT-260416-001/sections/Section-08-seasonal.md#L62-L66",
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L82-L91"
+    ]
+  },
+  {
+    "id": 11,
+    "name_en": "November",
+    "name_vi": "Tháng 11",
+    "short": "Nov",
+    "season_tag": "peak",
+    "combined_demand": "HIGH",
+    "demand_reason": "US Thanksgiving (early spike); peak-season demand building; cruise season enters full swing; India Diwali; SG inter-term",
+    "primary_drivers": [
+      "US Thanksgiving (4th Thu Nov = Nov 28, 2026) + 4-day travel window",
+      "Peak-season booking window opens (Oct-Nov booking for Dec-Feb travel)",
+      "Cruise season ramping (port-calls increasing Oct-Nov-Dec trajectory)",
+      "India Diwali window + winter-break buildup",
+      "SG inter-term (late Nov - early Dec)"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A3",
+      "CAT-03", "CAT-06", "CAT-07", "CAT-10"
+    ],
+    "peak_persona_ids": ["P1", "P6"],
+    "peak_market_ids": ["US", "IN", "SG", "UK"],
+    "events": [
+      {
+        "name": "US Thanksgiving",
+        "date": "2026-11-26",
+        "impact": "4-day weekend; US family travel trigger; Nov 26 (Thu) + long weekend"
+      },
+      {
+        "name": "India Diwali + winter-break window",
+        "date": "2026-11-10",
+        "impact": "Diwali late Oct/early Nov; winter holidays begin late Nov; P6/P7 IN peak"
+      },
+      {
+        "name": "Singapore inter-term break",
+        "date": "2026-11-20",
+        "impact": "late Nov/early Dec school break; SG families + extended trips"
+      },
+      {
+        "name": "Hoi An Lantern Festival (monthly Full Moon)",
+        "date": "2026-11-20",
+        "impact": "iconic photogenic night market event"
+      }
+    ],
+    "weather_note": {
+      "north": "cool, dry, excellent (18-22°C)",
+      "central": "EXCELLENT DRY (22-25°C); rain tail subsides by late Nov",
+      "south": "cool and dry (27-30°C)"
+    },
+    "booking_lead_time": "8-12 weeks ahead (Thanksgiving triggers peak-season booking surge)",
+    "confidence": "HIGH",
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L29-L41",
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L82-L91"
+    ]
+  },
+  {
+    "id": 12,
+    "name_en": "December",
+    "name_vi": "Tháng 12",
+    "short": "Dec",
+    "season_tag": "peak",
+    "combined_demand": "HIGHEST",
+    "demand_reason": "Xmas/NY global peak (Dec 15 - Jan 5); cruise season absolute peak; all personas converge; P5 PH Xmas spike",
+    "primary_drivers": [
+      "Xmas/NY holiday (Dec 20 - Jan 5 global peak)",
+      "Cruise season absolute peak (Ha Long ~18 calls, Phu My ~16 calls)",
+      "AU summer begins (peak demand)",
+      "Philippines Xmas break (Dec 16 - Jan 6)",
+      "SG inter-term extends early Dec"
+    ],
+    "active_tour_ids": [
+      "T1", "T4", "T10", "T12", "T18",
+      "A1", "A3", "A5",
+      "CAT-03", "CAT-06", "CAT-07", "CAT-10"
+    ],
+    "peak_persona_ids": ["P1", "P5", "P6", "P7"],
+    "peak_market_ids": ["US", "UK", "AU", "CA", "PH"],
+    "events": [
+      {
+        "name": "Xmas/New Year global peak",
+        "date": "2026-12-25",
+        "impact": "Dec 15-Jan 5 = 3-week absolute peak; all markets + personas converge"
+      },
+      {
+        "name": "Philippines Xmas break",
+        "date": "2026-12-16",
+        "impact": "Dec 16 - Jan 6; PH families + barkada groups P5 peak concentration"
+      },
+      {
+        "name": "Australia summer break",
+        "date": "2026-12-20",
+        "impact": "AU summer holidays start mid-Dec; AU families peak travel window"
+      },
+      {
+        "name": "Cruise season PEAK port-calls",
+        "date": "2026-12-15",
+        "impact": "Ha Long ~18 calls (peak), Phu My ~16 calls; 180K-220K pax window; P1/P7 cruise-overlap highest"
+      },
+      {
+        "name": "Hoi An Lantern Festival (monthly Full Moon)",
+        "date": "2026-12-25",
+        "impact": "Christmas Lantern night; iconic photogenic event during peak travel"
+      }
+    ],
+    "weather_note": {
+      "north": "cool, perfectly dry (16-21°C); ideal",
+      "central": "cool, dry, excellent (21-24°C); best month",
+      "south": "warm, dry, excellent (27-30°C)"
+    },
+    "booking_lead_time": "12-16 weeks ahead (Sep-Oct bookings for Dec peak)",
+    "confidence": "HIGH",
+    "source_refs": [
+      "INBOUND-EN-PERSONA-01/sections/Section-05-seasonality.md#L29-L50",
+      "INBOUND-EN-PERSONA-01/sections/Section-01-market-sizing.md#L54-L77",
+      "INBOUND-EN-PERSONA-01/sections/Section-02-personas.md#P1,P5,P6,P7"
+    ]
+  }
+]
