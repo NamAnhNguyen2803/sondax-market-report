@@ -40,14 +40,16 @@ export default function Sidebar({ view, setView, goReport, mobileOpen, setMobile
   };
 
   // ─── Styles ────────────────────────────────────────────────────────────────
+  // Height defers to outer container (App passes sticky positioning + height
+  // accounting for TopHeader). Sidebar fills available vertical space and
+  // scrolls internally if content overflows.
   const sidebarStyle = {
     width: W, minWidth: W,
     background: T.surface,
     borderRight: `1px solid ${T.line}`,
     display: "flex", flexDirection: "column",
     overflowY: "auto",
-    position: "sticky", top: 0,
-    height: "100vh", flexShrink: 0,
+    height: "100%", flexShrink: 0,
   };
 
   // Top-level group header (collapsible)
@@ -240,6 +242,6 @@ const GROUP_LABEL = {
   evidence: "📊 Evidence · Section sources",
   cafe:     "☕ Cafe Workshop HN",
   cruise:   "🚢 Cruise Vịnh Hạ Long",
-  "en-inbound": "🌐 EN Inbound · Tour 2026–27",
+  "en-inbound": "❄️ Mùa thấp điểm · Tháng 10–3 (Tour 2026–27)",
   detail:   "🔍 Drill-down",
 };

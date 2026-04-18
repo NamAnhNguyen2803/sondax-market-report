@@ -67,29 +67,44 @@ function ExplorerPane({ goto }) {
   );
 }
 
-function OffPeakPane({ goto }) {
+function OffPeakPane({ goto, goReport }) {
+  const jumpAsia = (section) => {
+    if (goReport) goReport("asia", section);
+  };
+  const linkBtn = (section, label, desc) => (
+    <button
+      onClick={() => jumpAsia(section)}
+      style={{
+        display: "block", width: "100%", textAlign: "left",
+        padding: "14px 16px",
+        background: T.surface,
+        border: `1px solid ${T.line}`,
+        borderLeft: `3px solid ${T.lavender}`,
+        borderRadius: 10,
+        cursor: "pointer", marginBottom: 10,
+        fontFamily: "inherit",
+        transition: "background .15s, border-color .15s",
+      }}
+      onMouseEnter={e => e.currentTarget.style.background = T.lavenderSoft}
+      onMouseLeave={e => e.currentTarget.style.background = T.surface}
+    >
+      <div style={{ fontWeight: 700, color: T.ink, fontSize: 13.5 }}>{label} <span style={{ color: T.lavender, marginLeft: 4 }}>→</span></div>
+      <div style={{ color: T.inkSoft, fontSize: 12.5, marginTop: 3, lineHeight: 1.5 }}>{desc}</div>
+    </button>
+  );
   return (
     <>
       <SectionHeader
         title="❄️ Mùa thấp điểm · Tháng 10 – 3"
-        subtitle="Báo cáo này hiện chỉ cover mùa cao điểm (Tháng 5–10) cho EN Inbound. Phần phân tích Tháng 10 → Tháng 3 (shoulder + low season: domestic, intra-Asia, weather windows ven biển miền Trung) dự kiến release ở phiên bản kế tiếp."
+        subtitle="Báo cáo RPT-001 này focus mùa cao điểm (Tháng 5–10). Phần phân tích Tháng 10 → Tháng 3 cho EN Inbound đã có sẵn trong báo cáo Asia · Tour EN Inbound 2026–27. Bấm bên dưới để sang."
         onBack={() => goto("rpt-home")}
       />
-      <div style={{
-        marginTop: 18, padding: "20px 22px",
-        background: T.lavenderSoft,
-        border: `1px solid ${T.line}`,
-        borderRadius: 14,
-        color: T.lavenderInk,
-        fontSize: 13.5, lineHeight: 1.7,
-      }}>
-        <div style={{ fontWeight: 700, marginBottom: 6, fontSize: 14 }}>Roadmap nội dung mùa 10–3</div>
-        <ul style={{ margin: 0, paddingLeft: 18 }}>
-          <li>Source markets dịch chuyển: Hàn Quốc / Nhật / Đài Loan thay vì Anglo block</li>
-          <li>Destinations chuyển trục: Hà Giang mùa hoa, Phú Quốc khô, Mekong nước rút</li>
-          <li>Sản phẩm: tour Tết, golf inbound, MICE Q4</li>
-          <li>OTA mix: Klook/KKday vs Viator/GYG ratio đảo chiều</li>
-        </ul>
+      <div style={{ marginTop: 18 }}>
+        {linkBtn("executive",   "Tóm tắt chiến lược",       "Executive summary cho Tour EN Inbound 2026–27 (cover full year, focus shoulder + low season)")}
+        {linkBtn("seasonality", "Mùa vụ chi tiết",          "Phân tích shoulder + low season month-by-month, weather windows, demand pattern Q4–Q1")}
+        {linkBtn("market",      "Định cỡ thị trường",       "Market sizing cả năm — bao gồm Q4 + Q1 (mùa Tết + golf + MICE)")}
+        {linkBtn("personas",    "7 Persona EN Inbound",     "Persona profile theo segment — applicable cả mùa cao + thấp điểm")}
+        {linkBtn("gtm",         "GTM Roadmap full year",    "Roadmap go-to-market theo quý, có actions cho Q4–Q1 mùa thấp điểm")}
       </div>
     </>
   );
@@ -107,11 +122,11 @@ function SectionView({ source, title, goto }) {
   );
 }
 
-function buildSectionMap(goto) {
+function buildSectionMap(goto, goReport) {
   const map = {
     "rpt-home":     () => <HomePane goto={goto} />,
     "rpt-explorer": () => <ExplorerPane goto={goto} />,
-    "rpt-offpeak":  () => <OffPeakPane goto={goto} />,
+    "rpt-offpeak":  () => <OffPeakPane goto={goto} goReport={goReport} />,
     "rpt-s1":       () => <SectionView source={s1} title="S1 · Thị trường nguồn" goto={goto} />,
     "rpt-s2":       () => <SectionView source={s2} title="S2 · Tour Categories" goto={goto} />,
     "rpt-s3":       () => <SectionView source={s3} title="S3 · Destinations" goto={goto} />,
@@ -135,8 +150,8 @@ function parseTourId(section) {
   return null;
 }
 
-export default function Rpt001Report({ section = "rpt-home", from = null, goto = () => {} }) {
-  const sectionMap = buildSectionMap(goto);
+export default function Rpt001Report({ section = "rpt-home", from = null, goto = () => {}, goReport }) {
+  const sectionMap = buildSectionMap(goto, goReport);
 
   const tourId = parseTourId(section);
   if (tourId) {

@@ -1,65 +1,78 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// V4 Soft Pastel Modern — theme tokens
-// Spec: Projects/Sondax-Travel/ui-pattern-demo/variants/v4-soft-pastel.html
+// V5 Sondax Brand — palette aligned with sondaxtravel.com (navy + amber + white)
 //
-// Replaces the old DARK palette. Keeps the `C` named export for back-compat —
-// every old key still resolves to a sensible V4 hue so existing components
-// (charts, KPI, Card) remain readable while we rebuild.
+// Replaces V4 lavender/mint/peach. All old `T.lavender / T.mint / T.peach`
+// keys still work — they now resolve to brand-equivalent hues so existing
+// components keep rendering while we incrementally retheme.
 //
-// New canonical tokens (recommended): use these for new code.
-//   bg / bgAlt / surface / line / lineStrong
+// Canonical brand tokens (use for new code):
+//   bg / bgAlt / surface / surfaceSoft / line / lineStrong
 //   ink / inkSoft
-//   mint / mintSoft / peach / peachSoft / lavender / lavenderSoft
+//   navy / navySoft / navyInk     ← primary brand
+//   amber / amberSoft / amberInk  ← section pills, accents, callouts
+//   emerald / emeraldSoft / emeraldInk  ← success / growth-strong
 // ─────────────────────────────────────────────────────────────────────────────
 
-// Canonical V4 tokens
 export const T = {
-  // Background + surface
-  bg:           "#F4F1F8",   // page bg (soft lilac wash)
-  bgAlt:        "#ECE7F2",   // alt strip / hover row alt
+  // Surface
+  bg:           "#FFFFFF",   // page bg (white)
+  bgAlt:        "#F4F5F7",   // alt strip / section divider
   surface:      "#FFFFFF",   // card / panel
-  surfaceSoft:  "#FAF7FC",   // very light surface (row alt)
+  surfaceSoft:  "#FAFBFC",   // very light row alt
 
   // Borders
-  line:         "#E2DBE9",
-  lineStrong:   "#CEC2DA",
+  line:         "#E5E7EB",
+  lineStrong:   "#CBD2DA",
 
-  // Text / ink
-  ink:          "#2D1B3D",   // primary text
-  inkSoft:      "#7B6B85",   // muted text
+  // Text
+  ink:          "#1B2B5A",   // primary (navy)
+  inkSoft:      "#5A6478",   // muted
 
-  // Three pastel accents
-  mint:         "#7DCFB6",
-  mintSoft:     "#DEF3EC",
-  mintInk:      "#2D7A60",   // text on mintSoft, growth-strong
+  // Brand primaries
+  navy:         "#1B2B5A",
+  navySoft:     "#E6EAF3",
+  navyInk:      "#0F1A3A",
 
-  peach:        "#FF9F8E",
-  peachSoft:    "#FFE5DF",
-  peachInk:     "#B8513E",
+  amber:        "#F59E0B",   // section pills + warm accent
+  amberSoft:    "#FEF3D6",
+  amberInk:     "#92560A",
 
-  lavender:     "#A88FBF",
-  lavenderSoft: "#E8DFF1",
-  lavenderInk:  "#6F578A",
+  emerald:      "#10B981",
+  emeraldSoft:  "#D1FAE5",
+  emeraldInk:   "#065F46",
+
+  // ─── V4 legacy keys remapped → brand equivalents (back-compat) ─────────────
+  // mint   → emerald (success / growth-strong)
+  mint:         "#10B981",
+  mintSoft:     "#D1FAE5",
+  mintInk:      "#065F46",
+
+  // peach  → amber (warm callout / section pill)
+  peach:        "#F59E0B",
+  peachSoft:    "#FEF3D6",
+  peachInk:     "#92560A",
+
+  // lavender → navy (primary brand)
+  lavender:     "#1B2B5A",
+  lavenderSoft: "#E6EAF3",
+  lavenderInk:  "#1B2B5A",
 };
 
-// Chart hues mapped to V4 friendly pastels (for recharts legends).
-// Old hard-saturated palette would clash on the lilac bg.
+// Chart hues — aligned with brand (navy primary, amber accent, emerald success)
 export const CHART = {
-  china:       "#A88FBF",   // lavender — biggest segment
-  korea:       "#7DCFB6",   // mint
-  japan:       "#FF9F8E",   // peach
-  india:       "#C9A8DC",   // light lavender
-  thailand:    "#5BB39B",   // deep mint
-  philippines: "#E89888",   // deep peach
+  china:       "#1B2B5A",   // navy — biggest segment
+  korea:       "#F59E0B",   // amber
+  japan:       "#10B981",   // emerald
+  india:       "#5B7BB6",   // mid navy
+  thailand:    "#0F8C68",   // deep emerald
+  philippines: "#C97A0F",   // deep amber
 };
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Back-compat `C` export. All old usages keep working; visuals update to V4.
-//   bg/card/text/muted/border/accent → V4 surfaces and ink
-//   green/red/orange/etc. → V4-friendly approximations
+// Back-compat `C` export. All old usages keep working; visuals shift to brand.
 // ─────────────────────────────────────────────────────────────────────────────
 export const C = {
-  // legacy chart hues (kept under their old keys)
+  // legacy chart hues
   china:       CHART.china,
   korea:       CHART.korea,
   japan:       CHART.japan,
@@ -67,19 +80,19 @@ export const C = {
   thailand:    CHART.thailand,
   philippines: CHART.philippines,
 
-  // legacy structural keys → V4
+  // legacy structural keys → brand
   bg:     T.bg,
   card:   T.surface,
   text:   T.ink,
   muted:  T.inkSoft,
-  accent: T.lavender,        // primary accent in V4 = lavender
+  accent: T.navy,
   border: T.line,
 
-  // legacy semantic colors → V4-friendly
-  green:  T.mintInk,         // success / growth-strong text
-  red:    T.peachInk,        // alarm / growth-mid text
-  purple: T.lavender,
-  pink:   T.peach,
-  orange: T.peach,           // map orange → peach
-  cyan:   "#5BB39B",         // map cyan → deep mint
+  // legacy semantic colors → brand
+  green:  T.emeraldInk,
+  red:    T.amberInk,
+  purple: T.navy,
+  pink:   T.amber,
+  orange: T.amber,
+  cyan:   "#0F8C68",
 };

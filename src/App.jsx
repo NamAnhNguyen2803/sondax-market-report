@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, lazy, Suspense } from "react";
 import { T } from "./data/colors.js";
 import Sidebar    from "./components/Sidebar.jsx";
+import TopHeader  from "./components/TopHeader.jsx";
 import AsiaReport from "./reports/asia/index.jsx";
 
 // Lazy-load MKT-001 (heavy markdown chunks ~700KB) — loads only when user navigates to it
@@ -50,6 +51,8 @@ export default function App() {
     setMobileOpen(false);
   };
 
+  // TopHeader is ~64px tall; sidebar sticks below it.
+  const HEADER_H = 64;
   const sidebarContainerStyle = isMobile
     ? {
         position: "fixed",
@@ -61,8 +64,8 @@ export default function App() {
       }
     : {
         position: "sticky",
-        top: 0,
-        height: "100vh",
+        top: HEADER_H,
+        height: `calc(100vh - ${HEADER_H}px)`,
         flexShrink: 0,
         zIndex: 50,
       };
@@ -74,66 +77,57 @@ export default function App() {
 
   return (
     <div style={{
-      display: "flex", minHeight: "100vh",
+      display: "flex", flexDirection: "column", minHeight: "100vh",
       background: T.bg, color: T.ink,
       fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif",
     }}>
 
-      {/* Mobile overlay backdrop */}
-      {isMobile && mobileOpen && (
-        <div
-          onClick={() => setMobileOpen(false)}
-          style={{ position: "fixed", inset: 0, background: "rgba(45,27,61,0.4)", zIndex: 98 }}
-        />
-      )}
+      {/* Brand top header — full width above sidebar + main */}
+      <TopHeader
+        goReport={goReport}
+        setMobileOpen={setMobileOpen}
+        isMobile={isMobile}
+      />
 
-      {/* Sidebar */}
-      <div style={sidebarContainerStyle}>
-        <Sidebar
-          view={view}
-          setView={setView}
-          goReport={goReport}
-          mobileOpen={mobileOpen}
-          setMobileOpen={setMobileOpen}
-        />
-      </div>
+      <div style={{ display: "flex", flex: 1, minHeight: 0 }}>
 
-      {/* Main area */}
-      <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+        {/* Mobile overlay backdrop */}
+        {isMobile && mobileOpen && (
+          <div
+            onClick={() => setMobileOpen(false)}
+            style={{ position: "fixed", inset: 0, background: "rgba(27,43,90,0.4)", zIndex: 98 }}
+          />
+        )}
 
-        {/* Top bar — V4 lavender soft surface */}
-        <header style={{
-          display: "flex", alignItems: "center", gap: 12,
-          padding: "12px 22px",
-          background: "rgba(244,241,248,0.92)",
-          backdropFilter: "blur(12px)",
-          borderBottom: `1px solid ${T.line}`,
-          position: "sticky", top: 0, zIndex: 50, flexShrink: 0,
-        }}>
-          {isMobile && (
-            <button
-              onClick={() => setMobileOpen(v => !v)}
-              style={{
-                background: T.lavenderSoft, border: `1px solid ${T.line}`,
-                color: T.lavenderInk, fontSize: 16, cursor: "pointer",
-                padding: "4px 10px", borderRadius: 8, fontWeight: 700,
-              }}
-              aria-label="Open sidebar"
-            >
-              ☰
-            </button>
-          )}
+        {/* Sidebar */}
+        <div style={sidebarContainerStyle}>
+          <Sidebar
+            view={view}
+            setView={setView}
+            goReport={goReport}
+            mobileOpen={mobileOpen}
+            setMobileOpen={setMobileOpen}
+          />
+        </div>
+
+        {/* Main area */}
+        <div style={{ flex: 1, minWidth: 0, display: "flex", flexDirection: "column", overflow: "hidden" }}>
+
+          {/* In-report context strip */}
           <div style={{
-            fontSize: 10, color: T.lavender, textTransform: "uppercase",
-            letterSpacing: 1.6, fontWeight: 700,
+            display: "flex", alignItems: "center", gap: 12,
+            padding: "10px 22px",
+            background: T.bgAlt,
+            borderBottom: `1px solid ${T.line}`,
+            flexShrink: 0,
           }}>
-            {reportLabel}
+            <div style={{
+              fontSize: 10, color: T.navy, textTransform: "uppercase",
+              letterSpacing: 1.6, fontWeight: 700,
+            }}>
+              {reportLabel}
+            </div>
           </div>
-          <div style={{ flex: 1 }} />
-          <div className="serif" style={{ fontSize: 14, color: T.ink }}>
-            Sondax Travel <span style={{ color: T.inkSoft, fontSize: 11, marginLeft: 6 }}>Reports</span>
-          </div>
-        </header>
 
         {/* Scrollable content */}
         <div
@@ -159,6 +153,7 @@ export default function App() {
                   section={view.section}
                   from={view.from}
                   goto={(sec, from) => setView({ report: "rpt-001", section: sec, from: from ?? null })}
+                  goReport={goReport}
                 />
               </Suspense>
             )}
@@ -171,6 +166,7 @@ export default function App() {
               </Suspense>
             )}
           </main>
+        </div>
         </div>
       </div>
     </div>
